@@ -5,6 +5,9 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
+    @user = current_user
+    @store = Store.find(params[:store_id])
   end
 
   def create
@@ -24,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :store_id, :price_per_unit, :quantity, :total_price, :name, :category)
+    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo)
   end
 end

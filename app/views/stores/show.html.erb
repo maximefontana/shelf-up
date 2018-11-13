@@ -1,7 +1,9 @@
 <h1><%= @store.name %></h1>
 <h2>City: <%= @store.location %></h2>
-<h3>Owner: <%= @store.user.username %></h3>
+<h3>Owner: <%= link_to @store.user.username, user_path(@user) %></h3>
 <% if @store.description %>
   <p>Description: <%= @store.description %></p>
 <% end %>
 <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+<%= link_to "Book", new_store_booking_path(@store), class: "btn btn-primary" %>
+
