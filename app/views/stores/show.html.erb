@@ -5,3 +5,5 @@
   <p>Description: <%= @store.description %></p>
 <% end %>
 <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+<%= link_to "Book", new_store_booking_path(@store), class: "btn btn-primary" %>
+
