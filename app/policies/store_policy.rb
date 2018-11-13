@@ -16,4 +16,12 @@ class StorePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def new?
+    create?
+  end
+
+  def create?
+    user == record.user ? false : true
+  end
 end
