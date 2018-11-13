@@ -3,6 +3,7 @@
   <li><%= @user.username %></li>
 
 </ul>
+<%= link_to "Edit My Details", edit_user_registration_path(@user), class: "btn btn-primary" %>
 
 <h3>Create new store: <%= link_to "New Store", new_store_path, class: "btn btn-primary" %></h3>
 

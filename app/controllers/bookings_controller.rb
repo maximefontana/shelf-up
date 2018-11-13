@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
   def create
     booking = Booking.create(booking_params)
     authorize booking
-    booking.store = Store.find(params[:store_id])
+    store = Store.find(params[:store_id])
+    booking.store = store
     booking.user = current_user
     if booking.save
       redirect_to store_path(store)
