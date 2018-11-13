@@ -5,24 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "Cleaning DB..."
 Store.destroy_all
 User.destroy_all
+puts "Growing the new seeds into big beautiful trees..."
 
-u1 = User.create(username: "mikey", email: "mikey@mikey.com", password: "testing")
 
-u2 = User.create(username: "m&m", email: "m@m.com", password: "testing")
+u1 = User.create!(username: "mikey", email: "mikey@mikey.com", password: "testing")
 
-s1 = Store.create(name: "Salsa Shop", location: "Amsterdam", user: u1)
+u2 = User.create!(username: "m&m", email: "m@m.com", password: "testing")
 
-s2 = Store.create(name: "Kashmir Coffeeshop", location: "Amsterdam", user: u2, description: "Dankity dank kashmoney")
+s1 = Store.create!(name: "Salsa Shop", location: "Amsterdam", user: u1)
 
-b1 = Booking.create(price_per_unit: 5, quantity: 2, total_price: 100, name: "no idea", category: "clothes")
+s2 = Store.create!(name: "Kashmir Coffeeshop", location: "Amsterdam", user: u2, description: "Dankity dank kashmoney")
+
+b1 = Booking.create!(price_per_unit: 5, quantity: 2, total_price: 100, name: "no idea", category: "clothes")
 b1.user = u1
 b1.store = s2
 b1.save
 
-b2 = Booking.create(price_per_unit: 7, quantity: 4, total_price: 150, name: "no idea", category: "food")
+b2 = Booking.create!(price_per_unit: 7, quantity: 4, total_price: 150, name: "no idea", category: "food")
 b2.user = u2
 b2.store = s1
 b2.save
