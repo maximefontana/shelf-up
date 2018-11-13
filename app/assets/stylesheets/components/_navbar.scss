@@ -7,9 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: $primarythree;
   overflow: hidden;
   position:fixed;
+  width: 100%;
 }
 
 /* Logo */
