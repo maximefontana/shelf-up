@@ -6,5 +6,6 @@ Make a Booking
     <%= f.input :price_per_unit %>
     <%= f.input :quantity, label: "Amount of units" %>
     <%= f.input :total_price %>
-    <%= f.submit "Book" %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
