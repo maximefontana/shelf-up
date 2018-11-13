@@ -27,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category)
+    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo)
   end
 end

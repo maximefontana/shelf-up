@@ -32,3 +32,7 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+# photos
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
