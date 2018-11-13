@@ -8,8 +8,22 @@
   justify-content: center;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
+.flex-child {
+  flex-grow: 1;
+}
+
 // spacing
 
 .margin {
   margin: 10px;
+}
+
+// width styles
+
+.width-small {
+  width: 100px;
 }
