@@ -7,6 +7,14 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    create?
+  end
+
+  def create?
+    user != record.user
+  end
+
   class Scope < Scope
     def resolve
       scope.all

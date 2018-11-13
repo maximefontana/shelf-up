@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     booking = Booking.create(booking_params)
+    authorize booking
     store = Store.find(params[:store_id])
     user = current_user
     booking.store = store
