@@ -1,2 +1,10 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+Make a Booking
+
+<%= simple_form_for(new_store_booking_path(@store)) do |f| %>
+    <%= f.input :category, label: "Item Type" %>
+    <%= f.input :name, label: "Item Name" %>
+    <%= f.input :price_per_unit %>
+    <%= f.input :quantity %>
+    <%= f.input :total_price %>
+    <%= f.submit "Book" %>
+<% end %>
