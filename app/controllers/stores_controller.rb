@@ -5,6 +5,11 @@ class StoresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
+    @stores = policy_scope(Store)
+    if current_user
+      @user = current_user
+      # authorize @user
+    end
   end
 
   def show
