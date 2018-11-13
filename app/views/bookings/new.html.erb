@@ -1,10 +1,10 @@
 Make a Booking
 
-<%= simple_form_for(new_store_booking_path(@store)) do |f| %>
+<%= simple_form_for([@store, @booking]) do |f| %>
     <%= f.input :category, label: "Item Type" %>
     <%= f.input :name, label: "Item Name" %>
     <%= f.input :price_per_unit %>
-    <%= f.input :quantity %>
+    <%= f.input :quantity, label: "Amount of units" %>
     <%= f.input :total_price %>
     <%= f.submit "Book" %>
 <% end %>
