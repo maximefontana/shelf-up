@@ -19,7 +19,7 @@
   <%= f.input :username, required: true %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :owner, value: "true", as: :hidden %>
+  <%= f.hidden_field :owner, value: true %>
   <%= f.input :password,
   required: true,
   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -51,7 +51,7 @@
   <%= f.input :username, required: true %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :owner, value: false, as: :hidden %>
+  <%= f.hidden_field :owner, value: false %>
   <%= f.input :password,
   required: true,
   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -59,10 +59,12 @@
   <%= f.input :password_confirmation,
   required: true,
   input_html: { autocomplete: "new-password" } %>
-  <%# f.input :photo %>
-  <%# f.input :photo_cache, as: :hidden %>
 </div>
 
+<div class="form-actions">
+  <%= f.button :submit, "Sign up" %>
+</div>
+<% end %>
 
 <%= render "devise/shared/links" %>
 </div>
