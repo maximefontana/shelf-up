@@ -1,21 +1,3 @@
-// flex box styling
-
-.flex-box {
-  display: flex;
-}
-
-.centered {
-  justify-content: center;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.flex-child {
-  flex-grow: 1;
-}
-
 // spacing
 
 .margin {
@@ -26,4 +8,9 @@
 
 .width-small {
   width: 100px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
 }
