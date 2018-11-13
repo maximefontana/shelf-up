@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.find(3)
+Store.destroy_all
+
+u = User.create(username: "mikey", email: "mikey@mikey.com", password: "testing")
 s = Store.create(name: "Salsa Shop", location: "Amsterdam", user: u)
 s = Store.create(name: "Kashmir Coffeeshop", location: "Amsterdam", user: u, description: "Dankity dank kashmoney")
