@@ -2,6 +2,8 @@
 <h3><%= @user.username %> </h3>
 <ul>
   <h3><% @stores.each do |store| %></h3>
-    <li><%= store.name %> | <%= store.location %> | <%= store.description %></li>
+    <div class="card">
+      <li><%= link_to store.name, store %> | <%= store.location %> | <%= store.description %></li>
+    </div>
   <% end %>
 </ul>
