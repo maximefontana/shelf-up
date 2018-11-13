@@ -1,0 +1,7 @@
+<h1><%= @store.name %></h1>
+<h2>City: <%= @store.location %></h2>
+<h3>Owner: <%= @store.user.username %></h3>
+<% if @store.description %>
+  <p>Description: <%= @store.description %></p>
+<% end %>
+<p>Store object: <%= @store %></p>
