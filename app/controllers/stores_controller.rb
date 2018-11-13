@@ -42,7 +42,6 @@ class StoresController < ApplicationController
 
   def stores_params
     params.require(:store).permit(:user_id, :name, :location,
-     :description, :address, :rent_space_size,
-     :rent_time, :rent_rate, :rent_price_min, :rent_price_max)
+     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max)
   end
 end

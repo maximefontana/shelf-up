@@ -1,0 +1,37 @@
+.btn-form {
+  padding: 5px 10px;
+}
+
+.btn-forward {
+  color: white;
+  background-color: $greenthree;
+}
+
+.btn-forward:hover {
+  color: white;
+  text-decoration: none;
+  background-color: $greenfour;
+}
+
+
+.btn-back {
+  color: white;
+  background-color: $redthree;
+}
+
+.btn-back:hover {
+  color: white;
+  text-decoration: none;
+  background-color: $redfour;
+}
+
+.btn-info {
+  color: white;
+  background-color: $bluefour;
+}
+
+.btn-info:hover {
+  color: white;
+  text-decoration: none;
+  background-color: $bluefour;
+}

@@ -1,2 +1,16 @@
-<h1>test</h1>
-<p>form needed here</p>
+Add a new store
+
+<%= simple_form_for(@store) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description, label: "Store description" %>
+    <%= f.input :address %>
+    <%= f.input :location, label: "City" %>
+    <%= f.input :rent_price_min, label: "Minimun Item Price You accept in your store" %>
+    <%= f.input :rent_price_max, label: "Maximum Item Price you accept in your store" %>
+    <%= f.input :commission_amount, label: "The commission you want per item" %>
+    <%= f.input :rent_time, label: "The time period you would want to take an item for" %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>

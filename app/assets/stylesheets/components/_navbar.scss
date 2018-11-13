@@ -22,7 +22,7 @@
 
 .navbar-logo:hover {
   text-decoration: none;
-  color: $graytwo; /* primary 5 */
+  color: $bluefive; /* primary 5 */
 }
 
 /* User Avatar */
@@ -43,15 +43,18 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+
 }
 
 /* Navbar link */
 .navbar-wagon-link {
   color: white;
   font-size: 14px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $bluefive;
   text-decoration: none;
 }
 
