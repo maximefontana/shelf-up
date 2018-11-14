@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def update
+    redirect_to user_path(current_user)
+  end
+
   def destroy
     @user = current_user
 
