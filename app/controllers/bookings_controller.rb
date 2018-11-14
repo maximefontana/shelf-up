@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable all
 class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
@@ -8,6 +11,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @user = current_user
     @store = Store.find(params[:store_id])
+
   end
 
   def create
@@ -16,7 +20,7 @@ class BookingsController < ApplicationController
     booking.store = Store.find(params[:store_id])
     booking.user = current_user
     if booking.save
-      redirect_to store_path(store)
+      redirect_to store_path(booking.store)
     else
       render :new
     end
