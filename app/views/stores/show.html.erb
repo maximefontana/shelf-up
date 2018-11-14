@@ -36,4 +36,8 @@
   <% if current_user && current_user != @store.user %>
   <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
   <% end %>
+  <% if current_user && policy(@store).update? %>
+  <%= link_to "Delete this space", store_path(@store), method: :delete, class: "btn btn-primary" %>
+  <% end %>
 </div>
+
