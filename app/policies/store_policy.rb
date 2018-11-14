@@ -16,7 +16,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def create?
-    user == record.user ? false : true
+    true
   end
 
   def edit?
@@ -24,7 +24,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user == record.user
   end
 
   class Scope < Scope

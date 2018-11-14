@@ -25,5 +25,8 @@
   <% end %>
 
   <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+
+  <% if current_user && current_user != @store.user %>
   <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
+  <% end %>
 </div>
