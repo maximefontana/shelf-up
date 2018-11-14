@@ -1,9 +1,27 @@
-<h1>test</h1>
-<h3><%= @user.username if current_user %> </h3>
-<ul>
-  <h3><% @stores.each do |store| %></h3>
-    <div class="card">
-      <li><%= link_to store.name, store %> | <%= store.location %> | <%= store.description %></li>
+<div class="card-container">
+    <h3><% @stores.each do |store| %></h3>
+    <div class="card col-xs-6 col-md-4 margin" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+      <div class="card-store limit-store">
+        <h3><%= link_to store.name, store %></h3>
+      </div>
+      <div class="card-city limit-city">
+        <h3> <%= store.location %> </h3>
+      </div>
+      <div class="card-description">
+        <p>description a description where description to description description there description for the front door description description description description ahaha description lalala description description</p>
+      </div>
     </div>
-  <% end %>
-</ul>
+    <% end %>
+</div>
+
+<!-- This is the one from le wagon, used as reference and to steal elements when necessary -->
+
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Le Wagon Shanghai</h2>
+    <p>Very cool city, the best</p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <a class="card-link" href="#" ></a>
+</div> -->
