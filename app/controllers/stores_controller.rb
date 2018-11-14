@@ -18,21 +18,22 @@ class StoresController < ApplicationController
     if current_user
       @user = current_user
       authorize @user
+      @booking = Booking.new
     end
   end
 
   def new
+    @store = Store.new
     authorize @store
     @user = current_user
-    @store = Store.new
   end
 
   def create
-    authorize @store
-    @user = current_user
-    @store = Store.new(store_params)
-    if @store.save
-      redirect_to store_path(@store)
+    store = Store.create(store_params)
+    authorize store
+    store.user = current_user
+    if store.save
+      redirect_to store_path(store)
     else
       render :new
     end
@@ -42,10 +43,10 @@ class StoresController < ApplicationController
   end
 
   def update
-    @store.update(store_params)
-    authorize @store
-    if @store.save
-      redirect_to store_path(@store)
+    store.update(store_params)
+    authorize store
+    if store.save
+      redirect_to store_path(store)
     else
       render :edit
     end
@@ -55,7 +56,7 @@ class StoresController < ApplicationController
 
   def store_params
     params.require(:store).permit(:user_id, :name, :location,
-     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max)
+     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max, :photo, :photo_cache)
   end
 
   def find_store
