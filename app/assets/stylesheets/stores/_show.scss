@@ -1,5 +1,19 @@
 .margin {
   margin-top: 90px;
-  margin-right: 20vw;
-  margin-left: 20vw;
+  margin-right: 15vw;
+  margin-left: 15vw;
+}
+.edit-store-container {
+  display: flex;
+  height: 700px;
+  // flex-direction: row;
+  // justify-content: stretch;
+}
+.store-left-side {
+  background-color: $grayone;
+  width: 35vw;
+}
+.store-right-side {
+  background-color: $graytwo;
+  width: 35vw;
 }
