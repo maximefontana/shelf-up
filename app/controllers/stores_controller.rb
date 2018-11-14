@@ -6,8 +6,11 @@ class StoresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
-    if params[:query].present?
+    @names = Store.all.map { |store| store.name }
+    if params[:query].present? && Store.where("location ILIKE ?", "%#{params[:query]}%")
       @stores = Store.where("location ILIKE ?", "%#{params[:query]}%")
+    elsif params_present
+      @stores = Store.where("category ILIKE ?", "%#{params[:category]}").where("name ILIKE ?", "%#{params[:name]}")
     else
       @stores = policy_scope(Store)
     end
@@ -67,10 +70,14 @@ class StoresController < ApplicationController
   def store_params
     params.require(:store).permit(:user_id, :name, :location, :description,
       :address, :rent_time, :commission_amount, :rent_price_min,
-     :rent_price_max, :photo, :photo_cache, :category)
+      :rent_price_max, :photo, :photo_cache, :category)
   end
 
   def find_store
     @store = Store.find(params[:id])
+  end
+
+  def params_present
+    params[:category].present? || params[:name].present?
   end
 end
