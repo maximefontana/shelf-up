@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root 'users#show', as: :authenticated_root
   end
 
+  root to: 'pages#home'
   get 'home', to: 'pages#home', as: :home
 
   resources :users, only: [:show, :update]
