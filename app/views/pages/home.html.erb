@@ -1,1 +1,33 @@
 <%= render "shared/banner" %>
+
+
+<div class="homepage-wrapper">
+  <h1>Who's on Yourshelf?</h1>
+
+  <div class="homepage-users">
+    <div class="homepage-avatar">
+      <h3>Adrien</h3>
+    </div>
+    <p>Hi I'm Adrien and I love putting myself on a shelf!</p>
+  </div>
+
+  <div class="homepage-users">
+    <div class="homepage-avatar">
+      <h3>Laura</h3>
+    </div>
+    <p>Hi I'm Laura and love that after selling a few of my goods online that I am able to find an easy way to put my products in real stores!</p>
+  </div>
+
+  <div class="homepage-bottom-buttons flex-box">
+    <div class="want-to-display flex-grow">
+      <h3>Do you want to display?</h3>
+      <%= link_to "Find Stores", stores_path, class: "btn btn-forward" %>
+    </div>
+    <div class="you-have-shelf flex-grow">
+      <h3>Find new brands (*** we dont have corrent link)</h3>
+
+      <%= link_to "Find Brands", root_path, class: "btn btn-forward"  %>
+    </div>
+  </div>
+
+</div>
