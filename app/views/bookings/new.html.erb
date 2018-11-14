@@ -1,32 +1,47 @@
-Make a Booking
+<div class="container-new-booking">
 
-<script>
-  function calcPrice() {
-    const pricePerUnit = document.getElementById("booking_price_per_unit").value;
-    const unitQuantity = document.getElementById("booking_quantity").value;
+  Make a Booking
 
-    document.getElementById('total-cost').innerHTML = "Total Cost: " + (pricePerUnit*unitQuantity).toString();
-    if (unitQuantity === "") {
-      document.getElementById('total-cost').innerHTML = "Total Cost: ";
+  <script>
+    function calcPrice() {
+      const pricePerUnit = document.getElementById("booking_price_per_unit").value;
+      const unitQuantity = document.getElementById("booking_quantity").value;
+
+      document.getElementById('total-cost').innerHTML = "Total Cost: " + (pricePerUnit*unitQuantity).toString();
+      if (unitQuantity === "") {
+        document.getElementById('total-cost').innerHTML = "Total Cost: ";
+      }
     }
-  }
-</script>
+  </script>
 
-<%= simple_form_for([@store, @booking]) do |f| %>
-    <%= f.input :category, label: "Item Type" %>
-    <%= f.input :name, label: "Item Name" %>
-    <%= f.input :price_per_unit %>
-    <%= f.input :quantity, label: "Amount of units" %>
-    <p id="total-cost">Total Cost: </p>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= link_to "Back", :back, class: "btn btn-primary" %>
-    <%= f.submit "Book", class: "btn btn-primary" %>
-<% end %>
+  <div class="booking-new-form">
+    <%= simple_form_for([@store, @booking]) do |f| %>
+      <%= f.input :category, collection: Booking::CATEGORY_CHOICES, input_html: { multiple: true }, label: "Item type" %>
+      <!-- works on form_for not simple form...I think, I found it on the internet -->
+      <%# f.select :desired_attribute, ['Clothing', 'Art', 'Culinary']%>
+      <%= f.input :name, label: "Item Name" %>
+      <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2) %>
+      <%= f.input :quantity, label: "Amount of units" %>
+      <p id="total-cost">Total Cost: </p>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+      <%= f.submit "Book", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<script>
-  const quantity = document.querySelector("#booking_quantity");
-  quantity.addEventListener('keyup', (event) => {
-    calcPrice();
-  });
-</script>
+  <!-- Has to be below the form, otherwise the form breaks because the function is confused -->
+  <script>
+    // updates when quantity is changed
+    const quantity = document.querySelector("#booking_quantity");
+    quantity.addEventListener('keyup', (event) => {
+      calcPrice();
+    });
+    //  Updates when price per unit is changed
+    const price_per_unit = document.querySelector("#booking_price_per_unit");
+    price_per_unit.addEventListener('keyup', (event) => {
+      calcPrice();
+    });
+  </script>
+
+</div>
