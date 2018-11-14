@@ -1,9 +1,28 @@
-<h1><%= @store.name %></h1>
-<h2>City: <%= @store.location %></h2>
+<%= form_for(@store) do |f| %>
+<h1 class="store-name"><%= @store.name %>
+  <% if current_user && policy(@store).update? %>
+  <i class="fas fa-pencil-alt edit-store-name"></i>
+  <% end %>
+</h1>
+<%= f.text_field :name, class: "input-store-name" %>
+<h2 class="store-city">City: <%= @store.location %>
+  <% if current_user && policy(@store).update? %>
+  <i class="fas fa-pencil-alt edit-store-city"></i>
+  <% end %>
+</h2>
+<%= f.text_field :location, class: "input-store-city"%>
 <h3>Owner: <%= link_to @store.user.username, user_path(@user) %></h3>
 <% if @store.description %>
-  <p>Description: <%= @store.description %></p>
+  <p class="store-description">Description: <%= @store.description %>
+    <% if current_user && policy(@store).update? %>
+    <i class="fas fa-pencil-alt edit-store-description"></i>
+    <% end %>
+  </p>
+  <%= f.text_field :description, class: "input-store-description" %>
 <% end %>
+<%= f.submit "Edit", class: "store-edit-button" %>
+<% end %>
+
 <%= link_to "Back", stores_path, class: "btn btn-primary" %>
 <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
 

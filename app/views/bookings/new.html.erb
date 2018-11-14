@@ -22,7 +22,7 @@
       <%= f.input :name, label: "Item Name" %>
       <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2) %>
       <%= f.input :quantity, label: "Amount of units" %>
-      <p id="total-cost">Total Cost: </p>
+      <p id="total-cost">Total Cost: €</p>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= link_to "Back", :back, class: "btn btn-primary" %>
