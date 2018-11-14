@@ -10,7 +10,6 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="wrapper">
       <%= render 'shared/navbarhomepage' %>
       <div class = "flash-msg-fixed">
         <%= render 'shared/flashes' %>
@@ -18,6 +17,5 @@
       <%= yield %>
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
-    </div>
   </body>
 </html>

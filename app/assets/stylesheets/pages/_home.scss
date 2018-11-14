@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+.homepage-wrapper {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $light-gray;
+}
+
+.homepage-users {
+  height: 500px;
+  background-color: $grayone;
+  margin-top: 5%;
+}
+
+.homepage-avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.you-have-shelf {
+  word-break: break-all;
+  width: 50%;
+}
+
+.want-to-display {
+  word-break: break-all;
+  width: 50%;
+}
