@@ -1,4 +1,5 @@
 <div class="edit-store-container">
+  <!-- Do not change class names as these are used in JavaScript -->
   <%= form_for(@store) do |f| %>
   <h1 class="store-name"><%= @store.name %>
     <% if current_user && policy(@store).update? %>

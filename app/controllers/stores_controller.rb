@@ -6,10 +6,13 @@ class StoresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
-    @stores = policy_scope(Store)
+    if params[:query].present?
+      @stores = Store.where(location: params[:query])
+    else
+      @stores = policy_scope(Store)
+    end
     if current_user
       @user = current_user
-      # authorize @user
     end
   end
 
@@ -62,8 +65,9 @@ class StoresController < ApplicationController
   private
 
   def store_params
-    params.require(:store).permit(:user_id, :name, :location,
-     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max, :photo, :photo_cache)
+    params.require(:store).permit(:user_id, :name, :location, :description,
+      :address, :rent_time, :commission_amount, :rent_price_min,
+     :rent_price_max, :photo, :photo_cache, :category)
   end
 
   def find_store
