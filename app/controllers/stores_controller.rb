@@ -7,7 +7,7 @@ class StoresController < ApplicationController
 
   def index
     if params[:query].present?
-      @stores = Store.where(location: params[:query])
+      @stores = Store.where("location ILIKE ?", "%#{params[:query]}%")
     else
       @stores = policy_scope(Store)
     end
