@@ -32,11 +32,12 @@ class StoresController < ApplicationController
   end
 
   def create
-    store = Store.create(store_params)
-    authorize store
-    store.user = current_user
-    if store.save
-      redirect_to store_path(store)
+    @store = Store.create(store_params)
+    authorize @store
+    @user = current_user
+    @store.user = current_user
+    if @store.save
+      redirect_to store_path(@store)
     else
       render :new
     end

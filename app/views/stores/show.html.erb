@@ -21,12 +21,12 @@
     <% end %>
   </h3>
   <% if @store.description %>
-  <p class="store-description">Description: <%= @store.description %>
+  <p class="store-description">Description: https://www.google.com/ <%= @store.description %>
     <% if current_user && policy(@store).update? %>
     <a href="#"><i class="fas fa-pencil-alt edit-store-description"></i></a>
     <% end %>
   </p>
-  <%= f.text_field :description, class: "input-store-description hidden" %>
+  <%= f.text_field :description, class: "input-store-description hidden", max_length: 200 %>
   <% end %>
   <%= f.submit "Edit", class: "store-edit-button hidden" %>
   <% end %>
