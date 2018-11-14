@@ -5,6 +5,7 @@ Add a new store
     <%= f.input :description, label: "Store description" %>
     <%= f.input :address %>
     <%= f.input :location, label: "City" %>
+    <%= f.input :category, collection: Store::CATEGORY_CHOICES %>
     <%= f.input :rent_price_min, label: "Minimun Item Price You accept in your store" %>
     <%= f.input :rent_price_max, label: "Maximum Item Price you accept in your store" %>
     <%= f.input :commission_amount, label: "The commission you want per item" %>
