@@ -3,12 +3,11 @@
 <%= cl_image_tag @user.photo,
 width: 150, height: 150, crop: :thumb, gravity: :face %>
 <% end %>
-<ul>
-  <li><%= @user.username %></li>
-
-</ul>
+<%= @user.username %>
 <%= link_to "Edit My Details", edit_user_registration_path(@user), class: "btn btn-primary" %>
 
 <h3>Create new store: <%= link_to "New Store", new_store_path, class: "btn btn-primary" %></h3>
 
 <%= link_to "Back", :back, class: "btn btn-primary" %>
+
+
