@@ -2,7 +2,10 @@
   color: white;
   text-align: center;
   height: 100vh;
-  background: url("https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
+  background: linear-gradient( -225deg,
+      rgba(1, 1, 1, 0.5) 0%,
+      rgba(1, 1, 1, 0.5) 100%,
+    ), url("https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
   background-size: cover !important;
   display: flex;
   align-items: center;
