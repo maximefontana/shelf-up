@@ -1,0 +1,50 @@
+.card-container {
+  margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.card {
+  height: 175px;
+  width: 520px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 4px;
+}
+.card-city {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 100px;
+  border-radius: 50%;
+  h3 {
+    margin: 0px !important;
+  }
+}
+.card-store {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  width: 200px;
+  h3 {
+    margin: 0px !important;
+  }
+}
+.card-description {
+  position: absolute;
+  width: 200px;
+  top: 10px;
+  right: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: lighter;
+}
