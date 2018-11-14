@@ -1,6 +1,7 @@
 <div class="edit-store-container">
   <div class="store-left-side">
     <%= form_for(@store) do |f| %>
+      <!-- Do not change class names as these are used in JS -->
       <h1 class="store-name"><%= @store.name %>
         <% if current_user && policy(@store).update? %>
           <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>

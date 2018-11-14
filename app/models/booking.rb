@@ -7,5 +7,5 @@ class Booking < ApplicationRecord
   belongs_to :store, dependent: :destroy
 
   # @category_choices = %w(Clothing Art Culinary Other)
-  CATEGORY_CHOICES = %w(Clothing Art Culinary Other)
+  CATEGORY_CHOICES = %w(Clothing Jewelry Art Culinary Other)
 end
