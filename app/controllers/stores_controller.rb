@@ -44,13 +44,19 @@ class StoresController < ApplicationController
   end
 
   def update
-    store.update(store_params)
-    authorize store
-    if store.save
-      redirect_to store_path(store)
+    authorize @store
+    @store.update(store_params)
+    if @store.save
+      redirect_to store_path(@store)
     else
       render :edit
     end
+  end
+
+  def destroy
+    authorize @store
+    @store.destroy
+    redirect_to user_path(current_user)
   end
 
   private

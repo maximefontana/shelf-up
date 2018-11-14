@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+  get 'home', to: 'pages#home', as: :home
 
   resources :users, only: [:show, :update]
 
-  resources :stores,  only: [:index, :show, :new, :create, :edit, :update] do
+  resources :stores do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:show]
