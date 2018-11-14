@@ -7,9 +7,9 @@
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
 
-      document.getElementById('total-cost').innerHTML = "Total Cost: " + (pricePerUnit*unitQuantity).toString();
+      document.getElementById('total-cost').innerHTML = "Total Cost: €" + (pricePerUnit*unitQuantity).toString();
       if (unitQuantity === "") {
-        document.getElementById('total-cost').innerHTML = "Total Cost: ";
+        document.getElementById('total-cost').innerHTML = "Total Cost: €0";
       }
     }
   </script>

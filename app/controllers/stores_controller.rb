@@ -2,6 +2,7 @@
 
 # rubocop:disable all
 class StoresController < ApplicationController
+  before_action :find_store, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
@@ -13,35 +14,52 @@ class StoresController < ApplicationController
   end
 
   def show
-    @store = Store.find(params[:id])
     authorize @store
     if current_user
       @user = current_user
       authorize @user
+      @booking = Booking.new
     end
   end
 
   def new
-    @user = current_user
     @store = Store.new
     authorize @store
+    @user = current_user
   end
 
   def create
-    @user = current_user
-    @store = Store.new(stores_params)
-    authorize @store
-    if @store.save
-      redirect_to stores_path
+    store = Store.create(store_params)
+    authorize store
+    store.user = current_user
+    if store.save
+      redirect_to store_path(store)
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+  def update
+    store.update(store_params)
+    authorize store
+    if store.save
+      redirect_to store_path(store)
+    else
+      render :edit
+    end
+  end
+
   private
 
-  def stores_params
+  def store_params
     params.require(:store).permit(:user_id, :name, :location,
-     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max)
+     :description, :address, :rent_time, :commission_amount, :rent_price_min, :rent_price_max, :photo, :photo_cache)
+  end
+
+  def find_store
+    @store = Store.find(params[:id])
   end
 end

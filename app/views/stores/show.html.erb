@@ -1,9 +1,39 @@
-<h1><%= @store.name %></h1>
-<h2>City: <%= @store.location %></h2>
-<h3>Owner: <%= link_to @store.user.username, user_path(@store.user) %></h3>
-<% if @store.description %>
-  <p>Description: <%= @store.description %></p>
-<% end %>
-<%= link_to "Back", stores_path, class: "btn btn-primary" %>
-<%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
-
+<div class="edit-store-container">
+  <%= form_for(@store) do |f| %>
+  <h1 class="store-name"><%= @store.name %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>
+    <% end %>
+  </h1>
+  <%= f.text_field :name, class: "input-store-name hidden" %>
+  <h2 class="store-city">City: <%= @store.location %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#"><i class="fas fa-pencil-alt edit-store-city"></i></a>
+    <% end %>
+  </h2>
+  <%= f.text_field :location, class: "input-store-city hidden"%>
+  <h3>Owner:
+    <% if user_signed_in? %>
+    <%= link_to @store.user.username, user_path(@store.user) %>
+    <% else %>
+    <%= @store.user.username %>
+    <% end %>
+  </h3>
+  <% if @store.description %>
+  <p class="store-description">Description: <%= @store.description %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#"><i class="fas fa-pencil-alt edit-store-description"></i></a>
+    <% end %>
+  </p>
+  <%= f.text_field :description, class: "input-store-description hidden" %>
+  <% end %>
+  <%= f.submit "Edit", class: "store-edit-button hidden" %>
+  <% end %>
+  <% if !user_signed_in? %>
+  <h3 class="btn btn-danger">Please Sign Up/ Log In to view the Owner's details and request this space.</h3>
+  <% end %>
+  <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+  <% if current_user && current_user != @store.user %>
+  <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
+  <% end %>
+</div>

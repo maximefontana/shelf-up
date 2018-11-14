@@ -3,12 +3,6 @@
 # rubocop:disable all
 class StorePolicy < ApplicationPolicy
 
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
-  end
-
   def index?
     true
   end
@@ -22,6 +16,20 @@ class StorePolicy < ApplicationPolicy
   end
 
   def create?
-    user == record.user ? false : true
+    true
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    user == record.user
+  end
+
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 end
