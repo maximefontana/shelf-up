@@ -24,7 +24,7 @@ class StoresController < ApplicationController
       @price_max = params[:price_max].present? ? params[:price_max] : 500
 
       @stores = Store.search(search_arguments).commission(@commission_min, @commission_max).price(@price_min, @price_max)
-      raise
+      
       # if @commission_min && @commission_max
       #   @stores = Store.search(search_arguments)
       #   .commission(@commission_min, @commission_max)
