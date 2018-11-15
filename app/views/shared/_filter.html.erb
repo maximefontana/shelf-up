@@ -15,10 +15,10 @@ Min: <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %>
 Max: <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %>
 Price Range:
 Min: <%= number_field_tag :price_min, nil, min: 0, value: "#{@price_min}" %>
-Max: <%= number_field_tag :price_min, nil, value: "#{@price_max}" %>
+Max: <%= number_field_tag :price_max, nil, value: "#{@price_max}" %>
 Rental Period(days):
 Min: <%= number_field_tag :time_min, nil, min: 0, value: "#{@time_min}" %>
-Max: <%= number_field_tag :time_min, nil, value: "#{@time_max}" %>
+Max: <%= number_field_tag :time_max, nil, value: "#{@time_max}" %>
 <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 </div>
