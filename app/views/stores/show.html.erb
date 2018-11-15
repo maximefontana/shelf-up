@@ -17,7 +17,7 @@
       <%= f.text_field :location, class: "input-store-city hidden"%>
 
       <h3>Owner:
-        <% if user_signed_in? %>
+        <% if user_signed_in? && @store.user == current_user %>
           <%= link_to @store.user.username, user_path(@store.user) %>
         <% else %>
           <%= @store.user.username %>
@@ -52,7 +52,7 @@
       <h3 class="btn btn-danger">Please Sign Up / Log In to view the Owner's details and request this space.</h3>
     <% end %>
 
-    <%= link_to "Back", @user, class: "btn btn-primary" %>
+    <%= link_to "Back", stores_path, class: "btn btn-primary" %>
     <% if current_user && current_user != @store.user %>
       <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
     <% end %>
