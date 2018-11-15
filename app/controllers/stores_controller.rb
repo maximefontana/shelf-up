@@ -8,7 +8,11 @@ class StoresController < ApplicationController
   def index
     if params[:query]
       @location = params[:query]
-      @stores = Store.search(@location)
+      if params[:query].empty? # show all if user doesn't put a location
+        @stores = policy_scope(Store)
+      else
+        @stores = Store.search(@location)
+      end
     elsif params_filter_present
       filter_results
     else

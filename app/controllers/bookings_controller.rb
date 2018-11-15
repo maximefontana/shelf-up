@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
     authorize @booking
     @user = current_user
     @store = Store.find(params[:store_id])
-
   end
 
   def create
