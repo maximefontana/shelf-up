@@ -1,22 +1,22 @@
 
-
-<div class="card-container">
-<%= render "shared/filter" %>
-  <% @stores.each do |store| %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-      <div class="card-store">
-        <%= store.name %>
+<div class="page-container">
+  <%= render "shared/filter" %>
+  <div class="card-container">
+    <% @stores.each do |store| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-store">
+          <%= store.name %>
+        </div>
+        <div class="card-city">
+          <%= store.location %>
+        </div>
+        <div class="card-description" style="overflow-y: scroll; height:100px;">
+          <%= store.description if store.description %>
+        </div>
       </div>
-      <div class="card-city">
-        <%= store.location %>
-      </div>
-      <div class="card-description" style="overflow-y: scroll; height:100px;">
-        <%= store.description if store.description %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-
 
 
 <!-- This is the one from le wagon, used as reference and to steal elements when necessary -->
