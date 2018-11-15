@@ -26,13 +26,13 @@ s1 = Store.create!(name: "Salsa Shop", location: "Amsterdam", user: u1,
   category: 'Culinary', rating: 5)
 s2 = Store.create!(name: "Kashmir Coffeeshop", location: "Amsterdam",
   user: u2, description: "Dankity dank kashmoney", category: 'Jewelry', rating: 5)
-s3 = Store.create!(name: "Dion's Funhouse", location: "Munich",
+s3 = Store.create!(name: "Dion's Trippy Coffeeshop", location: "Munich",
   user: u4, description: lorem, category: 'Other', rating: 4)
-s4 = Store.create!(name: "Mikey's Workshop", location: "Cali yo",
+s4 = Store.create!(name: "Mikey's Coolstore", location: "West Coast Best Coast",
   user: u1, description: lorem, category: 'Other', rating: 4)
 s5 = Store.create!(name: "Bella's Steakhouse", location: "Buenos Aires",
   user: u2, description: lorem, category: 'Other', rating: 4)
-s6 = Store.create!(name: "Maxime's Coffeeshop", location: "Paris",
+s6 = Store.create!(name: "Maxime's Guinness Pub", location: "Paris",
   user: u2, description: lorem, category: 'Other', rating: 4)
 s7 = Store.create!(name: "Toys R Us RIP", location: "Afterlife",
   user: u2, description: lorem, category: 'Culinary', rating: 3)
