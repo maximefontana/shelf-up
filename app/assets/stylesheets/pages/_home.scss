@@ -1,3 +1,56 @@
+.homepage-why-wrapper {
+  text-align: center;
+}
+.homepage-why-wrapper h2 {
+  margin: 25px 0px;
+}
+
+.homepage-why-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-why-box {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-why-box p {
+  width: 70%;
+  font-size: 20px;
+}
+
+.why-title {
+  font-size: 40px;
+}
+
+.with-bg-color-one {
+  overflow-wrap: normal;
+  background-color: $primaryone;
+  opacity: 0.7;
+}
+
+.with-bg-color-two {
+  overflow-wrap: normal;
+  background-color: $primarytwo;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
 .homepage-wrapper {
   height: 100%;
   width: 80%;
@@ -9,15 +62,21 @@
 .homepage-users {
   height: 500px;
   background-color: $grayone;
-  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .homepage-avatar {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  margin: 0 auto;
+  margin: 0% 10%;
   border: 1px solid black;
+}
+
+.homepage-users-words {
+  flex-grow: 1;
 }
 
 .you-have-shelf {
