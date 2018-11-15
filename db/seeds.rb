@@ -22,26 +22,28 @@ minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
  ea commodo consequat.'
 
 print "Stores Creating..."
-s1 = Store.create!(name: "Salsa Shop", location: "Amsterdam", user: u1, category: 'Culinary')
+s1 = Store.create!(name: "Salsa Shop", location: "Amsterdam", user: u1,
+  category: 'Culinary', rating: 5)
 s2 = Store.create!(name: "Kashmir Coffeeshop", location: "Amsterdam",
-  user: u2, description: "Dankity dank kashmoney", category: 'Jewelry')
+  user: u2, description: "Dankity dank kashmoney", category: 'Jewelry', rating: 5)
 s3 = Store.create!(name: "Dion's Funhouse", location: "Munich",
-  user: u4, description: lorem, category: 'Other')
+  user: u4, description: lorem, category: 'Other', rating: 4)
 s4 = Store.create!(name: "Mikey's Workshop", location: "Cali yo",
-  user: u1, description: lorem, category: 'Other')
+  user: u1, description: lorem, category: 'Other', rating: 4)
 s5 = Store.create!(name: "Bella's Steakhouse", location: "Buenos Aires",
-  user: u2, description: lorem, category: 'Other')
+  user: u2, description: lorem, category: 'Other', rating: 4)
 s6 = Store.create!(name: "Maxime's Coffeeshop", location: "Paris",
-  user: u2, description: lorem, category: 'Other')
+  user: u2, description: lorem, category: 'Other', rating: 4)
 s7 = Store.create!(name: "Toys R Us RIP", location: "Afterlife",
-  user: u2, description: lorem, category: 'Culinary')
+  user: u2, description: lorem, category: 'Culinary', rating: 3)
 s8 = Store.create!(name: "Cafe ONS", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Culinary')
+  user: u2, description: lorem, category: 'Culinary', rating: 2)
 s9 = Store.create!(name: "Public Space", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Clothing')
+  user: u2, description: lorem, category: 'Clothing', rating: 1)
 s10 = Store.create!(name: "Albert Heijn", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Clothing')
-s11 = Store.create!(name: "Arts Store", location: 'Amsterdam', user: u3)
+  user: u2, description: lorem, category: 'Clothing', rating: 2)
+s11 = Store.create!(name: "Arts Store", location: 'Amsterdam',
+ user: u3, description: lorem, category: 'Art', rating: 3)
 puts 'done'
 
 print 'Creating bookings...'
