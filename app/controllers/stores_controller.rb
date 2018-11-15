@@ -6,10 +6,9 @@ class StoresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
-    @names = Store.all.map { |store| store.name }
     if params[:query]
       @location = params[:query]
-      @stores = Store.search_by_location(@location)
+      @stores = Store.search(@location)
     elsif params_filter_present
       filter_results
     else
@@ -89,7 +88,6 @@ class StoresController < ApplicationController
     @location = params[:location] if params[:location].present?
     @category = params[:category] if params[:category].present?
     @name = params[:name] if params[:name].present?
-    @rental_period = params[:rent_time] if params[:rent_time].present?
 
     search_arguments = "#{@location}, #{@category}, #{@name}"
 
