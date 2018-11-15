@@ -6,13 +6,13 @@
     <div class="banner-search">
       <div><%= form_tag stores_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store Location" %>
-        <% end %>
       </div>
     </div>
 
       <div class="banner-button">
-        <%= link_to "Start", stores_path, class: "btn-big-homepage" %>
+        <%= submit_tag "Search", class: "btn-big-homepage" %>
       </div>
+      <% end %>
 
     <div class="banner-learn">LEARN MORE</div>
   </div>
