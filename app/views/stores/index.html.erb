@@ -2,35 +2,32 @@
   <div class="store-index-form">
     <%= render "shared/filter" %>
   </div>
+  <div class="card-container">
+    <% @stores.each do |store| %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); z-index: 9;">
+      <%= link_to "", store_path(store), class: "card-link" %>
 
-    <div class="card-container">
-      <% @stores.each do |store| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)); z-index: 9;">
-        <%= link_to "", store_path(store), class: "card-link" %>
-
-        <div class="card-store">
-          <%= store.name %>
-        </div>
-        <div class="card-city">
-          <%= store.location %>
-        </div>
-        <div class="store-rating card-description">
-          <% num_stars = store.rating %>
-          <% num_stars.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - num_stars).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-        </div>
-        <!-- This is being taken out, no desc on cards, thanks Jobs -->
+      <div class="card-store">
+        <%= store.name %>
+      </div>
+      <div class="card-city">
+        <%= store.location %>
+      </div>
+      <div class="store-rating card-description">
+        <% num_stars = store.rating %>
+        <% num_stars.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - num_stars).times do %>
+        <i class="far fa-star"></i>
+        <% end %>
+      </div>
+      <!-- This is being taken out, no desc on cards, thanks Jobs -->
         <!-- <div class="card-description" style="overflow-y: scroll; height:100px;">
           <%#= store.description if store.description %>
         </div> -->
-      </div>
     </div>
     <% end %>
   </div>
 </div>
-
 
