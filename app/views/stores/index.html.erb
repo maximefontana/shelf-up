@@ -4,6 +4,7 @@
   <div class="card-container">
     <% @stores.each do |store| %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+    <%= link_to "", store_path(store), class: "card-link" %>
       <div class="card-store">
         <%= store.name %>
       </div>
