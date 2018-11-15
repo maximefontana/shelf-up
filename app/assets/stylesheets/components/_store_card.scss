@@ -1,7 +1,10 @@
 .card-container {
   margin-top: 90px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  display: table;
+  text-align: center;
+
 }
 .card {
   height: 175px;
@@ -10,8 +13,19 @@
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
+
   border-radius: 4px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  // margin: 0 auto; /* Added */
+  // float: none; /* Added */
+  // margin-bottom: 10px; /* Added */
+
+  text-align: left;
+  display: table-cell;
+  position: relative;
 }
 .card-city {
   position: absolute;
@@ -36,7 +50,7 @@
 }
 .card-description {
   position: absolute;
-  width: 200px;
+  width: 225px;
   top: 10px;
   right: 10px;
 }
