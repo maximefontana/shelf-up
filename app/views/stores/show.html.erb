@@ -7,7 +7,7 @@
           <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>
         <% end %>
       </h1>
-      <%= f.text_field :name, class: "input-store-name hidden" %>
+      <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
 
       <h2 class="store-city">City: <%= @store.location %>
         <% if current_user && policy(@store).update? %>
@@ -34,7 +34,19 @@
       <% end %>
       <%= f.submit "Edit", class: "store-edit-button hidden" %>
     <% end %>
+
+    <div class="store-rating">
+      <% num_stars = @store.rating %>
+      <% num_stars.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - num_stars).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </div>
+
   </div>
+
   <div class="store-right-side">
     <% if !user_signed_in? %>
       <h3 class="btn btn-danger">Please Sign Up / Log In to view the Owner's details and request this space.</h3>
@@ -49,5 +61,6 @@
       <%= link_to "Delete this space", store_path(@store), method: :delete, class: "btn btn-primary" %>
     <% end %>
   </div>
+
 </div>
 

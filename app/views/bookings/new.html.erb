@@ -19,7 +19,7 @@
       <%= f.input :category, collection: Booking::CATEGORY_CHOICES, input_html: { multiple: true }, label: "Item type" %>
       <!-- works on form_for not simple form...I think, I found it on the internet -->
       <%# f.select :desired_attribute, ['Clothing', 'Art', 'Culinary']%>
-      <%= f.input :name, label: "Item Name" %>
+      <%= f.input :name, label: "Item Name", maxlength: 30 %>
       <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2) %>
       <%= f.input :quantity, label: "Amount of units" %>
       <p id="total-cost">Total Cost: </p>

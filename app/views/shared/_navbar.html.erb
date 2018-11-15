@@ -9,7 +9,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to @user.username.capitalize, @user, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to current_user.username.capitalize, current_user, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Shelves", stores_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
 

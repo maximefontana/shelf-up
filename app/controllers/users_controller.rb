@@ -5,8 +5,13 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
-    @user = current_user
-    authorize @user
+    if params[:id].to_i == current_user.id
+      @user = current_user
+      authorize @user
+    else
+      @user = User.find(params[:id])
+      authorize @user
+    end
   end
 
   def update
