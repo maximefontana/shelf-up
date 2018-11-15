@@ -1,9 +1,10 @@
-
-
-<div class="card-container">
-<%= render "shared/filter" %>
-  <% @stores.each do |store| %>
+  <div class="store-index-form">
+    <%= render "shared/filter" %>
+  </div>
+  <div class="card-container">
+    <% @stores.each do |store| %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+    <%= link_to "", store_path(store), class: "card-link" %>
       <div class="card-store">
         <%= store.name %>
       </div>
@@ -14,19 +15,5 @@
         <%= store.description if store.description %>
       </div>
     </div>
-  <% end %>
-</div>
-
-
-
-<!-- This is the one from le wagon, used as reference and to steal elements when necessary -->
-
-<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Le Wagon Shanghai</h2>
-    <p>Very cool city, the best</p>
+    <% end %>
   </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div> -->

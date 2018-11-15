@@ -8,7 +8,6 @@
 .card {
   height: 175px;
   width: 32%;
-  flex-grow: 1;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -41,5 +40,17 @@
   overflow-x: hidden;
   opacity: 0.9;
   font-weight: lighter;
+  z-index: 3;
+}
+
+.card-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
 }
 
