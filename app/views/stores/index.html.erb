@@ -5,9 +5,9 @@
   <div class="card-container">
     <% @stores.each do |store| %>
     <div class="card">
+      <%= link_to store_path(store), class: "card-link" do %>
     <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
     </div>
-      <%= link_to "", store_path(store), class: "card-link" %>
       <div class="card-store">
         <%= store.name %>
       </div>
@@ -29,6 +29,7 @@
         <i class="far fa-star"></i>
         <% end %>
       </div>
+      <% end %>
     </div>
     <% end %>
   </div>
