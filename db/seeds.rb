@@ -23,27 +23,27 @@ minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 
 print "Stores Creating..."
 s1 = Store.create!(name: "Salsa Shop", location: "Amsterdam", user: u1,
-  category: 'Culinary', rating: 5)
+  category: 'Culinary', rating: 5, commission_amount: 5)
 s2 = Store.create!(name: "Kashmir Coffeeshop", location: "Amsterdam",
-  user: u2, description: "Dankity dank kashmoney", category: 'Jewelry', rating: 5)
+  user: u2, description: "Dankity dank kashmoney", category: 'Jewelry', rating: 5, commission_amount: 8)
 s3 = Store.create!(name: "Dion's Trippy Coffeeshop", location: "Munich",
-  user: u4, description: lorem, category: 'Other', rating: 4)
+  user: u4, description: lorem, category: 'Other', rating: 4, commission_amount: 15)
 s4 = Store.create!(name: "Mikey's Coolstore", location: "West Coast Best Coast",
-  user: u1, description: lorem, category: 'Other', rating: 4)
+  user: u1, description: lorem, category: 'Other', rating: 4, commission_amount: 19)
 s5 = Store.create!(name: "Bella's Steakhouse", location: "Buenos Aires",
-  user: u2, description: lorem, category: 'Other', rating: 4)
+  user: u2, description: lorem, category: 'Other', rating: 4, commission_amount: 25)
 s6 = Store.create!(name: "Maxime's Guinness Pub", location: "Paris",
-  user: u2, description: lorem, category: 'Other', rating: 4)
+  user: u2, description: lorem, category: 'Other', rating: 4, commission_amount: 33)
 s7 = Store.create!(name: "Toys R Us RIP", location: "Afterlife",
-  user: u2, description: lorem, category: 'Culinary', rating: 3)
+  user: u2, description: lorem, category: 'Culinary', rating: 3, commission_amount: 39)
 s8 = Store.create!(name: "Cafe ONS", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Culinary', rating: 2)
+  user: u2, description: lorem, category: 'Culinary', rating: 2, commission_amount: 48)
 s9 = Store.create!(name: "Public Space", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Clothing', rating: 1)
+  user: u2, description: lorem, category: 'Clothing', rating: 1, commission_amount: 50)
 s10 = Store.create!(name: "Albert Heijn", location: "Amsterdam",
-  user: u2, description: lorem, category: 'Clothing', rating: 2)
+  user: u2, description: lorem, category: 'Clothing', rating: 2, commission_amount: 58)
 s11 = Store.create!(name: "Arts Store", location: 'Amsterdam',
- user: u3, description: lorem, category: 'Art', rating: 3)
+ user: u3, description: lorem, category: 'Art', rating: 3, commission_amount: 5)
 puts 'done'
 
 print 'Creating bookings...'

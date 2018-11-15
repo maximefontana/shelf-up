@@ -6,6 +6,7 @@ class Store < ApplicationRecord
 
   validates :location, presence: true
   validates :name, presence: true
+  validates :commission_amount, presence: true
 
   CATEGORY_CHOICES = %w(Clothing Jewelry Art Culinary Other)
 

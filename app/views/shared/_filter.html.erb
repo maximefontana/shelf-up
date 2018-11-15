@@ -1,6 +1,5 @@
 <div class="flex-box centered medium-text">
   <div class="filter-button">
-    Search:
   </div>
   <div>
 <h3 class="filter-button">Filter Results By:</h3>
@@ -12,10 +11,10 @@ Category:
 Name:
 <%= select_tag :name, options_for_select(@names), include_blank: true, class: "filter-category" %>
 Commission:
-Min: <%= number_field_tag :commission_min, nil, in: 1..100, value: "#{@price_min}" %>
-Max: <%= number_field_tag :commission_max, nil, in: 1..100 %>
+Min: <%= number_field_tag :commission_min, nil, in: 0..100, value: "#{@price_min}" %>
+Max: <%= number_field_tag :commission_max, nil, in: 0..100 %>
 Price Range:
-Min: <%= number_field_tag :price_min, nil, min: 1 %>
+Min: <%= number_field_tag :price_min, nil, min: 0 %>
 Max: <%= number_field_tag :price_min, nil %>
 <%= submit_tag "Search", class: "btn btn-primary" %>
 <%#= text_field_tag :commission, params[:commission_max], class: "form-control", placeholder: "Commission Max" %>
