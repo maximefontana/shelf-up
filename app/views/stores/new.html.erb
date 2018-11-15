@@ -3,7 +3,7 @@ Add a new store
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
-    <%= f.input :description, label: "Store description (limit 200 characters)", input_html: { maxlength: 250 } %>
+    <%= f.input :description, label: "Store description (limit 250 characters)", input_html: { maxlength: 250 } %>
     <%= f.input :address, input_html: { maxlength: 150 }  %>
     <%= f.input :location, label: "City" %>
     <%= f.input :category, collection: Store::CATEGORY_CHOICES %>
