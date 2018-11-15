@@ -17,7 +17,7 @@
       <%= f.text_field :location, class: "input-store-city hidden"%>
 
       <h3>Owner:
-        <% if user_signed_in? && @store.user == current_user %>
+        <% if user_signed_in? %>
           <%= link_to @store.user.username, user_path(@store.user) %>
         <% else %>
           <%= @store.user.username %>
