@@ -4,19 +4,21 @@
 
 <div class="card-container">
   <% @stores.each do |store| %>
-    <div class="card col-xs-6 col-md-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-      <div class="card-store limit-store">
-        <h3><%= link_to store.name, store %></h3>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+      <div class="card-store">
+        <%= store.name %>
       </div>
-      <div class="card-city limit-city">
-        <h3> <%= store.location %> </h3>
+      <div class="card-city">
+        <%= store.location %>
       </div>
-      <div class="card-description">
-        <p><%= store.description if store.description %></p>
+      <div class="card-description" style="overflow-y: scroll; height:100px;">
+        <%= store.description if store.description %>
       </div>
     </div>
   <% end %>
 </div>
+
+
 
 <!-- This is the one from le wagon, used as reference and to steal elements when necessary -->
 
