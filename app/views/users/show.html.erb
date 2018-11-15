@@ -6,7 +6,9 @@
   <% end %>
 
   <%= @user.username %>
-  <%= link_to "Edit My Details", edit_user_registration_path(@user), class: "btn btn-primary" %>
+  <% if @user == current_user %>
+    <%= link_to "Edit My Details", edit_user_registration_path(@user), class: "btn btn-primary" %>
+  <% end %>
 
   <% if @user.owner && @user.stores.empty? %>
   <h3 class="btn btn-danger">You haven't added a Store yet</h3>
