@@ -2,13 +2,30 @@
   padding: 5px 10px;
 }
 
-.btn-forward {
-  color: white;
-  background-color: $greenthree;
-}
 
 .btn-big {
   padding: 15px 60px;
+  border-radius: 3px;
+}
+
+.btn-big-homepage {
+  background-color: $primarythree;
+  color: white;
+  padding: 15px 80px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn-big-homepage:hover {
+  text-decoration: none;
+  background-color: $primaryfour;
+}
+
+.btn-forward {
+  color: white;
+  background-color: $greenthree;
 }
 
 .btn-forward:hover {

@@ -80,29 +80,31 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 50px 0pc;
+  margin: 50px 0px;
+  background-color: $grayone;
+
 }
 
 .you-have-shelf {
   word-break: break-all;
-  width: 50%;
+  width: 45%;
   font-size: 35px;
   font-weight: bold;
 }
 
 .you-have-shelf-btn {
-  width: 50%;
+  width: 45%;
   margin: 10px 0px;
 }
 
 .want-to-display {
   word-break: break-all;
-  width: 50%;
+  width: 45%;
   font-size: 35px;
   font-weight: bold;
 }
 
 .want-to-display-btn {
-  width: 50%;
+  width: 45%;
   margin: 10px 0px;
 }
