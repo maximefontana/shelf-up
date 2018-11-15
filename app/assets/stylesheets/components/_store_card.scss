@@ -1,27 +1,37 @@
 .card-container {
-  margin-top: 90px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
 }
+
+.scroll-box {
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 10%;
+  z-index: -1;
+}
+
 .card {
   height: 175px;
-  width: 520px;
+  width: 32%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
   border-radius: 4px;
+  margin: 7px 6px;
+  text-align: left;
+  position: relative;
+  z-index: -1;
 }
 .card-city {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  width: 100px;
   border-radius: 50%;
-  h3 {
-    margin: 0px !important;
-  }
 }
 .card-store {
   position: absolute;
@@ -29,22 +39,28 @@
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
-  width: 200px;
-  h3 {
-    margin: 0px !important;
-  }
 }
+
 .card-description {
   position: absolute;
-  width: 200px;
-  top: 10px;
-  right: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
+  top: 25%;
+  right: 0%;
+  width: 60%;
   font-size: 14px;
+  overflow-x: hidden;
   opacity: 0.9;
   font-weight: lighter;
+  z-index: 3;
 }
+
+.card-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+}
+

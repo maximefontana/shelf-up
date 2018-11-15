@@ -1,3 +1,8 @@
+<div class="flex-box centered medium-text">
+  <div class="filter-button">
+    Search:
+  </div>
+  <div>
 <h3 class="filter-button">Filter Results By:</h3>
 <%= form_tag stores_path, method: :get, class: "filter-form" do %>
 Location:
@@ -16,3 +21,6 @@ Max: <%= number_field_tag :price_min, nil %>
 <%#= text_field_tag :commission, params[:commission_max], class: "form-control", placeholder: "Commission Max" %>
 <%#= text_field_tag :commission, params[:commission_min], class: "form-control", placeholder: "Commission Max" %>
 <% end %>
+</div>
+</div>
+
