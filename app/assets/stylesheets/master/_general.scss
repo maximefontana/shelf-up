@@ -3,10 +3,20 @@
   margin: 10px;
 }
 
+.padding-small {
+  padding: 0px 20px;
+  white-space: nowrap;
+}
+
 // width styles
 
 .width-small {
   width: 100px;
+}
+
+.width-big {
+  width: 90%;
+  margin: 50px auto;
 }
 
 .wrapper {
@@ -23,4 +33,16 @@
 
 .scroll {
   overflow-y: scroll;
+}
+
+.line-through {
+  border: 0.5px solid $grayfour;
+}
+
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;
 }

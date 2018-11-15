@@ -3,27 +3,69 @@
   text-align: center;
   height: 100vh;
   background: linear-gradient( -225deg,
-      rgba(1, 1, 1, 0.5) 0%,
-      rgba(1, 1, 1, 0.5) 100%,
-    ), url("https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
+      rgba(1, 1, 1, 0.3) 0%,
+      rgba(1, 1, 1, 0.3) 100%,
+    ), url("https://images.pexels.com/photos/747510/pexels-photo-747510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat;
   background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-position: bottom;
+  position: relative;
 }
 
 .banner h1 {
-  font-size: 50px;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 45px;
+  width: 80%;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.5);
+  overflow-wrap: normal;
 }
 
 .banner p {
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: light;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.5);
   margin-bottom: 30px;
+  width: 40%;
+
+  margin-bottom: 3%;
 }
+
+.banner-search {
+  position: absolute;
+  width: 40%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 48%;
+}
+
+.banner-button {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 60%;
+}
+
+.banner-learn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 5%;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+
 
 

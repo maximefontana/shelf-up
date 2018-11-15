@@ -1,33 +1,90 @@
 <%= render "shared/banner" %>
+<div class="homepage-why-wrapper">
+  <div class="flex-box centered width-big">
+    <div class="flex-grow thirty line-through"></div>
+    <div class= "padding-small thirty"><h2>Why Shelfup?</h2></div>
+    <div class="flex-grow thirty line-through"></div>
+  </div>
 
+  <div class="homepage-why-container">
+    <div class="homepage-why-box">
+      <div class="why-title">Brand Awareness</div>
+    </div>
+    <div class="homepage-why-box with-bg-color-one">
+      <p>Increase brand awareness of your business by gettting your goods into physical stores. With ShelfUp you can always find great locations to get your prodcuts infont of customers! </p>
+    </div>
+    <div class="homepage-why-box with-bg-color-two">
+      <p>Increase your income! With ShelfUp you get your products on the shelves of the most popular stores in town. That means more customers are exposed to your goods. More customers mean the potential for your business to make more money!</p>
+    </div>
+    <div class="homepage-why-box">
+      <div class="why-title">Income</div>
+    </div>
+
+    <div class="homepage-why-box">
+      <div class="why-title">Changing Inventory</div>
+    </div>
+    <div class="homepage-why-box with-bg-color-one">
+      <p>Keep your customers hungry for more! By supplying shelves to local producers you ensure that your inventory is always chaninging. ShelfUp will keep customers visitng your store again and again!</p>
+    </div>
+    <div class="homepage-why-box with-bg-color-two">
+      <p>Help your commuinty. Support your neighbors who have a passion for their small business. Provide help to those looking to turn their hobby into a business.</p>
+    </div>
+    <div class="homepage-why-box">
+      <div class="why-title">Support Your Community</div>
+    </div>
+  </div>
+</div>
+
+<!-- whos on yourshelf title -->
+<div class="homepage-why-wrapper">
+  <div class="flex-box centered width-big">
+    <div class="flex-grow thirty line-through"></div>
+    <div class= "padding-small thirty"><h2>Who's on Yourshelf?</h2></div>
+    <div class="flex-grow thirty line-through"></div>
+  </div>
+</div>
 
 <div class="homepage-wrapper">
-  <h1>Who's on Yourshelf?</h1>
+
+  <div class="homepage-users bottom-margin">
+    <div class="homepage-avatar">
+    </div>
+    <div class="homepage-users-words">
+      <p>"With ShelfUp I was able to display my products in the coolest stores! It gave me the chance to give my customers the possiblity to "feel" our product. I displayed my clothes on shelves in serveral different cities, which brought more customers to my website! Overall my sales are up and our traffic has increas trastically! Thanks ShelfUp!"</p>
+      <p> - Adrien, BombShop Clothing Inc.</p>
+    </div>
+  </div>
 
   <div class="homepage-users">
     <div class="homepage-avatar">
-      <h3>Adrien</h3>
     </div>
-    <p>Hi I'm Adrien and I love putting myself on a shelf!</p>
-  </div>
-
-  <div class="homepage-users">
-    <div class="homepage-avatar">
-      <h3>Laura</h3>
-    </div>
-    <p>Hi I'm Laura and love that after selling a few of my goods online that I am able to find an easy way to put my products in real stores!</p>
-  </div>
-
-  <div class="homepage-bottom-buttons flex-box">
-    <div class="want-to-display flex-grow">
-      <h3>Do you want to display?</h3>
-      <%= link_to "Find Stores", stores_path, class: "btn btn-forward" %>
-    </div>
-    <div class="you-have-shelf flex-grow">
-      <h3>Find new brands (*** we dont have corrent link)</h3>
-
-      <%= link_to "Find Brands", home_path, class: "btn btn-forward"  %>
+    <div class="homepage-users-words">
+      <p>"With ShelfUp I was able to display my beauty products in the coolest stores! It gave me the chance to give my customers the possiblity to test out my make up so they can expierence how amazing it is. I displayed my homemade beauty products on shelves in the most popular locations in my town, which brought more customers to my website! Overall my sales are up and our traffic has increas trastically! Thanks ShelfUp!"</p>
+      <p> - Laura, Natural Beauty Co.</p>
     </div>
   </div>
 
+  <div class="homepage-bottom-buttons">
+
+    <div class="want-to-display">
+      <div>
+        Find Your shelf!
+      </div>
+    </div>
+
+    <div class="you-have-shelf">
+      <div>
+        Find Local Goods!
+      </div>
+    </div>
+
+     <div class="want-to-display-btn">
+      <%= link_to "Find Stores", stores_path, class: "btn btn-big btn-forward" %>
+    </div>
+
+    <div class="you-have-shelf-btn">
+      <%= link_to "Find Brands", home_path, class: "btn btn-big btn-forward"  %>
+    </div>
+  </div>
 </div>
+

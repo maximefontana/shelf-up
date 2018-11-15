@@ -1,10 +1,19 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>Sell Your Products In Real Stores</h1>
-    <p>ShelfUp let’s you display your brand in the coolest neighbourhoods of the city.</p>
+    <h1>YOUR PRODUCTS IN REAL STORES</h1>
+    <p>Display your items in the best neighborhoods of the city. Expand your brand, reach more customers, get your business going!</p>
 
-    <%= render "shared/search" %>
+    <div class="banner-search">
+      <div><%= form_tag stores_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store Location" %>
+        <% end %>
+      </div>
+    </div>
 
-    <%= link_to "View All Stores", stores_path, class: "btn-banner btn-forward" %>
+      <div class="banner-button">
+        <%= link_to "Start", stores_path, class: "btn-big-homepage" %>
+      </div>
+
+    <div class="banner-learn">LEARN MORE</div>
   </div>
 </div>
