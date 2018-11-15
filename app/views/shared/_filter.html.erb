@@ -5,11 +5,11 @@
 <h3 class="filter-button">Filter Results By:</h3>
 <%= form_tag stores_path, method: :get, class: "filter-form" do %>
 Location:
-<%= text_field_tag :location, params[:location], value: "#{@location}", list: "location-results" %>
+<%= text_field_tag :location, params[:location], value: "#{@location}", list: "location-results", autocomplete: :off %>
 Category:
-<%= text_field_tag :category, params[:category], value: "#{@category}", class: "filter-category", list: "category-results" %>
+<%= text_field_tag :category, params[:category], value: "#{@category}", class: "filter-category", list: "category-results", autocomplete: :off %>
 Name:
-<%= text_field_tag :name, params[:name], value: "#{@name}", class: "filter-category", list: "name-results" %>
+<%= text_field_tag :name, params[:name], value: "#{@name}", class: "filter-category", list: "name-results", autocomplete: :off %>
 Commission(%):
 Min: <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %>
 Max: <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %>
