@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 5%;
+  justify-content: center;
 }
 
 .scroll-box {
@@ -15,43 +16,65 @@
 }
 
 .card {
-  height: 175px;
-  width: 32%;
+  height: 350px;
+  background-color: $grayone;
+  width: 30%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
   color: white;
   border-radius: 4px;
-  margin: 7px 6px;
-  text-align: left;
+  margin: 7px 10px;
   position: relative;
   z-index: -1;
 }
-.card-city {
+
+.card-img {
+  position: absolute;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 3; /* Safari */
+  height: 35%;
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.card-search-category {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  border-radius: 50%;
+  z-index: 5;
 }
 .card-store {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
   text-transform: uppercase;
+  z-index: 10;
+}
+.card-rent-price {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 5;
 }
 
-.card-description {
+.card-store-commission {
   position: absolute;
-  top: 25%;
-  right: 0%;
-  width: 60%;
-  font-size: 14px;
-  overflow-x: hidden;
-  opacity: 0.9;
-  font-weight: lighter;
-  z-index: 3;
+  top: 55%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 5;
 }
+
 
 .card-link {
   position: absolute;
@@ -64,3 +87,9 @@
   z-index: 5;
 }
 
+.card-stars {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 5;
+}
