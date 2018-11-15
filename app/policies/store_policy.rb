@@ -16,7 +16,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.owner
   end
 
   def edit?

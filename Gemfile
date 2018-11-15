@@ -36,3 +36,7 @@ end
 # photos
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+
+# search bar
+gem 'pg_search'
+
