@@ -3,14 +3,24 @@
     Search:
   </div>
   <div>
-    <%= form_tag stores_path, method: :get, class: "filter-form" do %>
-    Category:
-    <%= select_tag :category, options_for_select(Store::CATEGORY_CHOICES), include_blank: true, class: "filter-category" %>
-    Name:
-    <%= select_tag :name, options_for_select(@names), include_blank: true, class: "filter-category" %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <%#= text_field_tag :commission, params[:commission_max], class: "form-control", placeholder: "Commission Max" %>
-    <%#= text_field_tag :commission, params[:commission_min], class: "form-control", placeholder: "Commission Max" %>
-    <% end %>
-  </div>
+<h3 class="filter-button">Filter Results By:</h3>
+<%= form_tag stores_path, method: :get, class: "filter-form" do %>
+Location:
+<%= text_field_tag :location, params[:location], value: "#{@location}" %>
+Category:
+<%= select_tag :category, options_for_select(Store::CATEGORY_CHOICES), include_blank: true, class: "filter-category", value: "#{@category}" %>
+Name:
+<%= select_tag :name, options_for_select(@names), include_blank: true, class: "filter-category" %>
+Commission:
+Min: <%= number_field_tag :commission_min, nil, in: 1..100, value: "#{@price_min}" %>
+Max: <%= number_field_tag :commission_max, nil, in: 1..100 %>
+Price Range:
+Min: <%= number_field_tag :price_min, nil, min: 1 %>
+Max: <%= number_field_tag :price_min, nil %>
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<%#= text_field_tag :commission, params[:commission_max], class: "form-control", placeholder: "Commission Max" %>
+<%#= text_field_tag :commission, params[:commission_min], class: "form-control", placeholder: "Commission Max" %>
+<% end %>
 </div>
+</div>
+
