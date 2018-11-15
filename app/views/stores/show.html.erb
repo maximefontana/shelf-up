@@ -7,7 +7,7 @@
           <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>
         <% end %>
       </h1>
-      <%= f.text_field :name, class: "input-store-name hidden" %>
+      <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
 
       <h2 class="store-city">City: <%= @store.location %>
         <% if current_user && policy(@store).update? %>
@@ -40,7 +40,7 @@
       <h3 class="btn btn-danger">Please Sign Up / Log In to view the Owner's details and request this space.</h3>
     <% end %>
 
-    <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+    <%= link_to "Back", @user, class: "btn btn-primary" %>
     <% if current_user && current_user != @store.user %>
       <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
     <% end %>
