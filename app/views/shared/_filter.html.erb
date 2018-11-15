@@ -5,11 +5,26 @@
 <h3 class="filter-button">Filter Results By:</h3>
 <%= form_tag stores_path, method: :get, class: "filter-form" do %>
 Location:
-<%= text_field_tag :location, params[:location], value: "#{@location}" %>
+<%= text_field_tag :location, params[:location], value: "#{@location}", list: "location-results" %>
+<datalist id="location-results">
+<% Store.all.map { |store| store.location }.uniq.each do |location| %>
+<option><%= location %></option>
+<% end %>
+</datalist>
 Category:
-<%= select_tag :category, options_for_select(Store::CATEGORY_CHOICES, selected: "#{@category}"), include_blank: true, class: "filter-category" %>
+<%= text_field_tag :category, params[:category], value: "#{@category}", class: "filter-category", list: "category-results" %>
+<datalist id="category-results">
+<% Store.all.map { |store| store.category }.uniq.each do |category| %>
+<option><%= category %></option>
+<% end %>
+</datalist>
 Name:
-<%= select_tag :name, options_for_select(@names, selected: "#{@name}"), include_blank: true, class: "filter-category" %>
+<%= text_field_tag :name, params[:name], value: "#{@name}", class: "filter-category", list: "name-results" %>
+<datalist id="name-results">
+<% Store.all.map { |store| store.name }.uniq.each do |name| %>
+<option><%= name %></option>
+<% end %>
+</datalist>
 Commission:
 Min: <%= number_field_tag :commission_min, nil, min: 0, value: "#{@price_min}" %>
 Max: <%= number_field_tag :commission_max, nil, max: 100, value: "#{@price_max}" %>
