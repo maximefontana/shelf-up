@@ -135,6 +135,7 @@ b4 = Booking.create!(price_per_unit: 50, quantity: 10, total_price: 500,
   name: "Charcoal art", category: "Art", user: u1, store: s11)
 b5 = Booking.create!(price_per_unit: 24, quantity: 7, total_price: 168,
   name: "Bob Ross inspired tableaus", category: "Art", user: u1, store: s11)
+
 puts 'done'
 
 puts 'SEEDS IS GOOOOOOOD!'

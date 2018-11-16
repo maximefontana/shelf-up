@@ -60,3 +60,27 @@
 .btn-banner {
   padding: 20px 40px;
 }
+
+.filter-button {
+  padding: 5px 25px;
+  background-color: $greenfour;
+  width: 50%;
+  margin: 8% auto 3% auto;
+  text-align: center;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.filter-button:hover {
+  color: white !important;
+}
+
+.filter-button-link {
+  color: white !important;
+}
+
+.filter-button-link:hover {
+  color: white !important;
+}

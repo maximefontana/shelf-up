@@ -15,6 +15,14 @@ class BookingPolicy < ApplicationPolicy
     user != record.user
   end
 
+  def edit?
+    update?
+  end
+
+  def update?
+    user == record.store.user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
