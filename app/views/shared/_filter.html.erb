@@ -21,12 +21,12 @@
     Commission(%):
   </div>
 <div class="filter-form-search-box width-thirty">
-    Min:
-    <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %>
+   <div> Min: </div> <div>
+    <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %> </div>
   </div>
   <div class="filter-form-search-box width-thirty">
-    Max:
-    <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %>
+    <div> Max: </div> <div>
+    <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %> </div>
   </div>
 
   <div class="filter-form-search-box width-thirty">
@@ -35,12 +35,12 @@
   </div>
   <div class="filter-form-search-box width-thirty">
 
-    Min: <%= number_field_tag :price_min, nil, min: 0, value: "#{@price_min}" %>
+    <div> Min: </div> <div><%= number_field_tag :price_min, nil, min: 0, value: "#{@price_min}" %> </div>
   </div>
   <div class="filter-form-search-box width-thirty">
 
-    Max:
-    <%= number_field_tag :price_max, nil, value: "#{@price_max}" %>
+    <div> Max: </div> <div>
+    <%= number_field_tag :price_max, nil, value: "#{@price_max}" %> </div>
   </div>
 
   <div class="filter-form-search-box width-thirty">
@@ -49,11 +49,13 @@
   </div>
   <div class="filter-form-search-box width-thirty">
 
-    Min: <%= number_field_tag :time_min, nil, min: 0, value: "#{@time_min}" %>
+    <div> Min: </div> <div><%= number_field_tag :time_min, nil, min: 0, value: "#{@time_min}" %> </div>
   </div>
   <div class="filter-form-search-box width-thirty">
-    Max:
-    <%= number_field_tag :time_max, nil, value: "#{@time_max}" %>
+    <div>Max:
+  </div>
+    <div>
+    <%= number_field_tag :time_max, nil, value: "#{@time_max}" %> </div>
   </div>
   <div class="filter-form-search-box">
 
