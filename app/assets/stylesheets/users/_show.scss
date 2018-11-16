@@ -7,16 +7,17 @@
 
 th {
   text-align: center;
-  background-color: grey;
+  background-color: #E5E5E5;
 }
 
 td {
  text-align: center;
- background-color: yellow;
+ background-color: white;
 }
 
 table {
   width: 640px;
+  box-shadow: 0px 4px #888888;
 }
 
 th, td {
@@ -27,17 +28,60 @@ th, td {
   background-color:green;
   height: 50px;
   width: 640px;
+  background-color: #66E7A9;
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36pt;
+  font-style: bold;
+
 }
 
 .display {
   width: 640px;
+  background-color: #66E7A9;
 }
 
 .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: blue;
+  width: 1000px;
+  height: 60px;
+  background-color: #66E7A9;
+  color: white;
+  font-size: 36pt;
+  font-style: bold;
+  position: relative;
+  top: 70px
 }
 
-.page-body {
+.flex-container {
   display:flex;
-  align-content:center
+  align-content:center;
+  flex-wrap: wrap;
+  width: 1000px;
+  align-items: center;
+  height: 575px;
+  position:absolute;
+  margin-top: 150px;
+}
+
+.avatar{
+  width: 50px;
+  border-radius: 50%;
+}
+
+#pending {
+  height:315 !important;
+  width: 350 !important;
+  flex-shrink: 1;
+  position:relative;
+  right: 0px;
+  bottom: 0px;
+  position: relative;
+  top: 50px;
+  left: 500px;
 }
