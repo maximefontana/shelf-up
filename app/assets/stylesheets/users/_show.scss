@@ -35,6 +35,7 @@ th, td {
   align-items: center;
   font-size: 36pt;
   font-style: bold;
+  margin-top: 5%;
 
 }
 
@@ -54,19 +55,21 @@ th, td {
   color: white;
   font-size: 36pt;
   font-style: bold;
-  position: relative;
-  top: 70px
+  margin: 5% 0%;
 }
 
 .flex-container {
   display:flex;
+
   align-content:center;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 1000px;
   align-items: center;
-  height: 575px;
-  position:absolute;
-  margin-top: 150px;
+  height: 100vh;
+
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5%;
 }
 
 .avatar{
@@ -77,11 +80,8 @@ th, td {
 #pending {
   height:315 !important;
   width: 350 !important;
-  flex-shrink: 1;
-  position:relative;
   right: 0px;
   bottom: 0px;
-  position: relative;
   top: 50px;
   left: 500px;
 }
