@@ -26,9 +26,41 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.update(booking_params)
+    raise
+    if @booking.save
+      redirect_to user_path(current_user)
+    end
+  end
+
+  # def status_accept
+  #   @booking = Booking.find(params[:id])
+  #   authorize @booking
+  #   @booking.status = "Accepted"
+  #   if @booking.save
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
+
+  # def status_decline
+  #   @booking = Booking.find(params[:id])
+  #   authorize @booking
+  #   @booking.status = "Declined"
+  #   if @booking.save
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo)
+    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo, :status)
   end
 end
