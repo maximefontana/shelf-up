@@ -33,11 +33,11 @@
           <p>Category: <%= booking.category %></p>
           <p>Total Price: €<%= booking.total_price %></p>
           <% if booking.status == "Pending" && policy(booking).update? %>
-            <%= form_for(booking_path(booking), method: :post) do |f| %>
+            <%= form_for(booking, method: :put) do |f| %>
               <%= f.hidden_field :status, value: "Accepted" %>
               <%= f.submit "Accept", class: "btn btn-primary" %>
             <% end %>
-            <%= form_for(booking_path(booking), method: :post) do |f| %>
+            <%= form_for(booking, method: :put) do |f| %>
               <%= f.hidden_field :status, value: "Declined" %>
               <%= f.submit "Decline", class: "btn-primary" %>
             <% end %>
