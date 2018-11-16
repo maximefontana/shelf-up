@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :stores
+  has_many :ratings
 
   validates :username, presence: true
 end
