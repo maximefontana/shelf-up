@@ -1,4 +1,4 @@
-<div class="user-profile-container">
+<!-- <div class="user-profile-container">
   <div>
     <% if @user.photo %>
       <%= cl_image_tag @user.photo,
@@ -22,9 +22,9 @@
       <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
     <% end %>
 
-    <%= link_to "Back to all shelves", stores_path, class: "btn btn-primary" %>
+    <%= link_to "Back to all shelves", stores_path, class: "btn btn-primary" %> -->
 
-    <!-- DO NOT USE SUBLIME'S AUTO INDENT SHORTCUT -->
+    <!-- DO NOT USE SUBLIME'S AUTO INDENT SHORTCUT
     <% if @user.owner %>
       <h3>Bookings:</h3>
       <% @user.stores.each do |store| %>
@@ -48,20 +48,20 @@
       <% end %>
     <% end %>
   </div>
-</div>
+</div> -->
 
 
-<div class="page-body">
-<div class="avatar">
-<% if @user.photo %>
-<%= cl_image_tag @user.photo,
-width: 150, height: 150, crop: :thumb, gravity: :face %>
-<% end %>
-</div>
+<div class="flex-container">
+  <div class="avatar">
+    <% if @user.photo %>
+    <%= cl_image_tag @user.photo,
+    width: 130, height: 130, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
+    <% end %>
+  </div>
 
-<div class="profile">
-  <h1>Your Profile</h1>
-</div>
+  <div class="profile">
+    <h1>Your Profile</h1>
+  </div>
 
 <div class="display">
   <div class="overview">
@@ -91,7 +91,7 @@ width: 150, height: 150, crop: :thumb, gravity: :face %>
     </div>
   </div>
 
-  <div class="display">
+  <div class="display" id="pending">
   <div class="overview">
     <h1> Pending Request </h1>
   </div>
