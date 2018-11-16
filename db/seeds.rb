@@ -12,9 +12,9 @@ print "Users Creating..."
 u1 = User.create!(username: "mikey", email: "mikey@mikey.com",
   password: "testing", owner: true)
 # these are the store owners we use
-u2 = User.create!(username: "marco", email: "marco@shelf.com", password: "testing")
-u3 = User.create!(username: "maria", email: "maria@shelf.com", password: "testing")
-u4 = User.create!(username: "steve", email: "steve@shelf.com", password: "testing")
+u2 = User.create!(username: "marco", email: "marco@shelf.com", password: "testing", owner: true)
+u3 = User.create!(username: "maria", email: "maria@shelf.com", password: "testing", owner: true)
+u4 = User.create!(username: "steve", email: "steve@shelf.com", password: "testing", owner: true)
 puts 'done'
 
 # placeholder for the description, at 231 characters. Limit 250
