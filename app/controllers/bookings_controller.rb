@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     booking.store = store
     booking.user = current_user
     if booking.save
-      redirect_to store_path(booking.store)
+      redirect_to user_path(current_user)
     else
       render :new
     end
