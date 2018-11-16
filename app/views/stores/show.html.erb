@@ -31,9 +31,9 @@
            <%= @store.name %>
         <% if current_user && policy(@store).update? %>
           <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
-           </div>
         <% end %>
       <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+           </div>
       </div>
 
       <div class="store-city">City: <%= @store.location %>
@@ -59,9 +59,9 @@
             <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
           <% end %>
         <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-      <% end %>
       <%= f.submit "Edit", class: "store-edit-button hidden" %>
         </div>
+      <% end %>
     <% end %>
 
     <div class="store-rating-show">
@@ -82,7 +82,7 @@
       <% end %>
 
       <%= link_to "Back", stores_path, class: "btn btn-back" %>
-      <% if current_user && current_user != @store.user %>
+      <% if current_user && current_user != @store.user && !current_user.owner %>
       <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-forward" %>
       <% end %>
 
