@@ -11,7 +11,7 @@
   </head>
   <body>
 
-      <% if current_page?(controller: 'pages', action: 'home') %>
+      <% if current_page?('root') %>
         <%= render 'shared/navbarhomepage' %>
       <% else %>
         <%= render 'shared/navbar' %>
