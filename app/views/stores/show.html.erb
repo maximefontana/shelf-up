@@ -18,9 +18,9 @@
 
       <h3>Owner:
         <% if user_signed_in? %>
-          <%= link_to @store.user.username, user_path(@store.user) %>
+          <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
         <% else %>
-          <%= @store.user.username %>
+          <%= @store.user.username.capitalize %>
         <% end %>
       </h3>
 
