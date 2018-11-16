@@ -10,15 +10,24 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <div class="wrapper">
-      <%= render 'shared/navbar' %>
-      <div class = "flash-msg-fixed">
+
+      <% if current_page?(controller: 'pages', action: 'home') %>
+        <%= render 'shared/navbarhomepage' %>
+      <% else %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+
+
+      <div class="flash-msg-fixed">
         <%= render 'shared/flashes' %>
       </div>
+
       <%= yield %>
+
       <%= render 'shared/footer' %>
+
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
-    </div>
+
   </body>
 </html>
