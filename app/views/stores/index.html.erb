@@ -1,7 +1,11 @@
 <div class="scroll-box">
-  <div class="store-index-form">
+
+  <div class="filter-button"><a href="#" class="filter-button-link">Filter Results</a></div>
+
+  <div class="store-index-form hidden">
     <%= render "shared/filter" %>
   </div>
+
   <div class="card-container">
     <% @stores.each do |store| %>
     <div class="card">

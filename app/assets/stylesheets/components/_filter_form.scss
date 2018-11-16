@@ -2,3 +2,33 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
+
+.filter-form-box {
+  margin: 5% 0%;
+}
+.filter-form-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter-form-search-box {
+  margin: 5px 0px;
+}
+
+.width-thirty {
+  width: 33%;
+}
+
+.width-fifty {
+  width: 50%;
+}
+
+.width-hundred {
+  width: 35%;
+  flex-grow: 1;
+}
