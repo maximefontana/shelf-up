@@ -53,6 +53,7 @@
       </div>
 
       <% if @store.description %>
+
         <div class="store-description">
           <%= @store.description %>
           <% if current_user && policy(@store).update? %>
