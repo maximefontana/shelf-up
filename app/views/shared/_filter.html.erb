@@ -1,43 +1,83 @@
-<div class="flex-box centered medium-text">
-  <div class="filter-button">
+<div class="filter-form-box">
+<%= form_tag stores_path, method: :get do %>
+<div class="filter-form-flexbox">
+
+  <div class="filter-form-search-box width-thirty">
+    Location:
+    <%= text_field_tag :location, params[:location], value: "#{@location}", list: "location-results", autocomplete: :off %>
   </div>
-  <div>
-<h3 class="filter-button">Filter Results By:</h3>
-<%= form_tag stores_path, method: :get, class: "filter-form" do %>
-Location:
-<%= text_field_tag :location, params[:location], value: "#{@location}", list: "location-results", autocomplete: :off %>
-Category:
-<%= text_field_tag :category, params[:category], value: "#{@category}", class: "filter-category", list: "category-results", autocomplete: :off %>
-Name:
-<%= text_field_tag :name, params[:name], value: "#{@name}", class: "filter-category", list: "name-results", autocomplete: :off %>
-Commission(%):
-Min: <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %>
-Max: <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %>
-Price Range:
-Min: <%= number_field_tag :price_min, nil, min: 0, value: "#{@price_min}" %>
-Max: <%= number_field_tag :price_max, nil, value: "#{@price_max}" %>
-Rental Period(days):
-Min: <%= number_field_tag :time_min, nil, min: 0, value: "#{@time_min}" %>
-Max: <%= number_field_tag :time_max, nil, value: "#{@time_max}" %>
-<%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-</div>
+
+  <div class="filter-form-search-box width-thirty">
+    Category:
+    <%= text_field_tag :category, params[:category], value: "#{@category}", list: "category-results", autocomplete: :off %>
+  </div>
+
+  <div class="filter-form-search-box width-thirty">
+    Name:
+    <%= text_field_tag :name, params[:name], value: "#{@name}", list: "name-results", autocomplete: :off %>
+  </div>
+
+  <div class="filter-form-search-box width-thirty">
+    Commission(%):
+  </div>
+<div class="filter-form-search-box width-thirty">
+    Min:
+    <%= number_field_tag :commission_min, nil, value: "#{@commission_min}" %>
+  </div>
+  <div class="filter-form-search-box width-thirty">
+    Max:
+    <%= number_field_tag :commission_max, nil, value: "#{@commission_max}" %>
+  </div>
+
+  <div class="filter-form-search-box width-thirty">
+
+    Price Range:
+  </div>
+  <div class="filter-form-search-box width-thirty">
+
+    Min: <%= number_field_tag :price_min, nil, min: 0, value: "#{@price_min}" %>
+  </div>
+  <div class="filter-form-search-box width-thirty">
+
+    Max:
+    <%= number_field_tag :price_max, nil, value: "#{@price_max}" %>
+  </div>
+
+  <div class="filter-form-search-box width-thirty">
+
+    Rental Period(days):
+  </div>
+  <div class="filter-form-search-box width-thirty">
+
+    Min: <%= number_field_tag :time_min, nil, min: 0, value: "#{@time_min}" %>
+  </div>
+  <div class="filter-form-search-box width-thirty">
+    Max:
+    <%= number_field_tag :time_max, nil, value: "#{@time_max}" %>
+  </div>
+  <div class="filter-form-search-box">
+
+    <%= submit_tag "Search", class: "btn-big btn-forward" %>
+  </div>
+
+  <% end %>
 </div>
 
 <datalist id="location-results">
-<% Store.all.map { |store| store.location }.uniq.each do |location| %>
-<option><%= location %></option>
-<% end %>
+  <% Store.all.map { |store| store.location }.uniq.each do |location| %>
+  <option><%= location %></option>
+  <% end %>
 </datalist>
 
 <datalist id="category-results">
-<% Store.all.map { |store| store.category }.uniq.each do |category| %>
-<option><%= category %></option>
-<% end %>
+  <% Store.all.map { |store| store.category }.uniq.each do |category| %>
+  <option><%= category %></option>
+  <% end %>
 </datalist>
 
 <datalist id="name-results">
-<% Store.all.map { |store| store.name }.uniq.each do |name| %>
-<option><%= name %></option>
-<% end %>
+  <% Store.all.map { |store| store.name }.uniq.each do |name| %>
+  <option><%= name %></option>
+  <% end %>
 </datalist>
+</div>
