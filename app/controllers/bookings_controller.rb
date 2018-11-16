@@ -34,9 +34,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.update(booking_params)
-    raise
     if @booking.save
       redirect_to user_path(current_user)
+    else
+      render :edit
     end
   end
 
