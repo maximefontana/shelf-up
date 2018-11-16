@@ -25,7 +25,7 @@
       </h3>
 
       <% if @store.description %>
-        <p class="store-description">Description: https://www.google.com/ <%= @store.description %>
+        <p class="store-description">Description: <%= @store.description %>
           <% if current_user && policy(@store).update? %>
             <a href="#"><i class="fas fa-pencil-alt edit-store-description"></i></a>
           <% end %>
