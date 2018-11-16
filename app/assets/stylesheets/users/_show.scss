@@ -2,4 +2,42 @@
   margin-top: 90px;
   margin-right: 10vw;
   margin-left: 10vw;
+  border-radius: 50%;
+}
+
+th {
+  text-align: center;
+  background-color: grey;
+}
+
+td {
+ text-align: center;
+ background-color: yellow;
+}
+
+table {
+  width: 640px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+.overview {
+  background-color:green;
+  height: 50px;
+  width: 640px;
+}
+
+.display {
+  width: 640px;
+}
+
+.profile {
+  background-color: blue;
+}
+
+.page-body {
+  display:flex;
+  align-content:center
 }
