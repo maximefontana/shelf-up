@@ -11,10 +11,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: :home
-  get 'status/accept/:id', to: 'bookings#status_accept', as: :accept_booking
-  get 'status/decline/:id', to: 'bookings#status_decline', as: :decline_booking
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show]
 
   resources :stores do
     resources :bookings, only: [:new, :create]
