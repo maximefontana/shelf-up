@@ -14,6 +14,7 @@ input::-webkit-inner-spin-button {
   margin: 0 auto;
   justify-content: space-around;
   align-items: center;
+  text-align: left;
 }
 
 .filter-form-search-box {
@@ -22,6 +23,7 @@ input::-webkit-inner-spin-button {
 
 .width-thirty {
   width: 33%;
+  text-align: center;
 }
 
 .width-fifty {
@@ -32,3 +34,7 @@ input::-webkit-inner-spin-button {
   width: 35%;
   flex-grow: 1;
 }
+
+// div {
+//   outline: 1px dotted red;
+// }
