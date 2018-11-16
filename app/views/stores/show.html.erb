@@ -67,11 +67,13 @@
 
     <div class="store-rating-show">
       <% num_stars = @store.rating %>
+      <% if !num_stars.nil? %>
       <% num_stars.times do %>
         <i class="fas fa-star"></i>
       <% end %>
       <% (5 - num_stars).times do %>
         <i class="far fa-star"></i>
+      <% end %>
       <% end %>
     </div>
 
