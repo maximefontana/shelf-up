@@ -1,41 +1,70 @@
-<div class="edit-store-container">
-  <div class="store-left-side">
+<div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.pexels.com/photos/1412235/pexels-photo-1412235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+</div>
+
+  <div class="edit-store-container">
+
+    <div class="store-category-show">
+      Category: <%= @store.category %>
+    </div>
+
+    <div class="store-details-show">
+      Details:
+      <div class="store-address-show">
+        Address: <%= @store.address %>
+      </div>
+      <div class="store-commish-show">
+        Commission Rate: <%= @store.commission_amount %>
+      </div>
+      <div class="store-rent-time">
+        Rent Time: <%= @store.rent_time %>
+      </div>
+      <div class="store-rent">
+        Rent: €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>
+      </div>
+    </div>
+
     <%= form_for(@store) do |f| %>
       <!-- Do not change class names as these are used in JS -->
-      <h1 class="store-name"><%= @store.name %>
+
+      <div class="store-name">
+        <div class="store-name-font">
+           <%= @store.name %>
         <% if current_user && policy(@store).update? %>
-          <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>
+          <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
+           </div>
         <% end %>
-      </h1>
       <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+      </div>
 
-      <h2 class="store-city">City: <%= @store.location %>
+      <div class="store-city">City: <%= @store.location %>
         <% if current_user && policy(@store).update? %>
-          <a href="#"><i class="fas fa-pencil-alt edit-store-city"></i></a>
+          <a href="#" class="fas fa-pencil-alt edit-store-city"></a>
         <% end %>
-      </h2>
       <%= f.text_field :location, class: "input-store-city hidden"%>
+      </div>
 
-      <h3>Owner:
+      <div class="store-owner">
+        Owner:
         <% if user_signed_in? %>
           <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
         <% else %>
           <%= @store.user.username.capitalize %>
         <% end %>
-      </h3>
+      </div>
 
       <% if @store.description %>
-        <p class="store-description">Description: https://www.google.com/ <%= @store.description %>
+        <div class="store-description">
+          <%= @store.description %>
           <% if current_user && policy(@store).update? %>
-            <a href="#"><i class="fas fa-pencil-alt edit-store-description"></i></a>
+            <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
           <% end %>
-        </p>
         <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
       <% end %>
       <%= f.submit "Edit", class: "store-edit-button hidden" %>
+        </div>
     <% end %>
 
-    <div class="store-rating">
+    <div class="store-rating-show">
       <% num_stars = @store.rating %>
       <% num_stars.times do %>
         <i class="fas fa-star"></i>
@@ -45,22 +74,23 @@
       <% end %>
     </div>
 
-  </div>
 
-  <div class="store-right-side">
-    <% if !user_signed_in? %>
-      <h3 class="btn btn-danger">Please Sign Up / Log In to view the Owner's details and request this space.</h3>
-    <% end %>
 
-    <%= link_to "Back", stores_path, class: "btn btn-primary" %>
-    <% if current_user && current_user != @store.user %>
-      <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-primary" %>
-    <% end %>
+    <div class="store-buttons">
+      <% if !user_signed_in? %>
+      <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
+      <% end %>
 
-    <% if current_user && policy(@store).update? %>
-      <%= link_to "Delete this space", store_path(@store), method: :delete, class: "btn btn-primary" %>
-    <% end %>
-  </div>
+      <%= link_to "Back", stores_path, class: "btn btn-back" %>
+      <% if current_user && current_user != @store.user %>
+      <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-forward" %>
+      <% end %>
+
+      <% if current_user && policy(@store).update? %>
+      <%= link_to "Delete this space", store_path(@store), method: :delete, class: "btn btn-info" %>
+      <% end %>
+    </div>
+
 
 </div>
 
