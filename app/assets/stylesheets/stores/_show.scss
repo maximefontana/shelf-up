@@ -11,7 +11,9 @@
   position: relative;
 }
 
-
+.store-name-font {
+  font-size: 45px;
+}
 .store-name {
   position: absolute;
   top: 1%;
@@ -19,7 +21,6 @@
   right: 0;
   text-align: center;
   min-width: 50%;
-  font-size: 45px;
   font-weight: bolder;
   color: $grayfive;
 }
@@ -52,6 +53,14 @@
 }
 
 .store-commish-show {
+
+}
+
+.store-rent-time{
+
+}
+
+.store-rent {
 
 }
 
@@ -99,6 +108,22 @@
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.input-store-name {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 25%  ;
+}
+
+.input-store-city {
+  width: 35%;
+}
+
+.input-store-description {
+  width: 50%;
+  height: 100px;
 }
 
 

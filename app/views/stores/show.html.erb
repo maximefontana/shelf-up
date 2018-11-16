@@ -18,48 +18,50 @@
       <div class="store-rent-time">
         Rent Time: <%= @store.rent_time %>
       </div>
-      <div class="store-rent-min">
-        Rent Min: <%= @store.rent_price_min %>
-      </div>
-       <div class="store-rent-max">
-        Rent Min: <%= @store.rent_price_max %>
+      <div class="store-rent">
+        Rent: €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>
       </div>
     </div>
 
     <%= form_for(@store) do |f| %>
       <!-- Do not change class names as these are used in JS -->
 
-      <div class="store-name"><%= @store.name %>
+      <div class="store-name">
+        <div class="store-name-font">
+           <%= @store.name %>
         <% if current_user && policy(@store).update? %>
-          <a href="#"><i class="fas fa-pencil-alt edit-store-name"></i></a>
+          <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
+           </div>
         <% end %>
-      </div>
       <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+      </div>
 
       <div class="store-city">City: <%= @store.location %>
         <% if current_user && policy(@store).update? %>
-          <a href="#"><i class="fas fa-pencil-alt edit-store-city"></i></a>
+          <a href="#" class="fas fa-pencil-alt edit-store-city"></a>
         <% end %>
-      </div>
       <%= f.text_field :location, class: "input-store-city hidden"%>
+      </div>
 
-      <div class="store-owner">Owner:
+      <div class="store-owner">
+        Owner:
         <% if user_signed_in? %>
-          <%= link_to @store.user.username, user_path(@store.user) %>
+          <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
         <% else %>
           <%= @store.user.username %>
         <% end %>
       </div>
 
       <% if @store.description %>
-        <p class="store-description">Description: https://www.google.com/ <%= @store.description %>
+        <div class="store-description">
+          <%= @store.description %>
           <% if current_user && policy(@store).update? %>
-            <a href="#"><i class="fas fa-pencil-alt edit-store-description"></i></a>
+            <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
           <% end %>
-        </p>
         <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
       <% end %>
       <%= f.submit "Edit", class: "store-edit-button hidden" %>
+        </div>
     <% end %>
 
     <div class="store-rating-show">
