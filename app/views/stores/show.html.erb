@@ -1,4 +1,4 @@
-<div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.pexels.com/photos/1412235/pexels-photo-1412235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+<div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @store.photo %>');">
 </div>
 
   <div class="edit-store-container">
@@ -31,9 +31,9 @@
            <%= @store.name %>
         <% if current_user && policy(@store).update? %>
           <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
-           </div>
         <% end %>
       <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+           </div>
       </div>
 
       <div class="store-city">City: <%= @store.location %>
@@ -60,18 +60,20 @@
             <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
           <% end %>
         <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-      <% end %>
       <%= f.submit "Edit", class: "store-edit-button hidden" %>
         </div>
+      <% end %>
     <% end %>
 
     <div class="store-rating-show">
       <% num_stars = @store.rating %>
+      <% if !num_stars.nil? %>
       <% num_stars.times do %>
         <i class="fas fa-star"></i>
       <% end %>
       <% (5 - num_stars).times do %>
         <i class="far fa-star"></i>
+      <% end %>
       <% end %>
     </div>
 
@@ -83,7 +85,7 @@
       <% end %>
 
       <%= link_to "Back", stores_path, class: "btn btn-back" %>
-      <% if current_user && current_user != @store.user %>
+      <% if current_user && current_user != @store.user && !current_user.owner %>
       <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-forward" %>
       <% end %>
 

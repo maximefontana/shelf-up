@@ -7,13 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // background-color: rgba($bluetwo, 0.6);
+  background-color: $primarythree;
   position:fixed;
   width: 100%;
   z-index: 1;
   top: 0;
-  border-bottom: 1px solid rgba($bluefive, 0.7);
-  text-shadow: 1px 1px $bluefive;
+  // border-bottom: 1px solid rgba($bluefive, 0.7);
 }
 
 /* Logo */
