@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # end
 
   root to: 'pages#home'
-  # get 'home', to: 'pages#home', as: :home
+  get 'home', to: 'pages#home', as: :home
 
   resources :users, only: [:show, :update]
 
