@@ -1,3 +1,10 @@
+<!-- page scrolls back to top when refreshed -->
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+</script>
+
 <div class="banner">
   <div class="banner-content">
     <h1>YOUR PRODUCTS IN REAL STORES</h1>
@@ -14,8 +21,19 @@
     </div>
     <% end %>
 
-    <div class="banner-learn">
-      <a href="#middle" class="banner-learn">LEARN MORE</a>
+    <!-- smooth scrolling down the page -->
+    <script type="text/javascript">
+      function Scroll() {
+        const button = document.getElementById("scroll");
+        button.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        });
+      }
+    </script>
+
+    <div class="banner-learn" onclick="Scroll();">
+      LEARN MORE
     </div>
   </div>
 </div>
