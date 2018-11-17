@@ -1,114 +1,84 @@
-<!--<div class="user-profile-container">
-  <div>
-    <% if @user.photo %>
-      <%= cl_image_tag @user.photo,
-        width: 150, height: 150, crop: :thumb, gravity: :face %>
-    <% end %>
+<!-- user profile details tab -->
+<div class="user-show-container">
+  <!-- tabs -->
+  <div class="tabs">
+    <a href="#" class="tab tab-first active">Personal</a>
+    <a href="#" class="tab tab-second">Pending Shelfs</a>
+    <a href="#" class="tab tab-third ">Current Shelfs</a>
+    <!-- <a href="#" class="tab tab-last">Bookings</a> -->
+  </div>
 
-    <%= @user.username %>
-    <% if @user == current_user %>
-      <%= link_to "Edit My Details", edit_user_registration_path(@user), class: "btn btn-primary" %>
-    <% end %>
-
-    <% if @user.owner && @user.stores.empty? %>
-      <h3 class="btn btn-danger">You haven't added a Store yet</h3>
-    <% elsif @user.owner && !@user.stores.empty? %>
-      <% @user.stores.each do |store| %>
-        <h3><%= link_to store.name, store_path(store) %></h3>
-      <% end %>
-    <% end %>
-
-    <% if @user.owner %>
-      <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
-    <% end %>
-
-    <%= link_to "Back to all shelves", stores_path, class: "btn btn-primary" %> -->
-
-    <!-- DO NOT USE SUBLIME'S AUTO INDENT SHORTCUT
-    <% if @user.owner %>
-      <h3>Bookings:</h3>
-      <% @user.stores.each do |store| %>
-        <% store.bookings.each do |booking| %>
-          <p>Store: <%= store.name %></p>
-          <p>Category: <%= booking.category %></p>
-          <p>Total Price: €<%= booking.total_price %></p>
-          <% if booking.status == "Pending" && policy(booking).update? %>
-            <%= form_for(booking, method: :put) do |f| %>
-              <%= f.hidden_field :status, value: "Accepted" %>
-              <%= f.submit "Accept", class: "btn btn-primary" %>
-            <% end %>
-            <%= form_for(booking, method: :put) do |f| %>
-              <%= f.hidden_field :status, value: "Declined" %>
-              <%= f.submit "Decline", class: "btn-primary" %>
-            <% end %>
-          <% else %>
-            <p>Status: <%= booking.status %></p>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div> -->
-
-  <div class="flex-container">
-
-    <div class="avatar">
+  <!-- user personal details -->
+  <div class="user-show-box">
+    <div class="user-show-avatar">
       <% if @user.photo %>
       <%= cl_image_tag @user.photo,
       width: 130, height: 130, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
       <% end %>
     </div>
+    <div class="user-show-name">
+      <%= @user.username.capitalize %>
+    </div>
 
-    <div class="profile">
-      <h1><%= @user.username.capitalize %></h1>
+
+
       <% if @user == current_user %>
       <%= link_to edit_user_registration_path(@user) do %>
-      <h3><i class="fas fa-pencil-alt edit-username"></i></h3>
+      <div class="fas fa-pencil-alt"></div>
       <% end %>
       <% end %>
-    </div>
-
-    <div class="display">
-      <div class="overview">
-        <h1> On Display </h1>
-      </div>
-      <div class="table">
-        <table>
-          <tr>
-            <th>Item</th>
-            <th>#</th>
-            <th>Location</th>
-            <th>Dates</th>
-          </tr>
-          <tr>
-            <td>Fire Spirit T-Shirt</td>
-            <td>25</td>
-            <td>Kashmiri Coffeeshop</td>
-            <td>12.11.18 - 27.11. 18</td>
-          </tr>
-          <tr>
-            <td>Eve Casual Jeans</td>
-            <td>45</td>
-            <td>H&M Amsterdam</td>
-            <td>05.12.18 - 05.01.19</td>
-          </tr>
-        </table>
-      </div>
 
 
-      <div class="display" id="pending">
-        <div class="overview">
-          <h1> Pending Request </h1>
-        </div>
-        <div class="table">
-          <table>
-            <tr>
-              <td>Fire Spirit T-Shirt</td>
-            </tr>
-            <tr>
-              <td>Eve Casual Jeans</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
+
   </div>
+</div>
+
+
+
+
+
+
+
+<!-- owner details and stores -->
+  <% if @user.owner && @user.stores.empty? %>
+  <h3 class="btn btn-danger">You haven't added a Store yet</h3>
+  <% elsif @user.owner && !@user.stores.empty? %>
+  <% @user.stores.each do |store| %>
+  <h3><%= link_to store.name, store_path(store) %></h3>
+  <% end %>
+  <% end %>
+
+  <% if @user.owner %>
+  <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
+  <% end %>
+
+  <%= link_to "Back to all shelves", stores_path, class: "btn btn-primary" %>
+
+  <% if @user.owner %>
+  <h3>Bookings:</h3>
+  <% @user.stores.each do |store| %>
+  <% store.bookings.each do |booking| %>
+  <p>Store: <%= store.name %></p>
+  <p>Category: <%= booking.category %></p>
+  <p>Total Price: €<%= booking.total_price %></p>
+  <% if booking.status == "Pending" && policy(booking).update? %>
+  <%= form_for(booking, method: :put) do |f| %>
+  <%= f.hidden_field :status, value: "Accepted" %>
+  <%= f.submit "Accept", class: "btn btn-primary" %>
+  <% end %>
+  <%= form_for(booking, method: :put) do |f| %>
+  <%= f.hidden_field :status, value: "Declined" %>
+  <%= f.submit "Decline", class: "btn-primary" %>
+  <% end %>
+  <% else %>
+  <p>Status: <%= booking.status %></p>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% end %>
+  ]
+
+
+
+
+

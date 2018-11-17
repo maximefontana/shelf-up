@@ -1,0 +1,33 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.tab {
+  color: $grayfive;
+  background-color: $grayone;
+}
+
+.tabs a {
+  text-decoration: none;
+  font-size: 40px;
+  transition: all 0.3s;
+}
+
+.tab.active {
+  border-bottom: 4px solid $bluesix;
+}
+.tab:hover {
+  border-bottom: 2px solid $bluesix;
+  color: white;
+  opacity: 0.8;
+}
+
+.tab-first {
+  border-radius: 3px 0px 0px 0px;
+}
+
+.tab-last {
+  border-radius: 0px 3px 0px 0px;
+}
