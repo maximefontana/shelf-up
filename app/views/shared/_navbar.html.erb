@@ -28,8 +28,10 @@
       <% end %>
     </div>
     <% end %>
-    <a href="#"><i class="fas fa-search search-icon"></i></a>
+    <div class="nav-search-logo">
+    <a href="#" class="fas fa-search search-icon"></a>
     <% end %>
+    </div>
 
     <!-- Links when logged in -->
     <%= link_to current_user.username.capitalize, current_user, class: "navbar-wagon-item navbar-wagon-link" %>
