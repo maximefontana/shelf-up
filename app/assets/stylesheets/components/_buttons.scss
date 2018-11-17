@@ -1,31 +1,36 @@
 .btn-form {
   padding: 5px 10px;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-big {
   padding: 15px 60px;
   border-radius: 3px;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-big-homepage {
-  background-color: $primarythree;
+  background-color: $bluesix;
   color: white;
-  padding: 7px 20px;
-  border-radius: 3px;
+  padding: 5px 15px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 25px;
   font-weight: bold;
   border: none;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-big-homepage:hover {
   text-decoration: none;
-  background-color: $primaryfour;
+  background-color: $primarythree;
+
 }
 
 .btn-forward {
   color: white;
   background-color: $greenthree;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-forward:hover {
@@ -38,6 +43,7 @@
 .btn-back {
   color: white;
   background-color: $redthree;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-back:hover {
@@ -49,6 +55,7 @@
 .btn-info {
   color: white;
   background-color: $bluefour;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-info:hover {
@@ -59,18 +66,20 @@
 
 .btn-banner {
   padding: 20px 40px;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .filter-button {
   padding: 5px 25px;
-  background-color: $greenfour;
-  width: 50%;
+  background-color: $bluesix;
+  width: 10%;
   margin: 8% auto 3% auto;
   text-align: center;
   color: white !important;
   font-weight: bold;
   border-radius: 3px;
   text-decoration: none;
+  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .filter-button:hover {
