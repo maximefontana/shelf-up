@@ -25,6 +25,7 @@
   overflow-wrap: normal;
 }
 
+
 .banner p {
   position: absolute;
   top: 35%;
@@ -53,15 +54,35 @@
   background-color: transparent !important;
   color: white;
   border: 2px solid $bluesix;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .form-control-banner {
   text-align: center;
-  background-color: transparent !important;
-  color: white !important;
+  background-color: white !important;
+  opacity:0.95;
+  color: grey !important;
 }
 
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.form-control-banner.placeholder{
+  color:red;
+}
+
+.form-control-banner:hover{
+  opacity:1;
+}
 
 .banner-button {
   position: absolute;
@@ -90,6 +111,24 @@
   width:185px;
   height:45px;
   background-color: #66E7A9;
+}
+
+.btn-big-homepage.hover{
+  opacity: 1;
+}
+
+.homepage-button{
+   width:150px;
+  height:45px;
+  background-color: #66E7A9;
+  border-radius:5px;
+  font-weight:bold;
+  font-size: 20px;
+  opacity:1;
+}
+
+.homepage-button:hover{
+  opacity:0.95;
 }
 
 
