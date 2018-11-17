@@ -8,29 +8,44 @@
     <!-- <a href="#" class="tab tab-last">Bookings</a> -->
   </div>
 
-  <!-- user personal details -->
-  <div class="user-show-box">
+  <!-- user personal details tab -->
+  <div class="user-show-box hidden">
     <div class="user-show-avatar">
       <% if @user.photo %>
       <%= cl_image_tag @user.photo,
       width: 130, height: 130, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
       <% end %>
     </div>
+
     <div class="user-show-name">
       <%= @user.username.capitalize %>
     </div>
 
-
-
+    <div class="user-show-edit-btn">
       <% if @user == current_user %>
       <%= link_to edit_user_registration_path(@user) do %>
-      <div class="fas fa-pencil-alt"></div>
+      Edit Profile
       <% end %>
       <% end %>
+    </div>
 
+    <div class="user-show-details">
+      <div>Email: <%= @user.email %></div>
+      <div>Phone: +31 06123456</div>
+      <div>Web: www.BadAssBrew.com</div>
+      <div>** I Think we need more info here? **</div>
+    </div>
+  </div>
 
+  <div class="user-show-box">
 
   </div>
+
+
+
+
+
+
 </div>
 
 

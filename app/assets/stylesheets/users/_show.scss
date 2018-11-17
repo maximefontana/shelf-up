@@ -39,4 +39,22 @@
   padding: 5px;
 }
 
+.user-show-edit-btn a {
+  color: $bluesix;
+  position: absolute;
+  top: 22%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.user-show-details {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  color: $grayfive;
+}
+
 
