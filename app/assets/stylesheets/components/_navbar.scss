@@ -16,16 +16,23 @@
 }
 
 /* Logo */
-.navbar-logo {
+.nav-logo {
   font-size: 25px;
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
-.navbar-logo:hover {
+.nav-logo a {
+  font-size: 25px;
   text-decoration: none;
-  color: $bluefive; /* primary 5 */
+  color: white;
+  font-weight: bold;
+}
+
+.nav-logo a:hover {
+  text-decoration: none;
+  color: $primarythree; /* primary 5 */
 }
 
 /* User Avatar */
@@ -57,7 +64,7 @@
   font-weight: bold;
 }
 .navbar-wagon-link:hover {
-  color: $bluefive;
+  color: $primarythree;
   text-decoration: none;
 }
 
