@@ -10,14 +10,14 @@
     <h1>YOUR PRODUCTS IN REAL STORES</h1>
     <p>ShelfUp let’s you display your brand in the coolest neighbourhoods of the city.</p>
 
-    <div class="banner-search">
+    <div id="form-control-banner" class="banner-search">
       <div><%= form_tag stores_path, method: :get do %>
         <% if user_signed_in? && current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Brand Location" %>
+        <%= text_field_tag :query, params[:query], class: "form-control form-control-banner", placeholder: "Search Locations" %>
         <% elsif user_signed_in? && !current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store Location" %>
+        <%= text_field_tag :query, params[:query], class: "form-control form-control-banner", placeholder: "Search Locations" %>
         <% else %>
-        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store / Brand Location" %>
+        <%= text_field_tag :query, params[:query], class: "form-control form-control-banner", placeholder: "Search" %>
         <% end %>
       </div>
     </div>
