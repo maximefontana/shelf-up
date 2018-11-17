@@ -56,6 +56,12 @@ th, td {
   font-size: 36pt;
   font-style: bold;
   margin: 5% 0%;
+  position: relative;
+}
+.edit-username {
+  position: absolute;
+  right: 2%;
+  top: 25%;
 }
 
 .flex-container {
