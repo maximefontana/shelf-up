@@ -18,17 +18,17 @@ function showForm() {
 
 export { showForm };
 
-function scroll() {
-  const learnMore = document.querySelector('.learn-button');
-  const middle = document.querySelector("#middle");
+// function scroll() {
+//   const learnMore = document.querySelector('.learn-button');
+//   const middle = document.querySelector("#middle");
 
-  if (learnMore) {
-    learnMore.addEventListener('click', event => {
-      middle.scrollIntoView({
-        behavior: 'smooth'
-      });
-    })
-  }
-};
+//   if (learnMore) {
+//     learnMore.addEventListener('click', event => {
+//       middle.scrollIntoView({
+//         behavior: 'smooth'
+//       });
+//     })
+//   }
+// };
 
-export { scroll };
+// export { scroll };
