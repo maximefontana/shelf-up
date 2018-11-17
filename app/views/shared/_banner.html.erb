@@ -12,7 +12,13 @@
 
     <div class="banner-search">
       <div><%= form_tag stores_path, method: :get do %>
+        <% if user_signed_in? && current_user.owner %>
+        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Brand Location" %>
+        <% elsif user_signed_in? && !current_user.owner %>
         <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store Location" %>
+        <% else %>
+        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store / Brand Location" %>
+        <% end %>
       </div>
     </div>
 
