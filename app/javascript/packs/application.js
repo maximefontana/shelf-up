@@ -7,3 +7,6 @@ import { openFilterForm } from '../components/filterForm';
 openFilterForm();
 // import { scroll } from '../components/registration';
 // scroll();
+
+import { changeTabs } from '../components/changeTabs';
+changeTabs();
