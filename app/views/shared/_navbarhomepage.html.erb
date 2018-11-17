@@ -1,7 +1,12 @@
 <div class="navbar-homepage">
 
   <!-- Logo -->
-  <%= link_to "SHELFUP", root_path, class: "navbar-logo" %>
+   <div class="nav-homepage-logo">
+    <%= link_to root_path do %>
+    <span>SHELFUP</span>
+    <span class="fas fa-arrow-up"></span>
+    <% end %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -9,8 +14,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to @user.username.capitalize, @user, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Shelves", stores_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to @user.username.capitalize, @user, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
+      <%= link_to "Shelves", stores_path, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -32,7 +37,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
     <% end %>
   </div>
 
