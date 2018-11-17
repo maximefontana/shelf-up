@@ -4,12 +4,12 @@
   <div class="tabs">
     <a href="#" class="tab tab-first active">Personal</a>
     <a href="#" class="tab tab-second">Pending Shelfs</a>
-    <a href="#" class="tab tab-third ">Current Shelfs</a>
+    <a href="#" class="tab tab-third">Current Shelfs</a>
     <!-- <a href="#" class="tab tab-last">Bookings</a> -->
   </div>
 
   <!-- user personal details tab -->
-  <div class="user-show-box hidden">
+  <div class="user-show-box personal-details hidden">
     <div class="user-show-avatar">
       <% if @user.photo %>
       <%= cl_image_tag @user.photo,
@@ -37,12 +37,30 @@
     </div>
   </div>
 
-  <div class="user-show-box">
-
+<!-- pending shelves tab -->
+  <div class="user-show-box pending-bookings hidden">
+    <div class="user-show-pending-bookings">
+    <% @user.bookings.each do |booking| %>
+    <% if booking.status == 'Pending' %>
+      <div><%= booking.name %> </div>
+      <% end %>
+    <% end %>
+    </div>
+    <%= link_to "Back", stores_path, class: "btn btn-primary" %>
   </div>
 
+  <!-- current shelves tab -->
+  <div class="user-show-box current-bookings">
+    <div class="user-show-current-bookings">
 
-
+      <% @user.bookings.each do |booking| %>
+      <% if booking.status != 'Pending' %>
+        <div><%= booking.name %> </div>
+      <% end %>
+      <% end %>
+    </div>
+    <%= link_to "Back", stores_path, class: "btn btn-primary" %>
+  </div>
 
 
 
@@ -66,8 +84,6 @@
   <% if @user.owner %>
   <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
   <% end %>
-
-  <%= link_to "Back to all shelves", stores_path, class: "btn btn-primary" %>
 
   <% if @user.owner %>
   <h3>Bookings:</h3>
