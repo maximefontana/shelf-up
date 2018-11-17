@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :stores
   has_many :ratings
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
 end
