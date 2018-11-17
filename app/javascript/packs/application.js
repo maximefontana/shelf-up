@@ -5,4 +5,5 @@ import { editStore } from '../components/storeEdit';
 editStore();
 import { openFilterForm } from '../components/filterForm';
 openFilterForm();
-
+// import { scroll } from '../components/registration';
+// scroll();

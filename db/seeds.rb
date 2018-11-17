@@ -10,7 +10,7 @@ puts "Growing the new seeds into big beautiful trees..."
 print "Users Creating..."
 # this is the user we will use to interact for demo purposes, mikey owns no stores
 u1 = User.create!(username: "mikey", email: "mikey@mikey.com", password: "testing", owner: false,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/arthur-littm")
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/mmudge")
 # these are the store owners we use
 u2 = User.create!(username: "marco", email: "marco@shelf.com", password: "testing", owner: true,
   remote_photo_url: "https://kitt.lewagon.com/placeholder/users/krokrob")
