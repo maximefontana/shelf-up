@@ -10,11 +10,10 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <% if user_signed_in? %>
 
     <!-- search bar except on stores index page -->
-    <div>
+    <div class="flex-box">
       <% unless current_page?('/stores') %>
       <!-- if store owner -->
       <% if current_user.owner %>
@@ -40,7 +39,6 @@
 
     <%= link_to "Dashboard", current_user, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Shelves", stores_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
 
 
     <!-- Avatar with dropdown menu -->
