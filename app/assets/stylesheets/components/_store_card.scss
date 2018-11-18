@@ -7,6 +7,15 @@
   justify-content: center;
 }
 
+.card-title-container {
+  width: 75%;
+  margin-top: 10%;
+  height: 5%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 .scroll-box {
   overflow-y: scroll;
   height: 100vh;
