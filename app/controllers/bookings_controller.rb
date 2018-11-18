@@ -2,8 +2,9 @@
 
 # rubocop:disable all
 class BookingsController < ApplicationController
+  before_action :find_booking, only: [:show, :edit, :update, :destroy]
+
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -27,11 +28,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
     authorize @booking
     @booking.update(booking_params)
     if @booking.save
@@ -41,9 +40,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking.destroy
+    authorize @booking
+    redirect_to user_path(current_user)
+  end
+
   private
 
+  def find_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
-    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo, :status)
+    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo, :status, :start_date, :end_date)
   end
 end

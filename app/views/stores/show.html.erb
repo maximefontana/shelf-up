@@ -86,11 +86,15 @@
   <% end %>
 
   <% if current_user && current_user != @store.user && !current_user.owner %>
+  <% if @store.bookings.empty? %>
+  <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
+  <% else %>
   <% @store.bookings.each do |booking| %>
   <% if booking.user == current_user && booking.status == "Pending" %>
   You have already requested this shelf.
   <% else %>
   <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
+  <% end %>
   <% end %>
   <% end %>
   <% end %>

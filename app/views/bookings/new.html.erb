@@ -25,6 +25,8 @@
       <p id="total-cost">Total Cost: </p>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :start_date, as: :date, class: 'form-control datepicker' %>
+      <%= f.input :end_date, as: :date %>
       <%= f.submit "Book", class: "button button-small button-blue" %>
       <%= link_to "Back", :back, class: "button button-small button-red" %>
     <% end %>
