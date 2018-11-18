@@ -109,7 +109,7 @@ s4 = Store.create!(
   from the hilly and mountainous regions from where the raw materials comes and the
   people who are manufacturing.',
   remote_photo_url: 'https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/416584_349007735161865_1348033079_o.jpg?_nc_cat=100&_nc_ht=scontent-ams3-1.xx&oh=12cf095f5a495420ff681dcc405db170&oe=5C84CA1C',
-  category: 'Other',
+  category: 'Lifestyle',
   rating: 3,
   commission_amount: 35,
   rent_price_min: 3,
@@ -141,7 +141,7 @@ location: "Amsterdam",
   right at home. Knud Cresten sets out to create a store concept that artfully
   combines music, beautiful product displays and storytelling.',
   remote_photo_url: 'https://indebuurt.nl/utrecht/wp-content/uploads/2018/06/sostrene-grene-utrecht.jpg',
-  category: 'Other',
+  category: 'Art',
   rating: 4,
   commission_amount: 33,
   rent_price_min: 5,
@@ -170,7 +170,7 @@ location: "Amsterdam",
   transformed into a legendary hotspot for high quality products, friendly customer
   service and a stunningly beautiful interior, all for a truly classic Amsterdam Experience",
   remote_photo_url: 'http://abraxas.tv/images/locations-001.jpg',
-  category: 'Other',
+  category: 'Interior Design',
   rating: 5,
   commission_amount: 25,
   rent_price_min: 5,
@@ -185,7 +185,7 @@ s9 = Store.create!(
   relax you after a stressful day. Others take you on a psychedelic journey through
   your mind, and then some recover you from it all. For every mood, the right mind food!",
   remote_photo_url: 'https://media-cdn.tripadvisor.com/media/photo-s/08/6a/70/d5/the-magic-mushroom-gallery.jpg',
-  category: 'Other',
+  category: 'Pharmacy',
   rating: 5,
   commission_amount: 25,
   rent_price_min: 5,
@@ -200,7 +200,7 @@ s10 = Store.create!(
   since 1985. The assortment in the store in the Paleisstraat includes more than 2000
   ifferent beers in every conceivable style from home and abroad.",
   remote_photo_url: 'https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/46137530_1822032041228913_4964196228045733888_n.jpg?_nc_cat=106&_nc_ht=scontent-ams3-1.xx&oh=06f54de02e33d54ade7fc3c43296c8c6&oe=5C7BBBD8',
-  category: 'Culinary',
+  category: 'Food',
   rating: 5,
   commission_amount: 36,
   rent_price_min: 1,
@@ -239,7 +239,7 @@ b2 = Booking.create!(
   quantity: 24,
   total_price: 144,
   name: "Craft Beers",
-  category: "Culinary",
+  category: "Food",
   user: u1,
   store: s10
   )

@@ -10,7 +10,6 @@
   background-color: transparent;
   width: 100%;
   z-index: 1;
-  position: fixed;
   color: white;
 }
 
@@ -42,9 +41,7 @@
 }
 
 .navbar-homepage-wagon-link:hover {
-
   text-decoration: none;
-
   font-weight: bold;
   color: $bluesix;
   text-decoration: none;
