@@ -3,6 +3,8 @@ function addRating(reviewHTML) {
   const stars = document.querySelector('.store-rating-show');
   const newRatingForm = document.getElementById('new_rating');
   const list= document.querySelectorAll(".fa-star");
+  const fullStars= document.querySelectorAll(".fas.fa-star");
+  const number = fullStars.length
 
   if (stars) {
     stars.addEventListener('mouseover', (event) => {
@@ -12,22 +14,31 @@ function addRating(reviewHTML) {
         return element == event.target;
       }
 
-      const star = arrayOfStars.findIndex(findIndexNumber) + 1;
+      const star = arrayOfStars.findIndex(findIndexNumber);
 
-      list.forEach(function(item, index) {
-        let i = 0;
-        for(i=1; i <= 5; i++){
-          if(i <= star){
-            console.log(i);
+      if(star == -1) {
+        list.forEach(function(item, index) {
+          if(index <= number - 1){
             item.classList.add('fas');
             item.classList.remove('far');
           } else {
-            console.log(i);
             item.classList.remove('fas');
             item.classList.add('far');
           }
-        }
-      })
+        })
+      }
+      else {
+        list.forEach(function(item, index) {
+
+          if(index <= star){
+            item.classList.add('fas');
+            item.classList.remove('far');
+          } else {
+            item.classList.remove('fas');
+            item.classList.add('far');
+          }
+        })
+      }
     })
     stars.addEventListener('click', (event) => {
       list.forEach(function(item, index) {
