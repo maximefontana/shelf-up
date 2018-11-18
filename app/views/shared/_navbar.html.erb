@@ -17,15 +17,17 @@
       <% unless current_page?('/stores') %>
       <!-- if store owner -->
       <% if current_user.owner %>
-      <div class="search-navbar hidden"><%= form_tag stores_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search Brands by Category" %>
+      <div class="search-navbar hidden">
+        <%= form_tag stores_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Search Brands by Category" %>
         <% end %>
       </div>
     </div>
     <!-- if entrepreneur -->
     <% else %>
-    <div class="search-navbar hidden"><%= form_tag stores_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search by Store Location" %>
+    <div class="search-navbar hidden">
+      <%= form_tag stores_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Find Stores" %>
       <% end %>
     </div>
     <% end %>
