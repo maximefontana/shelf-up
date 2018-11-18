@@ -6,6 +6,7 @@ class RatingsController < ApplicationController
     authorize @rating
     @rating.store = @store
     @rating.user = @user
+    @store.rating = average_rating(@store)
     if @rating.save
       respond_to do |format|
         format.html { redirect_to store_path(@store) }
@@ -23,5 +24,14 @@ class RatingsController < ApplicationController
 
   def rating_params
     params.require(:rating).permit(:score)
+  end
+
+  def average_rating(store)
+    average_rating = 0
+    @store.ratings.each do |rating|
+      average_rating += rating.score
+    end
+
+    average_rating = @store.ratings.size == 0 ? average_rating = 0 : average_rating /= @store.ratings.size
   end
 end

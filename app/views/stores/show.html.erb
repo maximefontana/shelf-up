@@ -1,102 +1,108 @@
 <div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @store.photo %>');">
 </div>
 
-  <div class="edit-store-container">
+<div class="edit-store-container">
 
-    <div class="store-category-show">
-      Category: <%= @store.category %>
+  <div class="store-category-show">
+    Category: <%= @store.category %>
+  </div>
+
+  <div class="store-details-show">
+    Details:
+    <div class="store-address-show">
+      Address: <%= @store.address %>
     </div>
-
-    <div class="store-details-show">
-      Details:
-      <div class="store-address-show">
-        Address: <%= @store.address %>
-      </div>
-      <div class="store-commish-show">
-        Commission Rate: <%= @store.commission_amount %>
-      </div>
-      <div class="store-rent-time">
-        Rent Time: <%= @store.rent_time %>
-      </div>
-      <div class="store-rent">
-        Rent: €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>
-      </div>
+    <div class="store-commish-show">
+      Commission Rate: <%= @store.commission_amount %>
     </div>
-
-    <%= form_for(@store) do |f| %>
-      <!-- Do not change class names as these are used in JS -->
-
-      <div class="store-name">
-        <div class="store-name-font">
-           <%= @store.name %>
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
-        <% end %>
-      <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
-           </div>
-      </div>
-
-      <div class="store-city">City: <%= @store.location %>
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-city"></a>
-        <% end %>
-      <%= f.text_field :location, class: "input-store-city hidden"%>
-      </div>
-
-      <div class="store-owner">
-        Owner:
-        <% if user_signed_in? %>
-          <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
-        <% else %>
-          <%= @store.user.username.capitalize %>
-        <% end %>
-      </div>
-
-      <% if @store.description %>
-
-        <div class="store-description">
-          <%= @store.description %>
-          <% if current_user && policy(@store).update? %>
-            <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
-          <% end %>
-        <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-      <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
-        </div>
-      <% end %>
-    <% end %>
-
-    <div class="store-rating-show">
-      <% num_stars = @average_rating %>
-      <% if !num_stars.nil? %>
-      <% count = 1 %>
-      <% num_stars.times do %>
-        <i class="fas fa-star star-<%=count%>"></i>
-        <% count += 1 %>
-      <% end %>
-      <% (5 - num_stars).times do %>
-        <i class="far fa-star star-<%=count%>"></i>
-        <% count += 1 %>
-      <% end %>
-      <% end %>
+    <div class="store-rent-time">
+      Rent Time: <%= @store.rent_time %>
     </div>
-
-
-    <div class="store-buttons">
-      <% if !user_signed_in? %>
-      <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
-      <% end %>
-
-      <% if current_user && current_user != @store.user && !current_user.owner %>
-      <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
-      <% end %>
-      <%= link_to "Back", stores_path, class: "button button-small button-red" %>
-
-      <% if current_user && policy(@store).update? %>
-      <%= link_to "Delete this space", store_path(@store), method: :delete, class: "button button-small button-red" %>
-      <% end %>
+    <div class="store-rent">
+      Rent: €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>
     </div>
+  </div>
+
+  <%= form_for(@store) do |f| %>
+  <!-- Do not change class names as these are used in JS -->
+
+  <div class="store-name">
+    <div class="store-name-font">
+     <%= @store.name %>
+     <% if current_user && policy(@store).update? %>
+     <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
+     <% end %>
+     <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+   </div>
+ </div>
+
+ <div class="store-city">City: <%= @store.location %>
+  <% if current_user && policy(@store).update? %>
+  <a href="#" class="fas fa-pencil-alt edit-store-city"></a>
+  <% end %>
+  <%= f.text_field :location, class: "input-store-city hidden"%>
+</div>
+
+<div class="store-owner">
+  Owner:
+  <% if user_signed_in? %>
+  <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
+  <% else %>
+  <%= @store.user.username.capitalize %>
+  <% end %>
+</div>
+
+<% if !@store.description.empty? %>
+<div class="store-description">
+  <%= @store.description %>
+  <% if current_user && policy(@store).update? %>
+  <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
+  <% end %>
+  <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
+  <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
+</div>
+<% end %>
+<% end %>
+
+<div class="store-rating-show">
+  <% num_stars = @store.rating %>
+  <% if !num_stars.nil? %>
+  <% count = 1 %>
+  <% num_stars.times do %>
+  <i class="fas fa-star star-<%=count%> star"></i>
+  <% count += 1 %>
+  <% end %>
+  <% (5 - num_stars).times do %>
+  <i class="far fa-star star-<%=count%> star"></i>
+  <% count += 1 %>
+  <% end %>
+  <% end %>
+</div>
+
+
+<div class="store-buttons">
+  <% if !user_signed_in? %>
+  <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
+  <% end %>
+
+  <% if current_user && current_user != @store.user && !current_user.owner %>
+  <% @store.bookings.each do |booking| %>
+  <% if booking.user == current_user && booking.status == "Pending" %>
+  You have already requested this shelf.
+  <% else %>
+  <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
+  <% end %>
+  <% end %>
+  <% end %>
+
+  <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+
+  <% if current_user && policy(@store).update? %>
+  <%= link_to "Delete this space", store_path(@store), method: :delete, class: "button button-small button-red" %>
+  <% end %>
+</div>
 
 
 </div>
-    <%= render 'ratings/form', store: @store %>
+<%= render 'ratings/form', store: @store %>
 
