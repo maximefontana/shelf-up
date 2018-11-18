@@ -3,17 +3,21 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 5%;
   justify-content: center;
 }
 
 .card-title-container {
   width: 75%;
-  margin-top: 10%;
   height: 5%;
-  margin: 0 auto;
+  margin: 5% auto;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid $bluesix;
+}
+
+
+.card-title-container-name {
+  font-size: 24px;
 }
 
 .scroll-box {
