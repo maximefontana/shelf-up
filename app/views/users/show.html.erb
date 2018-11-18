@@ -5,8 +5,10 @@
     <div class="tab-left"></div>
     <% if @user == current_user %>
     <a href="#" class="tab tab-first active">Personal</a>
+    <%# if @user.bookings.empty? %>
     <a href="#" class="tab tab-second">Bookings</a>
     <a href="#" class="tab tab-third">Current Shelfs</a>
+    <%# end %>
     <a href="#" class="tab tab-last">Messages</a>
     <% else %>
     <a href="#" class="tab tab-first active">Owner's Details</a>
@@ -58,9 +60,9 @@
       <% end %>
       <% end %>
 
-      <% if params[:id] == current_user.id && current_user.owner %>
+      <% if params[:id].to_i == current_user.id && current_user.owner %>
       <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
-      <% elsif params[:id] == current_user.id %>
+      <% elsif params[:id].to_i == current_user.id %>
       <h3><%= link_to "Add details about your Brand", new_store_path, class: "btn btn-primary" %></h3>
       <% end %>
     </div>
@@ -77,7 +79,105 @@
       <% @user.stores.each do |store| %>
       <% store.bookings.each do |booking| %>
       <div class="booking-card">
-        <p>Store: <%= store.name %></p>
+        <p class="user-bookings-store-name">Store: <%= store.name %></p>
+        <p>Category: <%= booking.category %></p>
+
+        <%= form_for(booking) do |f| %>
+
+
+        <% if current_user && policy(booking).update? %>
+        <a href="#" class="fas fa-pencil-alt"></a>
+        <%= f.text_field :category, class: "input-store-name", maxlength: 40 %>
+        <% end %>
+
+
+        <% end %>
+        <p>Total Price: €<%= booking.total_price %></p>
+        <% if booking.status == "Pending" && policy(booking).update? %>
+        <%= form_for(booking, method: :put) do |f| %>
+        <%= f.hidden_field :status, value: "Accepted" %>
+        <%= f.submit "Accept", class: "btn btn-primary" %>
+        <% end %>
+        <%= form_for(booking, method: :put) do |f| %>
+        <%= f.hidden_field :status, value: "Declined" %>
+        <%= f.submit "Decline", class: "btn btn-primary" %>
+        <% end %>
+        <% else %>
+        <p>Status: <%= booking.status %></p>
+        <% end %>
+
+        <% if !booking.comment.nil? %>
+        From: <%= booking.user.username.capitalize %>
+        <%= booking.comment %>
+        <% end %>
+
+        <% if !booking.messages.empty? %>
+        <% booking.messages.each do |message| %>
+        From: <%= message.user.username.capitalize %>
+        <%= message.text %>
+        <% end %>
+        <% end %>
+
+        <button>Respond</button>
+        <%= form_for(Message.new) do |f| %>
+        <%= f.text_field :text %>
+        <%= f.submit "Send" %>
+        <% end %>
+
+      </div>
+      <% end %>
+      <% end %>
+
+      <!-- if user not an owner, just show his pending bookings -->
+      <% else %>
+      <% @user.bookings.each do |booking| %>
+      <div class="booking-card">
+        <p class="user-bookings-store-name">Store: <%= booking.store.name %></p>
+        <p>Category: <%= booking.category %></p>
+        <p><%= booking.start_date %></p>
+        <p><%= booking.end_date %></p>
+        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Status: <%= booking.status %></p>
+        <% if booking.status == 'Pending' %>
+        <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+
+        <% if !booking.comment.nil? %>
+        From: <%= booking.store.user.username.capitalize %>
+        <%= booking.comment %>
+        <% end %>
+
+        <% if !booking.messages.empty? %>
+        <% booking.messages.each do |message| %>
+        From: <%= message.user.username.capitalize %>
+        <%= message.text %>
+        <% end %>
+        <% end %>
+
+        <button>Respond</button>
+        <%= form_for([booking, @message]) do |f| %>
+        <%= f.text_field :text %>
+        <%= f.submit "Send" %>
+        <% end %>
+
+      </div>
+      <% end %>
+      <% end %>
+
+    </div>
+    <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+  </div>
+
+  <!-- current shelves tab -->
+  <div class="user-show-box current-bookings hidden">
+    <div class="user-show-current-bookings">
+
+      <% if @user.owner %>
+      <% @user.stores.each do |store| %>
+      <% store.bookings.each do |booking| %>
+      <% if !booking.start_date.nil? && Date.today >= booking.start_date %>
+      <div class="booking-card">
+        <p class="user-bookings-store-name">Store: <%= store.name %></p>
         <p>Category: <%= booking.category %></p>
         <p>Total Price: €<%= booking.total_price %></p>
         <% if booking.status == "Pending" && policy(booking).update? %>
@@ -95,37 +195,15 @@
       </div>
       <% end %>
       <% end %>
+      <% end %>
 
-      <!-- if user not an owner, just show his pending bookings -->
       <% else %>
-      <% @user.bookings.each do |booking| %>
-      <div class="booking-card">
-        <p>Store: <%= booking.store.name %></p>
-        <p>Category: <%= booking.category %></p>
-        <p><%= booking.start_date %></p>
-        <p><%= booking.end_date %></p>
-        <p>Total Price: €<%= booking.total_price %></p>
-        <p>Status: <%= booking.status %></p>
-        <% if booking.status == 'Pending' %>
-        <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
-        <% end %>
-      </div>
-      <% end %>
-      <% end %>
-
-    </div>
-    <%= link_to "Back", stores_path, class: "button button-small button-red" %>
-  </div>
-
-  <!-- current shelves tab -->
-  <div class="user-show-box current-bookings hidden">
-    <div class="user-show-current-bookings">
 
       <% @user.bookings.each do |booking| %>
       <% if !booking.start_date.nil? && Date.today >= booking.start_date %>
 
       <div class="booking-card">
-        <p>Store: <%= booking.store.name %></p>
+        <p class="user-bookings-store-name">Store: <%= booking.store.name %></p>
         <p>Category: <%= booking.category %></p>
         <p><%= booking.start_date %></p>
         <p><%= booking.end_date %></p>
@@ -136,6 +214,7 @@
         <% end %>
       </div>
 
+      <% end %>
       <% end %>
       <% end %>
 

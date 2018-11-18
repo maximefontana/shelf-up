@@ -6,6 +6,8 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :store
 
+  has_many :messages
+
   # @category_choices = %w(Clothing Art Culinary Other)
   CATEGORY_CHOICES = %w(Clothing Jewelry Art Culinary Other)
 end

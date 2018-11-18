@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if params[:id].to_i == current_user.id
       @user = current_user
       authorize @user
+      @message = Message.new
     else
       @user = User.find(params[:id])
       authorize @user
