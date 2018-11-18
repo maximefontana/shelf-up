@@ -8,7 +8,7 @@ function editStore() {
   const inputDescription = document.querySelector('.input-store-description');
   const editButton = document.querySelector('.store-edit-button');
 
-  if (storeName) {
+  if (editName) {
     editName.addEventListener("click", (event) => {
       inputName.classList.remove('hidden');
       inputCity.classList.add('hidden');

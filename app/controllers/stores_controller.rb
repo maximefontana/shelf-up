@@ -25,6 +25,7 @@ class StoresController < ApplicationController
 
   def show
     authorize @store
+    @average_rating = average_rating(@store)
     if current_user
       @user = current_user
       authorize @user
@@ -110,4 +111,12 @@ class StoresController < ApplicationController
     .time(@time_min, @time_max)
   end
 
+  def average_rating(store)
+    average_rating = 0
+    @store.ratings.each do |rating|
+      average_rating += rating.score
+    end
+
+    average_rating = @store.ratings.size == 0 ? average_rating = 0 : average_rating /= @store.ratings.size
+  end
 end

@@ -6,12 +6,11 @@ editStore();
 import { openFilterForm } from '../components/filterForm';
 openFilterForm();
 
-// import { scroll } from '../components/registration';
-// scroll();
-
 import { changeTabs } from '../components/changeTabs';
 changeTabs();
 
 import { openSearch } from '../components/search';
 openSearch();
 
+import { addRating } from '../components/rating';
+addRating();
