@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :stores
   has_many :ratings
+  has_many :messages
 
   validates :username, presence: true, uniqueness: true
 end
