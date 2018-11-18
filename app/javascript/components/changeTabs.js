@@ -7,7 +7,6 @@ function changeTabs() {
   const pendingBookings = document.querySelector('.pending-bookings');
   const currentBookings = document.querySelector('.current-bookings');
   const userMessages = document.querySelector('.messages')
-  const addForm = document.querySelector('.user-listings-form');
   const addButton = document.querySelector('.new-listing-btn');
   const cancelButton = document.querySelector('.cancel-new')
 
@@ -25,7 +24,6 @@ function changeTabs() {
         userMessages.classList.add('hidden');
         lastTab.classList.add('active');
         currentBookings.classList.remove('hidden');
-        addForm.classList.add('hidden');
       }
     });
 
@@ -40,7 +38,6 @@ function changeTabs() {
         userMessages.classList.add('hidden');
         lastTab.classList.remove('active');
         currentBookings.classList.add('hidden');
-        addForm.classList.add('hidden');
       }
     });
 
@@ -53,7 +50,6 @@ function changeTabs() {
       userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       currentBookings.classList.add('hidden');
-      addForm.classList.add('hidden');
 
     });
     secondTab.addEventListener('click', (event) => {
@@ -65,7 +61,6 @@ function changeTabs() {
       userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
       currentBookings.classList.add('hidden');
-      addForm.classList.add('hidden');
 
     });
     lastTab.addEventListener('click', (event) => {
@@ -74,10 +69,9 @@ function changeTabs() {
       secondTab.classList.remove('active');
       pendingBookings.classList.add('hidden');
       thirdTab.classList.remove('active');
-      userMessages.classList.add('hidden');
+      userMessages.classList.remove('hidden');
       lastTab.classList.add('active');
-      currentBookings.classList.remove('hidden');
-      addForm.classList.add('hidden');
+      currentBookings.classList.add('hidden');
 
     });
     thirdTab.addEventListener('click', (event) => {
@@ -86,10 +80,9 @@ function changeTabs() {
       secondTab.classList.remove('active');
       pendingBookings.classList.add('hidden');
       thirdTab.classList.add('active');
-      userMessages.classList.remove('hidden');
+      userMessages.classList.add('hidden');
       lastTab.classList.remove('active');
-      currentBookings.classList.add('hidden');
-      addForm.classList.add('hidden');
+      currentBookings.classList.remove('hidden');
 
     });
   }
