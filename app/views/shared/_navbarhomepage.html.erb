@@ -14,7 +14,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to @user.username.capitalize, @user, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
+      <%= link_to "Dashboard", @user, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
       <%= link_to "Shelves", stores_path, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
