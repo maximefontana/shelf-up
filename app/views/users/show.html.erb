@@ -66,6 +66,8 @@
     </div>
   </div>
 
+
+
   <!-- pending shelves tab -->
   <div class="user-show-box pending-bookings hidden">
     <div class="user-show-pending-bookings">
@@ -118,20 +120,34 @@
   <!-- current shelves tab -->
   <div class="user-show-box current-bookings hidden">
     <div class="user-show-current-bookings">
+
       <% @user.bookings.each do |booking| %>
-      <% if booking.status != 'Pending' %>
-      <div><%= booking.name %> </div>
+      <% if !booking.start_date.nil? && Date.today >= booking.start_date %>
+
+      <div class="booking-card">
+        <p>Store: <%= booking.store.name %></p>
+        <p>Category: <%= booking.category %></p>
+        <p><%= booking.start_date %></p>
+        <p><%= booking.end_date %></p>
+        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Status: <%= booking.status %></p>
+        <% if booking.status == 'Pending' %>
+        <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+
       <% end %>
       <% end %>
-    <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+
     </div>
+    <%= link_to "Back", stores_path, class: "button button-small button-red" %>
   </div>
 
   <!-- messages tab -->
   <div class="user-show-box messages hidden">
-    <div class="show-messages">
 
-    </div>
   </div>
+
+
 </div>
 </div>
