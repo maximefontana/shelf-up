@@ -63,8 +63,6 @@
     </div>
   </div>
 
-
-
   <!-- pending shelves tab -->
   <div class="user-show-box pending-bookings hidden">
     <div class="user-show-pending-bookings">
@@ -114,34 +112,21 @@
   <!-- current shelves tab -->
   <div class="user-show-box current-bookings hidden">
     <div class="user-show-current-bookings">
-
       <% @user.bookings.each do |booking| %>
       <% if booking.status != 'Pending' %>
       <div><%= booking.name %> </div>
       <% end %>
       <% end %>
-    </div>
     <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+    </div>
   </div>
 
   <!-- messages tab -->
   <div class="user-show-box messages hidden">
+    <div class="show-messages">
 
+    </div>
   </div>
 
-
-
 </div>
-
-
-
-
-
-
-
-<!-- owner details and stores -->
-
-
-<% if @user.owner %>
-<h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
-<% end %>
+</div>
