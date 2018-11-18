@@ -21,7 +21,7 @@
   border-radius: 4px;
   margin: 7px 10px;
   position: relative;
-  box-shadow: 1px 1px 5px $grayfive;
+  box-shadow: 1px 1px 5px $graythree;
 }
 
 .card-img {
@@ -29,7 +29,7 @@
   top: 0;
   background-size: cover;
   background-position: center;
-  height: 45%;
+  height: 55%;
   width: 100%;
   border-radius: 4px 4px 0px 0px;
 }
@@ -38,17 +38,15 @@
   color: $grayfive;
   position: absolute;
   left: 10px;
-  bottom: 10px;
-  font-size: 22px;
+  top: 56%;
+  font-size: 15px;
 }
-.card-store {
-  color: white;
+
+.card-store-name {
+  color: $grayfive;
   position: absolute;
-  top: 35%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  top: 62%;
+  left: 12px;
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
@@ -56,21 +54,15 @@
 .card-rent-price {
   color: $grayfive;
   position: absolute;
-  top: 55%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  top: 72%;
+  left: 10px;
 }
 
 .card-store-commission {
   color: $grayfive;
   position: absolute;
-  top: 65%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  top: 80%;
+  left: 10px;
 }
 
 
