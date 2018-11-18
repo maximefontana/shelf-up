@@ -14,12 +14,14 @@
     <% if user_signed_in? %>
 
     <!-- search bar except on stores index page -->
-    <% unless current_page?('/stores') %>
-    <!-- if store owner -->
-    <% if current_user.owner %>
-    <div class="search-navbar hidden"><%= form_tag stores_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search Brands by Category" %>
-      <% end %>
+    <div>
+      <% unless current_page?('/stores') %>
+      <!-- if store owner -->
+      <% if current_user.owner %>
+      <div class="search-navbar hidden"><%= form_tag stores_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control text-center", placeholder: "Search Brands by Category" %>
+        <% end %>
+      </div>
     </div>
     <!-- if entrepreneur -->
     <% else %>
@@ -32,6 +34,7 @@
       <a href="#" class="fas fa-search search-icon"></a>
       <% end %>
     </div>
+
 
     <!-- Links when logged in -->
 
