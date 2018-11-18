@@ -60,7 +60,7 @@
             <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
           <% end %>
         <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-      <%= f.submit "Edit", class: "store-edit-button hidden" %>
+      <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
         </div>
       <% end %>
     <% end %>
@@ -84,13 +84,13 @@
       <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
       <% end %>
 
-      <%= link_to "Back", stores_path, class: "btn btn-back" %>
       <% if current_user && current_user != @store.user && !current_user.owner %>
-      <%= link_to "Request this space", new_store_booking_path(@store), class: "btn btn-forward" %>
+      <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
       <% end %>
+      <%= link_to "Back", stores_path, class: "button button-small button-red" %>
 
       <% if current_user && policy(@store).update? %>
-      <%= link_to "Delete this space", store_path(@store), method: :delete, class: "btn btn-info" %>
+      <%= link_to "Delete this space", store_path(@store), method: :delete, class: "button button-small button-red" %>
       <% end %>
     </div>
 
