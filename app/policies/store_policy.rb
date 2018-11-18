@@ -16,7 +16,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def create?
-    user.owner
+    true
   end
 
   def edit?
@@ -27,7 +27,7 @@ class StorePolicy < ApplicationPolicy
     user == record.user
   end
 
-  def delete?
+  def destroy?
     user == record.user
   end
 

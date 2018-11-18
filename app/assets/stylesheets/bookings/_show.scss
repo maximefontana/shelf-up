@@ -1,0 +1,13 @@
+.user-show-pending-bookings {
+  display: flex;
+}
+
+.booking-card {
+  height: 200px;
+  background-color: white;
+  width: 400px;
+  border-radius: 4px;
+  margin: 7px 10px;
+  position: relative;
+  box-shadow: 1px 1px 5px $graythree;
+}

@@ -1,5 +1,7 @@
 Add a new store
 
+<% if @user.owner %>
+
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
@@ -10,10 +12,33 @@ Add a new store
     <%= f.input :rent_price_min, label: "Minimun Item Price You accept in your store", input_html: { maxlength: 10 }  %>
     <%= f.input :rent_price_max, label: "Maximum Item Price you accept in your store", input_html: { maxlength: 10 }  %>
     <%= f.input :commission_amount, label: "The commission you want per item (%)", input_html: { maxlength: 4 }  %>
+    <%= f.input :rent_time, label: "The time period you would want to take an item for (default is 30 days)", input_html: { maxlength: 4 }  %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+<% else %>
+
+<div class="new-store-container">
+<%= simple_form_for(@store) do |f| %>
+    <%= f.input :name, input_html: { maxlength: 40 } %>
+    <%= f.input :description, label: "Store description (limit 250 characters)", input_html: { maxlength: 250 } %>
+    <%= f.input :address, input_html: { maxlength: 150 }  %>
+    <%= f.input :location, label: "City" %>
+    <%= f.input :category, collection: Store::CATEGORY_CHOICES %>
+    <%= f.input :rent_price_min, label: "Minimun Item Price You Would accept for your item", input_html: { maxlength: 10 }  %>
+    <%= f.input :rent_price_max, label: "Maximum Item Price you Would accept for your item", input_html: { maxlength: 10 }  %>
+    <%#= f.input :commission_amount, label: "The commission you want per item (%)", input_html: { maxlength: 4 }  %>
     <%= f.input :rent_time, label: "The time period you would want to take an item for (in days)", input_html: { maxlength: 4 }  %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= link_to "Back", :back, class: "btn btn-primary" %>
-    <%= f.submit "Book", class: "btn btn-primary" %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
 <% end %>
 </div>
+
+<% end %>
+

@@ -25,7 +25,6 @@ class StoresController < ApplicationController
 
   def show
     authorize @store
-    @average_rating = average_rating(@store)
     if current_user
       @user = current_user
       authorize @user
@@ -44,6 +43,9 @@ class StoresController < ApplicationController
     authorize @store
     @user = current_user
     @store.user = current_user
+    if !@user.owner
+      @store.brand = true
+    end
     if @store.save
       redirect_to store_path(@store)
     else
@@ -65,8 +67,8 @@ class StoresController < ApplicationController
   end
 
   def destroy
-    authorize @store
     @store.destroy
+    authorize @store
     redirect_to user_path(current_user)
   end
 
@@ -75,7 +77,7 @@ class StoresController < ApplicationController
   def store_params
     params.require(:store).permit(:user_id, :name, :location, :description,
       :address, :rent_time, :commission_amount, :rent_price_min,
-      :rent_price_max, :photo, :photo_cache, :category)
+      :rent_price_max, :photo, :photo_cache, :category, :brand)
   end
 
   def find_store
@@ -109,14 +111,5 @@ class StoresController < ApplicationController
     .commission(@commission_min, @commission_max)
     .price(@price_min, @price_max)
     .time(@time_min, @time_max)
-  end
-
-  def average_rating(store)
-    average_rating = 0
-    @store.ratings.each do |rating|
-      average_rating += rating.score
-    end
-
-    average_rating = @store.ratings.size == 0 ? average_rating = 0 : average_rating /= @store.ratings.size
   end
 end
