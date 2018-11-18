@@ -66,17 +66,19 @@
     <% end %>
 
     <div class="store-rating-show">
-      <% num_stars = @store.rating %>
+      <% num_stars = @average_rating %>
       <% if !num_stars.nil? %>
+      <% count = 1 %>
       <% num_stars.times do %>
-        <i class="fas fa-star"></i>
+        <i class="fas fa-star star-<%=count%>"></i>
+        <% count += 1 %>
       <% end %>
       <% (5 - num_stars).times do %>
-        <i class="far fa-star"></i>
+        <i class="far fa-star star-<%=count%>"></i>
+        <% count += 1 %>
       <% end %>
       <% end %>
     </div>
-
 
 
     <div class="store-buttons">
@@ -96,4 +98,5 @@
 
 
 </div>
+    <%= render 'ratings/form', store: @store %>
 
