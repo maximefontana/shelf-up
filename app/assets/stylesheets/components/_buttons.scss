@@ -1,89 +1,88 @@
-.btn-form {
-  padding: 5px 10px;
-  box-shadow: 1px 1px 5px $grayfive;
+.button {
+  box-shadow: 0.1px 0.1px 3px $graythree;
+  border-radius: 25px;
+  font-weight: bold;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
 }
 
-.btn-big {
-  padding: 15px 60px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 5px $grayfive;
+.button-small{
+  width: 125px;
+  height: auto;
+  padding: 5px 15px;
 }
+
+.button-medium {
+  width: 150px;
+  height: auto;
+  padding: 5px 25px;
+}
+
+.button-large {
+  width: 200px;
+  height: auto;
+  padding: 5px 35px;
+}
+
+.button-blue {
+  color: $bluesix;
+  border: 2px solid $bluesix;
+}
+
+.button-blue:hover {
+  color: white;
+  background-color: $bluesix;
+}
+.button-green {
+  color: $greenthree;
+  border: 2px solid $greenthree;
+}
+
+.button-green:hover {
+  color: white;
+  background-color: $greenthree;
+}
+
+.button-red {
+  color: $redthree;
+  border: 2px solid $redthree;
+}
+
+.button-red:hover {
+  color: white;
+  background-color: $redthree;
+}
+
 
 .btn-big-homepage {
-  background-color: $bluesix;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 10px;
-  text-decoration: none;
+  color: $primarythree;
+  border: 3px solid $primarythree !important;
+  padding: 5px 35px;
   font-size: 25px;
-  font-weight: bold;
   border: none;
-  box-shadow: 1px 1px 5px $grayfive;
 }
 
 .btn-big-homepage:hover {
   text-decoration: none;
   background-color: $primarythree;
-
-}
-
-.btn-forward {
   color: white;
-  background-color: $greenthree;
-  box-shadow: 1px 1px 5px $grayfive;
+
 }
 
-.btn-forward:hover {
-  color: white;
-  text-decoration: none;
-  background-color: $greenfour;
-}
-
-
-.btn-back {
-  color: white;
-  background-color: $redthree;
-  box-shadow: 1px 1px 5px $grayfive;
-}
-
-.btn-back:hover {
-  color: white;
-  text-decoration: none;
-  background-color: $redfour;
-}
-
-.btn-info {
-  color: white;
-  background-color: $bluefour;
-  box-shadow: 1px 1px 5px $grayfive;
-}
-
-.btn-info:hover {
-  color: white;
-  text-decoration: none;
-  background-color: $bluefour;
-}
-
-.btn-banner {
-  padding: 20px 40px;
-  box-shadow: 1px 1px 5px $grayfive;
-}
 
 .filter-button {
-  padding: 5px 25px;
-  background-color: $bluesix;
-  width: 10%;
   margin: 8% auto 3% auto;
-  text-align: center;
-  color: white !important;
-  font-weight: bold;
-  border-radius: 3px;
   text-decoration: none;
-  box-shadow: 1px 1px 5px $grayfive;
+
+}
+
+.filter-button a {
+  color: $bluesix !important;
 }
 
 .filter-button:hover {
-  color: white !important;
+  color: $bluesix !important;
 }
 
 .filter-button-link {
