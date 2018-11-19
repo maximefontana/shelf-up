@@ -39,9 +39,12 @@ class StoresController < ApplicationController
     @user = current_user
     @store.user = current_user
     @store.address = "#{@store.address}, #{@store.location}"
+    @store.rating = 0
+
     if !@user.owner
       @store.brand = true
     end
+
     if @store.save
       redirect_to store_path(@store)
     else
