@@ -11,12 +11,18 @@
   padding: 8px;
   &:focus {
     outline: none;
+  ::placeholder {
+    color: white;
   }
 }
 
-::placeholder {
-  color: white;
+.form-text input {
+  color: black !important;
+  ::placeholder {
+    color: $graythree !important;
+  }
 }
+
 
 
 .navbar-search-form {
@@ -27,5 +33,13 @@
   padding: 2px 3px;
   &:focus {
     outline: none;
+  }
+}
+
+.new-store-container .form-text  {
+
+  color: black !important;
+  ::placeholder {
+    color: $grayone;
   }
 }
