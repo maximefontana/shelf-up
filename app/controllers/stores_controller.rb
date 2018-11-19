@@ -6,20 +6,14 @@ class StoresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show], raise: false
 
   def index
-    if params[:query]
-      @location = params[:query]
-      if params[:query].empty? # show all if user doesn't put a location
-        @stores = policy_scope(Store)
-      else
-        @stores = Store.search(@location)
-      end
-    elsif params_filter_present
-      filter_results
+    if current_user && current_user.owner
+      @user = current_user
+      @stores = search_stores.brand
+    elsif current_user
+      @user = current_user
+      @stores = search_stores.shop
     else
       @stores = policy_scope(Store)
-    end
-    if current_user
-      @user = current_user
     end
   end
 
@@ -82,6 +76,22 @@ class StoresController < ApplicationController
 
   def find_store
     @store = Store.find(params[:id])
+  end
+  
+  def search_stores
+    if params[:query]
+      @location = params[:query]
+      if params[:query].empty? # show all if user doesn't put a location
+        @stores = policy_scope(Store)
+      else
+        @stores = Store.search(@location)
+      end
+    elsif params_filter_present
+      filter_results
+    else
+      @stores = policy_scope(Store)
+    end
+    @stores
   end
 
   def params_filter_present

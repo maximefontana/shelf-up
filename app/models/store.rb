@@ -16,6 +16,9 @@ class Store < ApplicationRecord
   scope :commission, -> (min, max) { where("commission_amount >= #{min} AND commission_amount <= #{max}") }
   scope :price, -> (min, max) { where("rent_price_min >= #{min} AND rent_price_max <= #{max}") }
   scope :time, -> (min, max) { where("rent_time >= #{min} AND rent_time <= #{max}") }
+  scope :brand, -> { where(brand: true) }
+  scope :shop, -> { where(brand: false) }
+
 
   pg_search_scope :search,
   against: [ :location, :category, :name],
