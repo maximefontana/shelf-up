@@ -77,7 +77,7 @@ class StoresController < ApplicationController
   def find_store
     @store = Store.find(params[:id])
   end
-  
+
   def search_stores
     if params[:query]
       @location = params[:query]
