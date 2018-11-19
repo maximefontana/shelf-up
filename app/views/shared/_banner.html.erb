@@ -17,7 +17,7 @@
         <%# elsif user_signed_in? && !current_user.owner %>
         <%#= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations" %>
         <%# else %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Location", list: "location", autocomplete: :off %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Location", list: "location", autocomplete: :off, onfocus: "this.placeholder = ''" %>
         <%# end %>
       </div>
     </div>
