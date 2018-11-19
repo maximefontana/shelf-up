@@ -3,64 +3,94 @@
 
 <div class="edit-store-container">
 
-  <div class="store-category-show">
-    <%= @store.category %> - <%= @store.location %>
-  </div>
-
   <div class="store-details-show">
-    <div class="store-address-show">
-      <%= @store.address %>
+
+    <%= form_for(@store) do |f| %>
+    <!-- Do not change class names as these are used in JS -->
+    <div class="store-category-show">
+      <%= @store.category %>
+      <% if current_user && policy(@store).update? %>
+      <a href="#" class="fas fa-pencil-alt edit-store-category"></a>
+      <% end %>
+      <%= f.text_field :name, class: "input-store-category hidden" %>
     </div>
-    <div class="store-commish-show">
-      <%= @store.commission_amount %>% Commission
-    </div>
-    <div class="store-rent-time">
-      <%= @store.rent_time %> day Rental
-    </div>
-    <div class="store-rent">
-      €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>/ Product
+
+    <div class="store-name">
+      <div class="store-name-font">
+       <%= @store.name %>
+       <% if current_user && policy(@store).update? %>
+       <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
+       <% end %>
+       <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+     </div>
+   </div>
+
+   <div class="store-address-show">
+    <%= @store.address %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-address"></a>
+    <% end %>
+    <%= f.text_field :address, class: "input-store-address hidden" %>
+  </div>
+
+  <div class="store-commish-show">
+    <%= @store.commission_amount %>% Commission
+    <% if current_user && policy(@store).update? && current_user.owner %>
+    <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
+    <% end %>
+    <%= f.text_field :commission_amount, class: "input-store-commish hidden" %>
+  </div>
+
+  <div class="store-rent-time">
+    Rent for: <%= @store.rent_time %> days
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-time"></a>
+    <% end %>
+    <%= f.text_field :rent_time, class: "input-store-time hidden" %>
+  </div>
+
+  <div class="store-rent-price">
+    €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>/ Product
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
+    <% end %>
+    <div class="input-store-price hidden">
+      <%= f.text_field :rent_price_min %>
+      <%= f.text_field :rent_price_max %>
     </div>
   </div>
 
-  <%= form_for(@store) do |f| %>
-  <!-- Do not change class names as these are used in JS -->
+  <div class="store-owner">
+    <% if user_signed_in? %>
+    <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
+    <% else %>
+    <%= @store.user.username.capitalize %>
+    <% end %>
+  </div>
 
-  <div class="store-name">
-    <div class="store-name-font">
-     <%= @store.name %>
-     <% if current_user && policy(@store).update? %>
-     <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
-     <% end %>
-     <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
-   </div>
- </div>
-
- <div class="store-city">City: <%= @store.location %>
-  <% if current_user && policy(@store).update? %>
-  <a href="#" class="fas fa-pencil-alt edit-store-city"></a>
+  <% if !@store.description.nil? %>
+  <div class="store-description">
+    <%= @store.description %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
+    <% end %>
+    <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
+    <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
+  </div>
   <% end %>
-  <%= f.text_field :location, class: "input-store-city hidden"%>
-</div>
 
-<div class="store-owner">
-  <% if user_signed_in? %>
-  <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
-  <% else %>
-  <%= @store.user.username.capitalize %>
+  <% if !@store.link.nil? %>
+  <div class="store-link">
+    Website: <%= link_to "#{@store.link}", @store.link %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-link"></a>
+    <% end %>
+    <%= f.text_field :link, class: "input-store-link hidden" %>
+  </div>
+  <% end %>
+
   <% end %>
 </div>
-
-<% if !@store.description.empty? %>
-<div class="store-description">
-  <%= @store.description %>
-  <% if current_user && policy(@store).update? %>
-  <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
-  <% end %>
-  <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-  <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
-</div>
-<% end %>
-<% end %>
 
 <div class="store-rating-show">
   <% num_stars = @store.rating %>
@@ -104,7 +134,15 @@
   <% end %>
 </div>
 
-
 </div>
 <%= render 'ratings/form', store: @store %>
 
+<% if !@store.longitude.nil? && !@store.latitude.nil? %>
+<div
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+<% end %>

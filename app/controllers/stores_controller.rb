@@ -8,16 +8,18 @@ class StoresController < ApplicationController
   def index
     if current_user && current_user.owner
       @user = current_user
-      @stores = search_stores.brand
+      @stores = search_stores.brand.not_belonging_to_user(@user)
     elsif current_user
       @user = current_user
-      @stores = search_stores.shop
+      @stores = search_stores.shop.not_belonging_to_user(@user)
+
     else
       @stores = policy_scope(Store)
     end
   end
 
   def show
+    @markers = [{ lng: @store.longitude, lat: @store.latitude }]
     authorize @store
     if current_user
       @user = current_user
@@ -37,9 +39,13 @@ class StoresController < ApplicationController
     authorize @store
     @user = current_user
     @store.user = current_user
+    @store.address = "#{@store.address}, #{@store.location}"
+    @store.rating = 0
+
     if !@user.owner
       @store.brand = true
     end
+
     if @store.save
       redirect_to store_path(@store)
     else
@@ -71,7 +77,7 @@ class StoresController < ApplicationController
   def store_params
     params.require(:store).permit(:user_id, :name, :location, :description,
       :address, :rent_time, :commission_amount, :rent_price_min,
-      :rent_price_max, :photo, :photo_cache, :category, :brand)
+      :rent_price_max, :photo, :photo_cache, :category, :brand, :link)
   end
 
   def find_store

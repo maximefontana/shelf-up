@@ -1,20 +1,19 @@
-<div class="scroll-box">
   <div class="store-index-img-banner" id="listings-banner">
-  <h1 class="banner-header">Amsterdam</h1>
-</div>
+    <h1 class="banner-header">Amsterdam</h1>
+  </div>
 
-  <% if !user_signed_in? %>
+    <% if !user_signed_in? %>
 
-    <%= render 'stores/no_user_index' %>
+      <%= render 'stores/no_user_index' %>
 
-  <% elsif current_user.owner %>
+    <% elsif current_user.owner %>
 
-    <%= render 'stores/owner_brands_index' %>
+      <%= render 'stores/owner_brands_index' %>
 
-  <% else %>
+    <% else %>
 
-    <%= render 'stores/entrepreneur_store_index' %>
+      <%= render 'stores/entrepreneur_store_index' %>
 
-  <% end %>
+    <% end %>
 
-</div>
+  </div>
