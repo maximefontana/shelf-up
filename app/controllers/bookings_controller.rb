@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     booking.store = store
     booking.user = current_user
     if booking.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) + "#bookings"
     else
       render :new
     end
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.update(booking_params)
     if @booking.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) + "#bookings"
     else
       render :edit
     end

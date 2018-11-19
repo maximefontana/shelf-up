@@ -1,10 +1,12 @@
 print "Cleaning DB..."
-Booking.delete_all
+Booking.destroy_all
 Store.destroy_all
 User.destroy_all
 puts 'done'
 
+sleep(0.5)
 puts "Growing the new seeds into big beautiful trees..."
+sleep(0.5)
 
 
 print "Users Creating..."
@@ -42,6 +44,7 @@ u4 = User.create!(
   )
 
 puts 'done'
+sleep(0.5)
 
 # placeholder for the description, at 231 characters. Limit 250
 lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -222,6 +225,7 @@ s11 = Store.create!(
   rent_price_max: 500
   )
 puts 'done'
+sleep(0.5)
 
 print 'Creating bookings...'
 b1 = Booking.create!(
@@ -275,5 +279,6 @@ b5 = Booking.create!(
   )
 
 puts 'done'
+sleep(0.5)
 
 puts 'SEEDS IS GOOOOOOOD!'
