@@ -13,11 +13,11 @@
     <div class="banner-search">
       <div><%= form_tag stores_path, method: :get do %>
         <% if user_signed_in? && current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off, onfocus: "this.placeholder = ''" %>
         <% elsif user_signed_in? && !current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off, onfocus: "this.placeholder = ''" %>
         <% else %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search", autocomplete: :off %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search", autocomplete: :off, onfocus: "this.placeholder = ''" %>
         <% end %>
       </div>
     </div>
