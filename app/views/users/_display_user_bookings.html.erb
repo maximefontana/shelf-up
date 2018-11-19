@@ -1,53 +1,58 @@
 <div class="booking-card">
-  <div class="user-bookings-store-name">
-    <%= store.name %>
+  <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">&nbsp;
   </div>
-  <div class="user-bookings-category-location">
-    <%= booking.category %> - <%= booking.store.location %>
+  <div class="booking-card-content">
+    <div class="user-bookings-store-name">
+      <%=  link_to store.name, store_path(store) %>
+    </div>
+    <div class="user-bookings-category-location">
+      <%= booking.category %> - <%= booking.store.location %>
+    </div>
+
+    <div class="user-bookings-total-price">
+      <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
+    </div>
   </div>
+  <div class="booking-card-extra">
+    <div class="user-bookings-status">
+      <%= booking.status %>
+    </div>
 
-  <div class="user-bookings-total-price">
-    <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
-  </div>
+    <div class="user-bookings-actions">
+      <!-- if booking is pending and user is an owner -->
+      <% if @user.owner %>
+      <!-- add option to accept or delete booking if pending -->
+      <% if booking.status == "Pending" && policy(booking).update? %>
+      <%= form_for(booking, method: :put) do |f| %>
+      <%= f.hidden_field :status, value: "Accepted" %>
+      <%= f.submit "Accept", class: "button button-small button-blue" %>
+      <% end %>
+      <%= form_for(booking, method: :put) do |f| %>
+      <%= f.hidden_field :status, value: "Declined" %>
+      <%= f.submit "Decline", class: "button button-small button-red" %>
+      <% end %>
+      <% end %>
 
-  <div class="user-bookings-status">
-    Status: <%= booking.status %>
-  </div>
+      <!-- if user is an entrepreneur -->
+      <% else %>
 
-  <!-- if booking is pending and user is an owner -->
-  <% if @user.owner %>
+      <% if booking.status == 'Pending' %>
+      <%= link_to "Cancel", booking_path(booking), method: :delete, class: "button button-small button-red" %>
+      <% end %>
 
-  <!-- add option to accept or delete booking if pending -->
-  <% if booking.status == "Pending" && policy(booking).update? %>
-  <%= form_for(booking, method: :put) do |f| %>
-  <%= f.hidden_field :status, value: "Accepted" %>
-  <%= f.submit "Accept", class: "button button-small button-blue" %>
-  <% end %>
-  <%= form_for(booking, method: :put) do |f| %>
-  <%= f.hidden_field :status, value: "Declined" %>
-  <%= f.submit "Decline", class: "button button-small button-red" %>
-  <% end %>
-  <% end %>
+      <% end %>
 
-  <!-- if user is an entrepreneur -->
-  <% else %>
+      <a href="#" class="button button-small button-blue user-bookings-message-button">Messages</a>
+    </div>
 
-  <% if booking.status == 'Pending' %>
-  <%= link_to "Cancel", booking_path(booking), method: :delete, class: "button button-small button-red" %>
-  <% end %>
-
-  <% end %>
-
-  <div class="user-bookings-message-button">
-    <a href="#" class="button button-small button-blue">Messages</a>
   </div>
 
   <div class="user-bookings-chatroom">
     <div class="user-chatroom-messages">
 
       <!-- display comment if there is one -->
-      <% if !booking.comment.nil? %>
-      <div>
+      <% if booking.comment %>
+      <div class="booking-comment">
         <%= booking.store.user.username.capitalize %> :
         <%= booking.comment %>
       </div>
@@ -55,12 +60,16 @@
 
       <!-- display messages if there are any -->
       <% if !booking.messages.empty? %>
-      <% booking.messages.each do |message| %>
-      <div>
-        <%= message.user.username.capitalize %> :
-        <%= message.text %>
+      <div class="booking-messages">
+
+        <% booking.messages.each do |message| %>
+        <div class="booking-message">
+          <%= message.user.username.capitalize %> :
+          <%= message.text %>
+        </div>
+        <% end %>
+
       </div>
-      <% end %>
       <% end %>
 
     </div>
