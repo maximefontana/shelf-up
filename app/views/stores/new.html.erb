@@ -1,6 +1,6 @@
-Add a new store
-
 <% if @user.owner %>
+
+Add a Store
 
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>
@@ -21,6 +21,8 @@ Add a new store
 </div>
 
 <% else %>
+
+Add a Brand
 
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>

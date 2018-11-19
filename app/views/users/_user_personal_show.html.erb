@@ -1,0 +1,51 @@
+  <!-- USER PERSONAL SHOW PAGE -->
+
+  <!-- tabs -->
+  <div class="tabs">
+    <div class="tab-left"></div>
+    <a href="#" class="tab tab-first active">Personal</a>
+    <a href="#" class="tab tab-second">Bookings</a>
+    <a href="#" class="tab tab-third">Current Shelfs</a>
+    <a href="#" class="tab tab-last">Messages</a>
+    <div class="tab-right"></div>
+  </div>
+
+  <div class="user-show-box personal-details">
+    <div class="user-show-avatar">
+      <% if @user.photo %>
+      <%= cl_image_tag @user.photo,
+      width: 130, height: 130, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
+      <% end %>
+    </div>
+
+    <div class="user-show-name">
+      <%= @user.username.capitalize %>
+    </div>
+
+    <div class="user-show-edit-btn">
+      <%= link_to edit_user_registration_path(@user) do %>
+      Edit Profile
+      <% end %>
+    </div>
+
+    <div class="user-show-details">
+      <div>Email: <%= @user.email %></div>
+      <div>Phone: +31 06123456</div>
+      <div>Web: www.BadAssBrew.com</div>
+      <div>** I Think we need more info here? **</div>
+    </div>
+
+    <!-- if user is an owner -->
+
+    <% if @user.owner %>
+
+    <%= render 'users/owner_show' %>
+
+    <!-- if user is an entrepreneur -->
+    <% else %>
+
+    <%= render 'users/entrepreneur_show' %>
+
+    <% end %>
+
+  </div>
