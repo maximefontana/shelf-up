@@ -49,10 +49,35 @@
   bottom: 5%;
 }
 
-.user-bookings-chatroom {
+.user-bookings-message-button {
   position: absolute;
-  width: 40%;
-  height: 50%;
-  right: 25%;
-  top: 50%;
+  left: 5%;
+  bottom: 5%;
+}
+
+.user-bookings-message-button a {
+   color: $bluesix !important;
+}
+
+.user-bookings-message-button a:hover {
+  color: white !important;
+}
+
+.user-bookings-chatroom {
+  height: 200px;
+  background-color: white;
+  width: 80vw;
+  border-radius: 4px;
+  margin: 2% auto;
+  position: relative;
+  box-shadow: 1px 1px 5px $graythree;
+}
+
+.user-chatroom-messages {
+  position: absolute;
+  top: 0;
+  padding: 2%;
+  overflow-y: scroll;
+  max-height: 90%;
+  font-size: 18px;
 }
