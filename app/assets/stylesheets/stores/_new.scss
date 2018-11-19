@@ -1,7 +1,49 @@
 .new-store-container {
-  margin-top: 10%;
-  width: 80%;
-  margin: 0 auto;
+  width: 50%;
   height: auto;
   min-height: 92vh;
+  border-radius: 5px;
+  background-color: #F4F1F1;
+  color:#1E1D1D;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-weight: normal;
+}
+
+.store-form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+h1{
+  font-weight:bold;
+  color:white;
+  text-shadow: 1px 1px black;
+}
+
+body{
+  background-color: rgba(0, 0, 0, 0.15);
+
+}
+
+.button-small{
+  color:red;
+  text-decoration:none;
+}
+
+.btn-primary{
+background-color:$greenthree;
+border-width: 0px;
+}
+
+.btn-primary:hover{
+background-color:$greenfour;
 }
