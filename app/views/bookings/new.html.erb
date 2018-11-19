@@ -1,7 +1,5 @@
 <div class="container-new-booking">
 
-  Make a Booking
-
   <script>
     function calcPrice() {
       // calculations
@@ -20,6 +18,7 @@
   </script>
 
   <div class="booking-new-form">
+    <h2> Make a Booking </h2>
     <%= simple_form_for([@store, @booking]) do |f| %>
       <%= f.input :category, collection: Booking::CATEGORY_CHOICES, input_html: { multiple: true }, label: "Item type" %>
       <!-- works on form_for not simple form...I think, I found it on the internet -->
@@ -36,7 +35,7 @@
       <%= f.input :start_date, as: :date, class: 'form-control datepicker' %>
       <%= f.input :end_date, as: :date %>
       <%= f.input :comment, label: "Message" %>
-      <%= f.submit "Book", class: "button button-small button-blue" %>
+      <%= f.submit "Book", class: "button button-medium button-green" %>
       <%= link_to "Back", :back, class: "button button-small button-red" %>
     <% end %>
   </div>
