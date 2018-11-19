@@ -6,7 +6,78 @@
   background-color: white;
   width: 80vw;
   border-radius: 4px;
-  margin: 7px 10px;
+  margin: 2% auto;
   position: relative;
   box-shadow: 1px 1px 5px $graythree;
+}
+
+.user-bookings-store-name {
+  position: absolute;
+  left: 40%;
+  top: 5px;
+  font-size: 32px;
+}
+
+.user-bookings-category-location {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  font-size: 16px;
+}
+
+.user-bookings-status {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+}
+
+.user-bookings-dates {
+  position: absolute;
+  right: 5%;
+  top: 5px;
+}
+
+.user-bookings-total-price {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
+
+.bookings-status-buttons{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.user-bookings-message-button {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+}
+
+.user-bookings-message-button a {
+   color: $bluesix !important;
+}
+
+.user-bookings-message-button a:hover {
+  color: white !important;
+}
+
+.user-bookings-chatroom {
+  height: 200px;
+  background-color: white;
+  width: 80vw;
+  border-radius: 4px;
+  margin: 2% auto;
+  position: relative;
+  box-shadow: 1px 1px 5px $graythree;
+}
+
+.user-chatroom-messages {
+  position: absolute;
+  top: 0;
+  padding: 2%;
+  overflow-y: scroll;
+  max-height: 90%;
+  font-size: 18px;
 }

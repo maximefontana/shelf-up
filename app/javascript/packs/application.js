@@ -14,3 +14,6 @@ openSearch();
 
 import { addRating } from '../components/rating';
 addRating();
+
+import { openMessages } from '../components/userShowMessages';
+openMessages();
