@@ -50,7 +50,7 @@
   <% end %>
 </div>
 
-<% if !@store.description.empty? %>
+<% if !@store.description.nil? %>
 <div class="store-description">
   <%= @store.description %>
   <% if current_user && policy(@store).update? %>
@@ -108,3 +108,12 @@
 </div>
 <%= render 'ratings/form', store: @store %>
 
+<% if !@store.longitude.nil? && !@store.latitude.nil? %>
+<div
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+<% end %>
