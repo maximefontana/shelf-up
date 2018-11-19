@@ -92,7 +92,7 @@
 
 
         <% end %>
-        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
         <% if booking.status == "Pending" && policy(booking).update? %>
         <%= form_for(booking, method: :put) do |f| %>
         <%= f.hidden_field :status, value: "Accepted" %>
@@ -136,7 +136,7 @@
         <p>Category: <%= booking.category %></p>
         <p><%= booking.start_date %></p>
         <p><%= booking.end_date %></p>
-        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
         <p>Status: <%= booking.status %></p>
         <% if booking.status == 'Pending' %>
         <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
@@ -179,7 +179,7 @@
       <div class="booking-card">
         <p class="user-bookings-store-name">Store: <%= store.name %></p>
         <p>Category: <%= booking.category %></p>
-        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
         <% if booking.status == "Pending" && policy(booking).update? %>
         <%= form_for(booking, method: :put) do |f| %>
         <%= f.hidden_field :status, value: "Accepted" %>
@@ -207,7 +207,7 @@
         <p>Category: <%= booking.category %></p>
         <p><%= booking.start_date %></p>
         <p><%= booking.end_date %></p>
-        <p>Total Price: €<%= booking.total_price %></p>
+        <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
         <p>Status: <%= booking.status %></p>
         <% if booking.status == 'Pending' %>
         <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
