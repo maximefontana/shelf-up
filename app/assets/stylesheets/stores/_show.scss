@@ -11,6 +11,14 @@
   background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 }
 
+.store-img-banner{
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+
 .banner-header{
   color:white;
   font-weight:bold;
