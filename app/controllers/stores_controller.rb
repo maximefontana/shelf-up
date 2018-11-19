@@ -38,6 +38,7 @@ class StoresController < ApplicationController
     authorize @store
     @user = current_user
     @store.user = current_user
+    @store.address = "#{@store.address}, #{@store.location}"
     if !@user.owner
       @store.brand = true
     end
@@ -72,7 +73,7 @@ class StoresController < ApplicationController
   def store_params
     params.require(:store).permit(:user_id, :name, :location, :description,
       :address, :rent_time, :commission_amount, :rent_price_min,
-      :rent_price_max, :photo, :photo_cache, :category, :brand)
+      :rent_price_max, :photo, :photo_cache, :category, :brand, :link)
   end
 
   def find_store

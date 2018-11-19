@@ -12,8 +12,7 @@ class Store < ApplicationRecord
   validates :name, presence: true
   validates :photo, presence: true
   validates :category, presence: true
-
-  CATEGORY_CHOICES = %w(Clothing Jewelry Art Culinary Other)
+  validates :address, presence: true
 
   include PgSearch
   scope :commission, -> (min, max) { where("commission_amount >= #{min} AND commission_amount <= #{max}") }

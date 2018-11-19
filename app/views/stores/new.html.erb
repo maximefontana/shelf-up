@@ -6,9 +6,10 @@ Add a Store
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
     <%= f.input :description, label: "Store description (limit 250 characters)", input_html: { maxlength: 250 } %>
-    <%= f.input :address, input_html: { maxlength: 150 }  %>
+    <%= f.input :address, label: "Street Adress", input_html: { maxlength: 150 }  %>
     <%= f.input :location, label: "City" %>
-    <%= f.input :category, collection: Store::CATEGORY_CHOICES %>
+    <%= f.input :category %>
+    <%= f.input :link %>
     <%= f.input :rent_price_min, label: "Minimun Item Price You accept in your store", input_html: { maxlength: 10 }  %>
     <%= f.input :rent_price_max, label: "Maximum Item Price you accept in your store", input_html: { maxlength: 10 }  %>
     <%= f.input :commission_amount, label: "The commission you want per item (%)", input_html: { maxlength: 4 }  %>
@@ -28,9 +29,10 @@ Add a Brand
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
     <%= f.input :description, label: "Store description (limit 250 characters)", input_html: { maxlength: 250 } %>
-    <%= f.input :address, input_html: { maxlength: 150 }  %>
+    <%= f.input :address, label: "Street Adress", input_html: { maxlength: 150 }  %>
     <%= f.input :location, label: "City" %>
-    <%= f.input :category, collection: Store::CATEGORY_CHOICES %>
+    <%= f.input :category %>
+    <%= f.input :link %>
     <%= f.input :rent_price_min, label: "Minimun Item Price You Would accept for your item", input_html: { maxlength: 10 }  %>
     <%= f.input :rent_price_max, label: "Maximum Item Price you Would accept for your item", input_html: { maxlength: 10 }  %>
     <%#= f.input :commission_amount, label: "The commission you want per item (%)", input_html: { maxlength: 4 }  %>
