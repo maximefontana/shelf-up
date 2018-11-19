@@ -20,6 +20,7 @@ class Store < ApplicationRecord
   scope :time, -> (min, max) { where("rent_time >= #{min} AND rent_time <= #{max}") }
   scope :brand, -> { where(brand: true) }
   scope :shop, -> { where(brand: false) }
+  scope :not_belonging_to_user, -> (current_user) { where("user_id != #{current_user.id}") }
 
   pg_search_scope :search,
   against: [ :location, :category, :name],
