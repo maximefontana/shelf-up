@@ -1,8 +1,6 @@
 print "Cleaning DB..."
 Booking.delete_all
-puts "booking"
-Store.delete_all
-puts "store"
+Store.destroy_all
 User.destroy_all
 puts 'done'
 
