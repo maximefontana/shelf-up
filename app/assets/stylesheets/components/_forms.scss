@@ -9,11 +9,18 @@
   font-weight: lighter;
   width: 300px;
   padding: 8px;
+  ::placeholder {
+    color: white;
+  }
 }
 
-::placeholder {
-  color: white;
+.form-text input {
+  color: black !important;
+  ::placeholder {
+    color: $graythree !important;
+  }
 }
+
 
 
 .navbar-search-form {
@@ -22,4 +29,12 @@
   border-radius: 25px;
   text-align: center;
   padding: 2px 3px;
+}
+
+.new-store-container .form-text  {
+
+  color: black !important;
+  ::placeholder {
+    color: $grayone;
+  }
 }
