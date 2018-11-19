@@ -4,10 +4,15 @@
 
   <script>
     function calcPrice() {
+      // calculations
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
 
-      document.getElementById('total-cost').innerHTML = "Total Cost: €" + (pricePerUnit*unitQuantity).toString();
+      const bookingFee = Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100;
+      document.getElementById('store-fee').innerHTML = "Store's Insurance Policy Fee: €" + bookingFee.toString();
+
+      // updating HTML
+      document.getElementById('total-cost').innerHTML = "Total Cost: €" + (Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100).toString();
       if (unitQuantity === "") {
         document.getElementById('total-cost').innerHTML = "Total Cost: €0";
       }

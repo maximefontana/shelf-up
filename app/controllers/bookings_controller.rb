@@ -28,7 +28,8 @@ class BookingsController < ApplicationController
 
     # set booking_fee to 15% of subtotal
     params[:booking][:booking_fee] =
-      ((params[:booking][:price_per_unit] * params[:booking][:quantity]) * 0.15).to_i
+      ((params[:booking][:price_per_unit] * params[:booking][:quantity]) * 0.15)
+      .round.to_i
 
     # set total_price to subtotal plus booking_fee
     params[:booking][:total_price] =
