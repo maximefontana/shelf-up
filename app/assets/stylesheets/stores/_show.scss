@@ -4,11 +4,14 @@
   height: 40vh;
   width: 100%;
   border-radius: 4px 4px 0px 0px;
+  margin-top: 5%;
 }
 
 .edit-store-container {
   height: 60vh;
   position: relative;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .store-name-font {
@@ -16,7 +19,7 @@
 }
 .store-name {
   position: absolute;
-  top: 4%;
+  top: 9%;
   left: 3%;
   font-weight: bolder;
   color: $grayfive;
@@ -24,7 +27,7 @@
 
 .store-category-show {
   position: absolute;
-  top: 1%;
+  top: 5%;
   left: 3%;
   font-size: 18px;
   color: $grayfive;
@@ -44,7 +47,7 @@
 
 .store-owner{
   position: absolute;
-  top: 16%;
+  top: 22%;
   left: 3%;
   right: 0;
   font-size: 15px;
@@ -78,8 +81,8 @@
 
 .store-description {
   position: absolute;
-  top: 20%;
-  left: 35%;
+  top: 25%;
+  left: 40%;
   font-size: 20px;
   width: 50%;
 }
