@@ -119,7 +119,7 @@
         <% end %>
 
         <button>Respond</button>
-        <%= form_for(Message.new) do |f| %>
+        <%= form_for([booking, @message]) do |f| %>
         <%= f.text_field :text %>
         <%= f.submit "Send" %>
         <% end %>
