@@ -4,22 +4,21 @@
 <div class="edit-store-container">
 
   <div class="store-category-show">
-    Category: <%= @store.category %>
+    <%= @store.category %> - <%= @store.location %>
   </div>
 
   <div class="store-details-show">
-    Details:
     <div class="store-address-show">
-      Address: <%= @store.address %>
+      <%= @store.address %>
     </div>
     <div class="store-commish-show">
-      Commission Rate: <%= @store.commission_amount %>
+      <%= @store.commission_amount %>% Commission
     </div>
     <div class="store-rent-time">
-      Rent Time: <%= @store.rent_time %>
+      <%= @store.rent_time %> day Rental
     </div>
     <div class="store-rent">
-      Rent: €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>
+      €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>/ Product
     </div>
   </div>
 
@@ -44,7 +43,6 @@
 </div>
 
 <div class="store-owner">
-  Owner:
   <% if user_signed_in? %>
   <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
   <% else %>

@@ -1,13 +1,13 @@
 .store-img-banner{
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  height: 40vh;
   width: 100%;
   border-radius: 4px 4px 0px 0px;
 }
 
 .edit-store-container {
-  height: 1000px;
+  height: 60vh;
   position: relative;
 }
 
@@ -16,38 +16,41 @@
 }
 .store-name {
   position: absolute;
-  top: 1%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  min-width: 50%;
+  top: 4%;
+  left: 3%;
   font-weight: bolder;
   color: $grayfive;
 }
 
 .store-category-show {
   position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  min-width: 50%;
-  font-size: 25px;
+  top: 1%;
+  left: 3%;
+  font-size: 18px;
   color: $grayfive;
 }
 
 .store-details-show {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   position: absolute;
-  bottom: 15%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  min-width: 50%;
-  font-size: 25px;
+  top: 27%;
+  left: 3%;
+  max-width: 28%;
+  font-size: 22px;
 }
+
+
+.store-owner{
+  position: absolute;
+  top: 16%;
+  left: 3%;
+  right: 0;
+  font-size: 15px;
+  font-weight: light;
+}
+
 .store-address-show {
 
 }
@@ -66,28 +69,17 @@
 
 .store-city {
   position: absolute;
-  top: 15%;
-  left: 50%;
-  right: 0;
+  top: 70%;
+  left: 3%;
   font-size: 15px;
   font-weight: light;
 }
 
-.store-owner{
-  position: absolute;
-  top: 15%;
-  left:35%;
-  right: 0;
-  font-size: 15px;
-  font-weight: light;
-}
 
 .store-description {
   position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  top: 20%;
+  left: 35%;
   font-size: 20px;
   width: 50%;
 }
@@ -95,19 +87,14 @@
 .store-rating-show {
   position: absolute;
   top: 55%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  left: 44%;
   font-size: 55px;
 }
 
 .store-buttons {
   position: absolute;
-  bottom: 3%;
-  left: 0;
-  right: 0;
-  text-align: center;
+  top: 7%;
+  left: 50%;
 }
 
 .input-store-name {
@@ -128,4 +115,5 @@
 
 .star {
   cursor: pointer;
+  color: gold !important;
 }
