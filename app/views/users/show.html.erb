@@ -132,40 +132,52 @@
       <% else %>
       <% @user.bookings.each do |booking| %>
       <div class="booking-card">
-        <p class="user-bookings-store-name">Store: <%= booking.store.name %></p>
-        <p>Category: <%= booking.category %></p>
-        <p><%= booking.start_date %></p>
-        <p><%= booking.end_date %></p>
-        <p>Total Price: €<%= booking.total_price %></p>
-        <p>Status: <%= booking.status %></p>
+        <div class="user-bookings-store-name"><%= booking.store.name %></div>
+        <div class="user-bookings-category-location">
+          <%= booking.category %> - <%= booking.store.location %>
+          </div>
+        <div class="user-bookings-dates"><%= booking.start_date %> - <%= booking.end_date %></div>
+        <div class="user-bookings-total-price">
+          Total Price: €<%= booking.total_price %>
+        </div>
+        <div class="user-bookings-status">
+          <%= booking.status %>
+        </div>
         <% if booking.status == 'Pending' %>
-        <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+        <div class="bookings-status-buttons">
+        <%= link_to "Cancel", booking_path(booking), method: :delete, class: "button button-small button-red" %>
         <% end %>
+         <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+         </div>
+        <div class="user-bookings-chatroom">
+          <% if !booking.comment.nil? %>
+          <div>
+            <%= booking.store.user.username.capitalize %> :
+            <%= booking.comment %>
+            <% end %>
+          </div>
+          <% if !booking.messages.empty? %>
+            <% booking.messages.each do |message| %>
+          <div>
+            <%= message.user.username.capitalize %> :
+            <%= message.text %>
+            <% end %>
+            <% end %>
+          </div>
+          <div>
+            <%= form_for([booking, @message]) do |f| %>
+            <%= f.text_field :text %>
+            <%= f.submit "Send", class: "button button-small button-blue" %>
+          <% end %>
+          </div>
 
-        <% if !booking.comment.nil? %>
-        From: <%= booking.store.user.username.capitalize %>
-        <%= booking.comment %>
-        <% end %>
-
-        <% if !booking.messages.empty? %>
-        <% booking.messages.each do |message| %>
-        From: <%= message.user.username.capitalize %>
-        <%= message.text %>
         <% end %>
         <% end %>
-
-        <button>Respond</button>
-        <%= form_for([booking, @message]) do |f| %>
-        <%= f.text_field :text %>
-        <%= f.submit "Send" %>
-        <% end %>
-
+        </div>
       </div>
-      <% end %>
-      <% end %>
 
     </div>
-    <%= link_to "Back", stores_path, class: "button button-small button-red" %>
+
   </div>
 
   <!-- current shelves tab -->
