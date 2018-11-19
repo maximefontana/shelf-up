@@ -5,6 +5,7 @@
   background-color: transparent;
   text-align: center;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .button-small{
@@ -23,6 +24,14 @@
   width: 200px;
   height: auto;
   padding: 5px 35px;
+}
+
+.button-extra-large {
+  width: 300px;
+  height: auto;
+  padding: 15px 65px;
+  border-radius: 50px;
+  font-size: 22px;
 }
 
 .button-blue {
