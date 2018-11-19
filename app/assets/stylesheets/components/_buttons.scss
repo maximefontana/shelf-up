@@ -44,7 +44,7 @@
   background-color: $greenthree;
 }
 
-.button-red {
+.button-red, .button-red:focus {
   color: $redthree;
   border: 2px solid $redthree;
 }
