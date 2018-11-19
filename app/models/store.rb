@@ -19,7 +19,6 @@ class Store < ApplicationRecord
   scope :brand, -> { where(brand: true) }
   scope :shop, -> { where(brand: false) }
 
-
   pg_search_scope :search,
   against: [ :location, :category, :name],
   using: {

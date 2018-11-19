@@ -1,0 +1,76 @@
+<div class="booking-card">
+  <div class="user-bookings-store-name">
+    <%= store.name %>
+  </div>
+  <div class="user-bookings-category-location">
+    <%= booking.category %> - <%= booking.store.location %>
+  </div>
+
+  <div class="user-bookings-total-price">
+    <p>Total Price: €<%= (booking.total_price.to_f)/100 %></p>
+  </div>
+
+  <div class="user-bookings-status">
+    Status: <%= booking.status %>
+  </div>
+
+  <!-- if booking is pending and user is an owner -->
+  <% if @user.owner %>
+
+  <!-- add option to accept or delete booking if pending -->
+  <% if booking.status == "Pending" && policy(booking).update? %>
+  <%= form_for(booking, method: :put) do |f| %>
+  <%= f.hidden_field :status, value: "Accepted" %>
+  <%= f.submit "Accept", class: "button button-small button-blue" %>
+  <% end %>
+  <%= form_for(booking, method: :put) do |f| %>
+  <%= f.hidden_field :status, value: "Declined" %>
+  <%= f.submit "Decline", class: "button button-small button-red" %>
+  <% end %>
+  <% end %>
+
+  <!-- if user is an entrepreneur -->
+  <% else %>
+
+  <% if booking.status == 'Pending' %>
+  <%= link_to "Cancel", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+  <% end %>
+
+  <% end %>
+
+  <div class="user-bookings-message-button">
+    <a href="#" class="button button-small button-blue">Messages</a>
+  </div>
+
+  <div class="user-bookings-chatroom">
+    <div class="user-chatroom-messages">
+
+      <!-- display comment if there is one -->
+      <% if !booking.comment.nil? %>
+      <div>
+        <%= booking.store.user.username.capitalize %> :
+        <%= booking.comment %>
+      </div>
+      <% end %>
+
+      <!-- display messages if there are any -->
+      <% if !booking.messages.empty? %>
+      <% booking.messages.each do |message| %>
+      <div>
+        <%= message.user.username.capitalize %> :
+        <%= message.text %>
+      </div>
+      <% end %>
+      <% end %>
+
+    </div>
+
+    <!-- form to send new message -->
+    <div class = "chatroom-submit">
+      <%= form_for([booking, @message]) do |f| %>
+      <%= f.text_field :text %>
+      <%= f.submit "Send", class: "button button-small button-blue" %>
+      <% end %>
+    </div>
+  </div>
+</div>

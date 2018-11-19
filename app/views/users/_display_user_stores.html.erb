@@ -1,0 +1,10 @@
+<% @user.stores.each do |store| %>
+  <h3><%= link_to store.name, store_path(store) %></h3>
+  <% num_stars = store.rating %>
+  <% num_stars.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - num_stars).times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+<% end %>
