@@ -9,5 +9,4 @@ class Booking < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   # @category_choices = %w(Clothing Art Culinary Other)
-  CATEGORY_CHOICES = %w(Clothing Jewelry Art Culinary Other)
 end

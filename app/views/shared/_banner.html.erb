@@ -12,15 +12,22 @@
 
     <div class="banner-search">
       <div><%= form_tag stores_path, method: :get do %>
-        <% if user_signed_in? && current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off, onfocus: "this.placeholder = ''" %>
-        <% elsif user_signed_in? && !current_user.owner %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations", autocomplete: :off, onfocus: "this.placeholder = ''" %>
-        <% else %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search", autocomplete: :off, onfocus: "this.placeholder = ''" %>
-        <% end %>
+
+        <%# if user_signed_in? && current_user.owner %>
+        <%#= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations" %>
+        <%# elsif user_signed_in? && !current_user.owner %>
+        <%#= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations" %>
+        <%# else %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Location", list: "location", autocomplete: :off, onfocus: "this.placeholder = ''" %>
+        <%# end %>
       </div>
     </div>
+
+    <datalist id="location">
+      <% Store.all.map { |store| store.location }.uniq.each do |location| %>
+      <option><%= location %></option>
+      <% end %>
+    </datalist>
 
     <div class="banner-button">
       <%= submit_tag "Search", class: "button btn-big-homepage" %>

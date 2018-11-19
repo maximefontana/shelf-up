@@ -12,7 +12,6 @@ class StoresController < ApplicationController
     elsif current_user
       @user = current_user
       @stores = search_stores.shop.not_belonging_to_user(@user)
-
     else
       @stores = policy_scope(Store)
     end
@@ -21,6 +20,7 @@ class StoresController < ApplicationController
   def show
     @markers = [{ lng: @store.longitude, lat: @store.latitude }]
     authorize @store
+    @store.rating = average_rating
     if current_user
       @user = current_user
       authorize @user
@@ -127,5 +127,14 @@ class StoresController < ApplicationController
     .commission(@commission_min, @commission_max)
     .price(@price_min, @price_max)
     .time(@time_min, @time_max)
+  end
+
+  def average_rating
+    average_rating = 0
+    @store.ratings.each do |rating|
+      average_rating += rating.score
+    end
+
+    average_rating = @store.ratings.size == 0 ? average_rating = 0 : average_rating /= @store.ratings.size
   end
 end
