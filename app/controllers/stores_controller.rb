@@ -37,9 +37,11 @@ class StoresController < ApplicationController
     authorize @store
     @user = current_user
     @store.user = current_user
+    @store.rating = 0
     if !@user.owner
       @store.brand = true
     end
+
     if @store.save
       redirect_to store_path(@store)
     else
@@ -77,7 +79,7 @@ class StoresController < ApplicationController
   def find_store
     @store = Store.find(params[:id])
   end
-  
+
   def search_stores
     if params[:query]
       @location = params[:query]

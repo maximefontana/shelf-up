@@ -1,13 +1,13 @@
 <!-- show stores -->
 <div class="user-show-stores">
   <% if @user.stores.empty? %>
-  <h3 class="btn btn-danger">You haven't added a Store yet</h3>
+  <h3 class="button button-large button-red">You haven't added a Store yet</h3>
   <% else %>
 
   <%= render 'users/display_user_stores' %>
 
   <% end %>
-  <h3><%= link_to "Add a New Store", new_store_path, class: "btn btn-primary" %></h3>
+  <h3><%= link_to "Add Store", new_store_path, class: "button button-medium button-green" %></h3>
 </div>
 </div>
 
