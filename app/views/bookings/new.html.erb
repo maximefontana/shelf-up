@@ -20,7 +20,7 @@
   <div class="booking-new-form">
     <h2> Make a Booking </h2>
     <%= simple_form_for([@store, @booking]) do |f| %>
-      <%= f.input :category, collection: Booking::CATEGORY_CHOICES, input_html: { multiple: true }, label: "Item type" %>
+      <%= f.input :category, label: "Item type" %>
       <!-- works on form_for not simple form...I think, I found it on the internet -->
       <%# f.select :desired_attribute, ['Clothing', 'Art', 'Culinary']%>
       <%= f.input :name, label: "Item Name", maxlength: 30 %>
@@ -39,6 +39,7 @@
       <%= link_to "Back", :back, class: "button button-small button-red" %>
     <% end %>
   </div>
+
 
   <!-- Has to be below the form, otherwise the form breaks because the function is confused -->
   <script>
