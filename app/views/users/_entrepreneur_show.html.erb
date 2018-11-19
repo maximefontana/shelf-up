@@ -1,14 +1,14 @@
 <!-- show stores -->
 <div class="user-show-stores">
   <% if @user.stores.empty? %>
-  <h3 class="btn btn-danger">You haven't added a Brand yet</h3>
+  <p>You haven't added a Brand yet</p>
   <% else %>
 
   <%= render 'users/display_user_stores' %>
-
   <% end %>
-  <h3><%= link_to "Add a Brand", new_store_path, class: "btn btn-primary" %></h3>
+
 </div>
+  <%= link_to "Add Products", new_store_path, class: "button button-large button-green add-brand-button" %>
 </div>
 
 <!-- show bookings -->

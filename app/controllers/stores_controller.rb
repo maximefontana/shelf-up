@@ -38,9 +38,11 @@ class StoresController < ApplicationController
     authorize @store
     @user = current_user
     @store.user = current_user
+    @store.rating = 0
     if !@user.owner
       @store.brand = true
     end
+
     if @store.save
       redirect_to store_path(@store)
     else
