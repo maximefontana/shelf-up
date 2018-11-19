@@ -17,23 +17,6 @@ class StoresController < ApplicationController
     end
   end
 
-  def search_stores
-    if params[:query]
-      @location = params[:query]
-      if params[:query].empty? && # show all if user doesn't put a location
-        @stores = policy_scope(Store)
-      else
-        @stores = Store.search(@location)
-      end
-    elsif params_filter_present
-      filter_results
-    else
-      @stores = policy_scope(Store)
-    end
-    @stores
-  end
-
-
   def show
     authorize @store
     if current_user
@@ -93,6 +76,22 @@ class StoresController < ApplicationController
 
   def find_store
     @store = Store.find(params[:id])
+  end
+  
+  def search_stores
+    if params[:query]
+      @location = params[:query]
+      if params[:query].empty? # show all if user doesn't put a location
+        @stores = policy_scope(Store)
+      else
+        @stores = Store.search(@location)
+      end
+    elsif params_filter_present
+      filter_results
+    else
+      @stores = policy_scope(Store)
+    end
+    @stores
   end
 
   def params_filter_present
