@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     booking.store = store
     booking.user = current_user
 
-    # set calculated fields
+    # set calculated fields in params
     set_price_per_unit
     set_booking_fee
     set_total_price
