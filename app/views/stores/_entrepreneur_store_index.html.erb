@@ -43,3 +43,48 @@
     </div>
     <% end %>
   </div>
+
+<!-- show 3 stores in user's area -->
+<% if !@user.stores.empty? %>
+
+<div class="card-title-container-two">
+  <div class="card-title-container-name">Other Brands in Your Area</div>
+</div>
+
+<% @place = @user.stores.first.location %>
+
+<div class="card-container">
+  <% Store.all.brand.where(location: @place).first(3).each do |store| %>
+  <div class="card">
+    <%= link_to store_path(store), class: "card-link" do %>
+    <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
+      <%# raise %>
+    </div>
+    <div class="card-store-name">
+      <%= store.name %>
+    </div>
+    <div class="card-rent-price">
+      €<%= store.rent_price_min %> - €<%= store.rent_price_max %> / Per Day
+    </div>
+    <div class="card-store-commission">
+      <p><%= store.commission_amount %> % Commission</p>
+    </div>
+    <div class="card-search-category">
+      <%= store.category %> - <%= store.location %>
+    </div>
+    <div class="store-rating card-stars">
+      <% num_stars = store.rating %>
+      <% num_stars.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - num_stars).times do %>
+      <i class="far fa-star"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+</div>
+
+<% end %>
