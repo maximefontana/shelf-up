@@ -9,6 +9,9 @@
   font-weight: lighter;
   width: 300px;
   padding: 8px;
+  &:focus {
+    outline: none;
+  }
 }
 
 ::placeholder {
@@ -22,4 +25,7 @@
   border-radius: 25px;
   text-align: center;
   padding: 2px 3px;
+  &:focus {
+    outline: none;
+  }
 }

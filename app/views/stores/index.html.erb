@@ -1,5 +1,5 @@
   <div class="store-index-img-banner" id="listings-banner">
-    <h1 class="banner-header">Amsterdam</h1>
+    <h1 class="banner-header"><%= @location.capitalize if !@location.nil? %></h1>
   </div>
 
     <% if !user_signed_in? %>

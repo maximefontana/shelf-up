@@ -19,7 +19,7 @@
       <% if current_user.owner %>
       <div class="search-navbar hidden">
         <%= form_tag stores_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Search Brands by Category" %>
+        <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Search Brands by Category", autocomplete: :off %>
         <% end %>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <% else %>
     <div class="search-navbar hidden">
       <%= form_tag stores_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Find Stores" %>
+      <%= text_field_tag :query, params[:query], class: "navbar-search-form", placeholder: "Find Stores", autocomplete: :off %>
       <% end %>
     </div>
     <% end %>

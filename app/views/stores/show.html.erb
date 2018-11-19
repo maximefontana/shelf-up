@@ -92,6 +92,8 @@
   <% end %>
 </div>
 
+<%= render 'ratings/form', store: @store %>
+
 <div class="store-rating-show">
   <% num_stars = @store.rating %>
   <% if !num_stars.nil? %>
@@ -135,7 +137,6 @@
 </div>
 
 </div>
-<%= render 'ratings/form', store: @store %>
 
 <% if !@store.longitude.nil? && !@store.latitude.nil? %>
 <div
