@@ -1,6 +1,6 @@
 <% if @user.owner %>
 <div class="store-form">
-<h1> Add a new store </h1>
+<h1 id="form-header"> Add a new store </h1>
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
@@ -23,7 +23,7 @@
 <% else %>
 
 <div class="store-form">
-<h1> Add a new store </h1>
+<h1 id="form-header"> Add a new store </h1>
 <div class="new-store-container">
 <%= simple_form_for(@store) do |f| %>
     <%= f.input :name, input_html: { maxlength: 40 } %>
