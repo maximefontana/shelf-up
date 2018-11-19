@@ -61,14 +61,25 @@
 }
 
 .homepage-avatar {
-  background-image: url("https://kitt.lewagon.com/placeholder/users/random");
   background-size: cover;
   background-position: center;
   height: 275px;
   width: 275px;
   border-radius: 50%;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin: 5%
+}
+
+#adrien {
+  background-image: url("https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+#laura {
+  background-image: url("https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.owner-desription{
+  font-weight:bold;
 }
 
 .homepage-users-words {
