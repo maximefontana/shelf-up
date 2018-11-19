@@ -18,6 +18,7 @@ class StoresController < ApplicationController
   end
 
   def show
+    @markers = [{ lng: @store.longitude, lat: @store.latitude }]
     authorize @store
     if current_user
       @user = current_user
@@ -77,7 +78,7 @@ class StoresController < ApplicationController
   def find_store
     @store = Store.find(params[:id])
   end
-  
+
   def search_stores
     if params[:query]
       @location = params[:query]
