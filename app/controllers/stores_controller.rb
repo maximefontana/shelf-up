@@ -8,10 +8,11 @@ class StoresController < ApplicationController
   def index
     if current_user && current_user.owner
       @user = current_user
-      @stores = search_stores.brand
+      @stores = search_stores.brand.not_belonging_to_user(@user)
     elsif current_user
       @user = current_user
-      @stores = search_stores.shop
+      @stores = search_stores.shop.not_belonging_to_user(@user)
+
     else
       @stores = policy_scope(Store)
     end
