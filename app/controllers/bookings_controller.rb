@@ -20,7 +20,25 @@ class BookingsController < ApplicationController
     store = Store.find(params[:store_id])
     booking.store = store
     booking.user = current_user
+
+    # set price_per_unit and quantity as integers
+    params[:booking][:price_per_unit] =
+      ((params[:booking][:price_per_unit].to_f)*100).to_i
+    params[:booking][:quantity] = params[:booking][:quantity].to_i
+
+    # set booking_fee to 15% of subtotal
+    params[:booking][:booking_fee] =
+      ((params[:booking][:price_per_unit] * params[:booking][:quantity]) * 0.15).to_i
+
+    # set total_price to subtotal plus booking_fee
+    params[:booking][:total_price] =
+      (params[:booking][:booking_fee]) +
+      (params[:booking][:price_per_unit] * params[:booking][:quantity])
+
+    booking.booking_fee = params[:booking][:booking_fee]
+    booking.total_price = params[:booking][:total_price]
     if booking.save
+      # raise
       redirect_to user_path(current_user) + "#bookings"
     else
       render :new
@@ -53,6 +71,8 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:price_per_unit, :quantity, :total_price, :name, :category, :photo, :status, :start_date, :end_date, :comment)
+    params.require(:booking).permit(:price_per_unit, :quantity, :total_price,
+      :booking_fee, :name, :category, :photo, :status, :start_date, :end_date,
+      :comment)
   end
 end
