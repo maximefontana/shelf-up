@@ -8,10 +8,16 @@ function showForm() {
     ownerOption.addEventListener("click", (event) => {
       ownerForm.classList.remove('hidden');
       entrepreneurForm.classList.add('hidden');
+      ownerOption.classList.add('active');
+      entrepreneurOption.classList.remove('active');
+
     });
     entrepreneurOption.addEventListener("click", (event) => {
       ownerForm.classList.add('hidden');
       entrepreneurForm.classList.remove('hidden');
+      entrepreneurOption.classList.add('active');
+      ownerOption.classList.remove('active');
+
     });
   }
 };

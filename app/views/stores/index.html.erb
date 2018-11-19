@@ -1,87 +1,19 @@
 <div class="scroll-box">
 
 <!-- Recommended cards  -->
-  <div class="card-title-container-one">
-    <div class="card-title-container-name">Recommended Stores</div>
-     <div class="button button-small button-blue filter-button">
-    <a href="#" class="filter-button-link">Filter</a>
-    </div>
-  </div>
 
-  <div class="store-index-form hidden">
-    <%= render 'shared/filter' %>
-  </div>
+  <% if !user_signed_in? %>
 
-  <div class="card-container">
-    <% @stores.first(3).each do |store| %>
-    <div class="card">
-      <%= link_to store_path(store), class: "card-link" do %>
-      <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
-        <%# raise %>
-      </div>
-      <div class="card-store-name">
-        <%= store.name %>
-      </div>
-      <div class="card-rent-price">
-        €<%= store.rent_price_min %> - €<%= store.rent_price_max %> / Per Day
-      </div>
-      <div class="card-store-commission">
-        <p><%= store.commission_amount %> % Commission</p>
-      </div>
-      <div class="card-search-category">
-        <%= store.category %> - <%= store.location %>
-      </div>
-      <div class="store-rating card-stars">
-        <% num_stars = store.rating %>
-        <% num_stars.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - num_stars).times do %>
-        <i class="far fa-star"></i>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
+    <%= render 'stores/no_user_index' %>
 
+  <% elsif current_user.owner %>
 
-<!-- all cards -->
-  <div class="card-title-container-two">
-    <div class="card-title-container-name">All Stores</div>
-  </div>
+    <%= render 'stores/owner_brands_index' %>
 
-  <div class="card-container">
-    <% @stores.each do |store| %>
-    <div class="card">
-      <%= link_to store_path(store), class: "card-link" do %>
-      <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
-        <%# raise %>
-      </div>
-      <div class="card-store-name">
-        <%= store.name %>
-      </div>
-      <div class="card-rent-price">
-        €<%= store.rent_price_min %> - €<%= store.rent_price_max %> / Per Day
-      </div>
-      <div class="card-store-commission">
-        <p><%= store.commission_amount %> % Commission</p>
-      </div>
-      <div class="card-search-category">
-        <%= store.category %> - <%= store.location %>
-      </div>
-      <div class="store-rating card-stars">
-        <% num_stars = store.rating %>
-        <% num_stars.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - num_stars).times do %>
-        <i class="far fa-star"></i>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
+  <% else %>
+
+    <%= render 'stores/entrepreneur_store_index' %>
+
+  <% end %>
+
 </div>
-

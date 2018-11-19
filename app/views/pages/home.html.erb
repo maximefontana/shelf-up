@@ -66,25 +66,37 @@
 
   <div class="homepage-bottom-buttons">
 
-    <div class="want-to-display">
-      <div>
-        Find Your shelf!
-      </div>
-    </div>
 
+
+    <% if current_user && current_user.owner %>
     <div class="you-have-shelf">
       <div>
         Find Local Goods!
       </div>
     </div>
-
-     <div class="want-to-display-btn">
+    <div class="you-have-shelf-btn">
+      <%= link_to "Find Brands", stores_path, class: "button button-medium button-blue" %>
+    </div>
+    <% elsif current_user %>
+    <div class="want-to-display">
+      <div>
+        Find Your shelf!
+      </div>
+    </div>
+    <div class="want-to-display-btn">
       <%= link_to "Find Stores", stores_path, class: "button button-medium button-blue" %>
     </div>
-
-    <div class="you-have-shelf-btn">
-      <%= link_to "Find Brands", root_path, class: "button button-medium button-blue"  %>
+    <% else %>
+    <div class="want-to-display">
+      <div>
+        Find Your shelf!
+      </div>
     </div>
+    <div class="want-to-display-btn">
+      <%= link_to "Find Stores/Brands", stores_path, class: "button button-medium button-blue" %>
+    </div>
+    <% end %>
+
   </div>
 </div>
 

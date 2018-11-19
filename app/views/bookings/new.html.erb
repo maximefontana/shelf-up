@@ -22,6 +22,9 @@
       <%= f.input :name, label: "Item Name", maxlength: 30 %>
       <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2) %>
       <%= f.input :quantity, label: "Amount of units" %>
+      <%= f.input :booking_fee, as: :hidden %>
+      <p id="store-fee">Store Insurance Policy Fee: </p>
+      <%= f.input :total_price, as: :hidden %>
       <p id="total-cost">Total Cost: </p>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
