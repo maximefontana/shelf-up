@@ -8,10 +8,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-  has_many :bookings
-  has_many :stores
-  has_many :ratings
-  has_many :messages
+  has_many :bookings, dependent: :destroy
+  has_many :stores, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
 end
