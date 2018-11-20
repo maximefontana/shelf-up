@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: :home
-  post 'user/:id/bookings', to: 'bookings#filter', as: :bookings_filter
 
   resources :users, only: [:show]
 
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
     resources :ratings, only: :create
   end
-  resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
+  resources :bookings, only: [:show, :edit, :update, :destroy] do
     resources :messages, only: [:new, :create, :destroy]
   end
 end
