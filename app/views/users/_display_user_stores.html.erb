@@ -1,17 +1,18 @@
-<div class="user-brands">
-  <p>My Products:</p>
-<% @user.stores.each do |store| %>
-    <div>
-      <%= link_to store.name, store_path(store) %>
+<div class="user-bookings-box">
+  <% @user.stores.each do |store| %>
+  <div class="booking-card">
+    <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">&nbsp;
     </div>
-    <!-- <div class="user-brand-rating">
-      <% num_stars = store.rating %>
-      <% num_stars.times do %>
-        <i class="fas fa-star"></i>
-      <% end %>
-      <% (5 - num_stars).times do %>
-        <i class="far fa-star"></i>
-      <% end %>
-    </div> -->
-  <% end %>
+    <div class="booking-card-content">
+      <div class="user-bookings-store-name">
+        <%=  link_to store.name, store_path(store) %>
+      </div>
+      <div class="user-bookings-category-location">
+        <%= store.category %> - <%= store.location %>
+      </div>
+    </div>
+  </div>
+
+
+  <% end  %>
 </div>
