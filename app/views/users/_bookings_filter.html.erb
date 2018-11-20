@@ -1,0 +1,14 @@
+<%#= form_tag user_path(current_user), method: :get, class: "filter-bookings-form" do %>
+
+    <%#= text_field_tag :status, id: "status" %>
+
+<%#= submit_tag "Search", class: "booking-status-btn" %>
+
+<%# end %>
+
+<button class="booking-status button button-blue button-small">Pending</button>
+<button class="booking-status not-selected button button-blue button-small">Accepted</button>
+<button class="booking-status not-selected button button-blue button-small">Declined</button>
+<button class="booking-status not-selected button button-blue button-small">Currently Displayed</button>
+<button class="booking-status not-selected button button-blue button-small">Past End Date</button>
+<button class="booking-status status-selected button button-blue button-small">All</button>

@@ -13,6 +13,8 @@
 
 <!-- show bookings -->
 <div class="user-show-box pending-bookings hidden">
+  <%= render 'users/bookings_filter' %>
+
   <div class="user-show-pending-bookings">
     <% @user.bookings.each do |booking| %>
 

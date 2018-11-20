@@ -27,6 +27,10 @@ class BookingPolicy < ApplicationPolicy
     user == record.user
   end
 
+  def filter?
+    true
+  end
+
   class Scope < Scope
     def resolve
       scope.all

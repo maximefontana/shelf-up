@@ -13,6 +13,9 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       authorize @user
     end
+    if filters
+      filter_results
+    end
   end
 
   def destroy
@@ -23,5 +26,16 @@ class UsersController < ApplicationController
 
     @user.destroy
     redirect_to home_root
+  end
+
+  private
+
+  def filters
+    params[:pending] || params[:accepted] || params[:declined] ||
+    params[:currently_displayed] || params[:past_end_date]
+  end
+
+  def filter_results
+
   end
 end

@@ -57,6 +57,11 @@ class BookingsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def filter
+    @bookings = Booking.all
+    authorize @bookings
+  end
+
   private
 
   def find_booking

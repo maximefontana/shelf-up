@@ -37,11 +37,25 @@
 .button-blue {
   color: $bluesix;
   border: 2px solid $bluesix;
+  width: auto;
+  &:focus {
+    outline: none;
+  }
 }
 
 .button-blue:hover {
   color: white;
   background-color: $bluesix;
+}
+// booking filter buttons
+.status-selected {
+  color: white;
+  background-color: $bluesix;
+  border: 2px solid $bluesix;
+  width: auto;
+  &:focus {
+    outline: none;
+  }
 }
 .button-green {
   color: $greenthree;
