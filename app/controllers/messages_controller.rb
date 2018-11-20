@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable all
 class MessagesController < ApplicationController
   def create
     @message = Message.create(message_params)

@@ -8,7 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "map" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <div>
@@ -20,14 +20,14 @@
     </div>
 
 
-      <div class="flash-msg-fixed">
-        <%= render 'shared/flashes' %>
-      </div>
+    <div class="flash-msg-fixed">
+      <%= render 'shared/flashes' %>
+    </div>
 
-        <%= yield %>
+    <%= yield %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
-      <%= javascript_pack_tag "map" %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
   </body>
 </html>

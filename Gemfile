@@ -16,10 +16,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-# what we add
-gem 'devise'
-gem 'pundit'
-
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -32,6 +28,12 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+# what we add
+gem 'devise'
+gem 'pundit'
+gem 'bootstrap-datepicker-rails'
+gem 'jquery-rails'
 
 # photos
 gem 'cloudinary'
