@@ -32,7 +32,6 @@ end
 # what we add
 gem 'devise'
 gem 'pundit'
-gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
 
 # photos
