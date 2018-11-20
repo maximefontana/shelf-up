@@ -14,6 +14,11 @@
     </div>
   </div>
   <div class="booking-card-extra">
+    <% if !booking.start_date.nil? && Date.today >= booking.start_date && Date.today <= booking.end_date %>
+    <% booking.status = "Currently Displayed" %>
+    <% elsif !booking.start_date.nil? && Date.today > booking.end_date %>
+    <% booking.status = "Past End Date" %>
+    <% end %>
     <div class="user-bookings-status">
       <%= booking.status %>
     </div>

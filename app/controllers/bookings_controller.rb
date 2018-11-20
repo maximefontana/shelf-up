@@ -34,6 +34,8 @@ class BookingsController < ApplicationController
     if booking.save
       redirect_to user_path(current_user) + "#bookings"
     else
+      @booking = booking
+      @store = store
       render :new
     end
   end
