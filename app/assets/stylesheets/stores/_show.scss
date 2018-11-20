@@ -225,7 +225,18 @@
   }
 }
 
+// Sticky form classes
+.sticky-form {
+  width: 35%;
+  // border: 1px solid black;
+  position: sticky;
+  top: 0;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  margin-left: 60vw;
+  padding-top: 80px;
+  padding-bottom:10px;
+  padding-left: 10px;
 
-
-
-
+  z-index: 9;
+}
