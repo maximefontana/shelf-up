@@ -115,6 +115,18 @@
   padding: 2% 10%;
   text-align: center;
 
+   .store-owner {
+      display: flex;
+      font-size: 14px;
+      color: $bluesix;
+      justify-content: center;
+      align-items: center;
+
+      > i {
+        width: 36px;
+      }
+    }
+
   .store-location-show {
     display: flex;
     justify-content: center;
@@ -127,6 +139,9 @@
     > div {
       width: 36px;
     }
+
+
+
   }
   .store-description {
     width: 80%;

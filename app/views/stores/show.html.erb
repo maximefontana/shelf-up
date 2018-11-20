@@ -77,6 +77,20 @@
     <div class="fas fa-map-marker-alt"></div>
     <p><%= @store.address %></p>
   </div>
+
+  <div class="store-owner">
+
+
+      <% if user_signed_in? %>
+    <i class="far fa-user"></i>
+
+    <%= link_to @store.user.username, user_path(@store.user)%>
+    <% else %>
+    <%= @store.user.username %>
+    <% end %>
+
+
+  </div>
   <% if @store.description %>
   <div class="store-description">
     <%= @store.description %>
@@ -150,31 +164,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-      <div class="store-address-show">
-        <%= @store.address %>
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-address"></a>
-        <% end %>
-        <%= f.text_field :address, class: "input-store-address hidden" %>
-      </div>
-
-
-
-
-
-
-
       <div class="store-owner">
         <% if user_signed_in? %>
           <%= link_to @store.user.username, user_path(@store.user) %>
@@ -183,16 +172,6 @@
         <% end %>
       </div>
 
-      <% if !@store.description.nil? %>
-        <div class="store-description">
-          <%= @store.description %>
-          <% if current_user && policy(@store).update? %>
-            <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
-          <% end %>
-          <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-          <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
-        </div>
-      <% end %>
 
       <% if !@store.link.nil? %>
         <div class="store-link">
