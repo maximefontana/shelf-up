@@ -73,6 +73,10 @@
 
 <div class="store-about-container">
   <h2>About <%= @store.name %></h2>
+  <div class="store-location-show">
+    <div class="fas fa-map-marker-alt"></div>
+    <p><%= @store.address %></p>
+  </div>
   <% if @store.description %>
   <div class="store-description">
     <%= @store.description %>
@@ -91,7 +95,7 @@
   </div>
 </div>
 
-<div class="store-map-container hidden">
+<div class="store-map-container">
   <% if !@store.longitude.nil? && !@store.latitude.nil? %>
     <div
     id="map"
@@ -104,24 +108,45 @@
 </div>
 
 <div class="store-testimonial-container">
-  <div class="testimonial-card">
-    <h3>Steve Jobs</h3>
-    <p>Wow, after using shelf up I was able to sell so many more Iphones and Mac products so all web developers use my stuff now!</p>
+  <p>What people say about us</p>
+  <div class="store-testimonial-card-container">
+    <div class="testimonial-card">
+      <div class="testimonial-avatar" style="background-image: url('https://kitt.lewagon.com/placeholder/users/random');" width="100px"></div>
+      <h4>Maria Sanchez</h4>
+      <h6>Family Jewels Co.</h6>
+      <p>"Wow, after using shelf up I was able to sell so many more of my bracelets and necklaces!"</p>
+      <div>
+        <% 4.times do %>
+        <i class="fas fa-star star"></i>
+        <% end %>
+      </div>
 
-  </div>
+    </div>
 
     <div class="testimonial-card">
-    <h3>Steve Jobs</h3>
-    <p>Wow, after using shelf up I was able to sell so many more Iphones and Mac products so all web developers use my stuff now!</p>
-
-  </div>
+      <div class="testimonial-avatar" style="background-image: url('https://kitt.lewagon.com/placeholder/users/random');" width="100px"></div>
+      <h4>Brandon Sanderson</h4>
+      <h6>Wood Works Inc.</h6>
+      <p>"Wow, after using shelf up I was able to sell so many more things of my home made furniture!"</p>
+      <div>
+        <% 5.times do %>
+        <i class="fas fa-star star"></i>
+        <% end %>
+      </div>
+    </div>
 
     <div class="testimonial-card">
-    <h3>Steve Jobs</h3>
-    <p>Wow, after using shelf up I was able to sell so many more Iphones and Mac products so all web developers use my stuff now!</p>
-
+      <div class="testimonial-avatar" style="background-image: url('https://kitt.lewagon.com/placeholder/users/random');" width="100px"></div>
+      <h4>Pierce Brown</h4>
+      <h6>"Blue Publising LLC.</h6>
+      <p>Wow, after using shelf up I was able to sell so many more books and novels! Thanks ShelfUp!"</p>
+      <div>
+        <% 4.times do %>
+        <i class="fas fa-star star"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
-
 </div>
 
 
