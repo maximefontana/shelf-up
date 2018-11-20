@@ -593,9 +593,9 @@ sleep(0.5)
 
 print 'Creating bookings...'
 b1 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -607,9 +607,9 @@ b1 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b2 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -622,9 +622,9 @@ b2 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b3 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -637,9 +637,9 @@ b3 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b4 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -652,9 +652,9 @@ b4 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b5 = Booking.create!(
-  price_per_unit: 6,
+  price_per_unit: 600,
   quantity: 24,
-  total_price: 144,
+  total_price: 14400,
   name: "Craft Beers",
   category: "Food",
   user: u4,
@@ -665,9 +665,9 @@ b5 = Booking.create!(
   remote_photo_url: 'https://unsplash.com/photos/EoC_IuYmtug'
   )
 b6 = Booking.create!(
-  price_per_unit: 67,
+  price_per_unit: 6700,
   quantity: 5,
-  total_price: 335,
+  total_price: 33500,
   name: "Leather Purse",
   category: "Clothing",
   user: u1,
@@ -679,9 +679,9 @@ b6 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b7 = Booking.create!(
-  price_per_unit: 50,
+  price_per_unit: 5000,
   quantity: 10,
-  total_price: 500,
+  total_price: 50000,
   name: "Drinks",
   category: "Food",
   user: u6,
@@ -692,9 +692,9 @@ b7 = Booking.create!(
   remote_photo_url: 'https://unsplash.com/photos/uVxPEvrYJxA'
   )
 b8 = Booking.create!(
-  price_per_unit: 24,
+  price_per_unit: 2400,
   quantity: 7,
-  total_price: 168,
+  total_price: 16800,
   name: "Love life",
   category: "Lifestyle",
   user: u2,
@@ -705,9 +705,9 @@ b8 = Booking.create!(
   remote_photo_url: 'https://unsplash.com/photos/-r_ZJcwAz7A'
   )
 b9 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -720,9 +720,9 @@ b9 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b10 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
@@ -735,9 +735,9 @@ b10 = Booking.create!(
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
 b11 = Booking.create!(
-  price_per_unit: 15,
+  price_per_unit: 1500,
   quantity: 4,
-  total_price: 60,
+  total_price: 6000,
   name: "Jeans",
   category: "Clothing",
   user: u1,
