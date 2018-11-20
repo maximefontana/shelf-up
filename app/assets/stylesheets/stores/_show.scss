@@ -8,7 +8,12 @@
   align-items:center;
   justify-content: center;
   align-items: flex-end;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+  background-image: -webkit-linear-gradient(top right, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
+    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: -o-linear-gradient(top right, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
+    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: linear-gradient(to bottom left, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
+    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
 
 .store-img-banner{
@@ -20,13 +25,14 @@
   margin-top: 5%;
 }
 
-.banner-header{
+.banner-header {
   color:white;
   font-weight:bold;
   font-size: 150px;
   text-shadow: 2px 1px black;
 }
 
+// top level container for all the elements
 .edit-store-container {
   height: 60vh;
   position: relative;
@@ -34,106 +40,64 @@
   margin: 0 auto;
 }
 
-.store-name-font {
-  font-size: 45px;
-}
-.store-name {
-  position: absolute;
-  top: 9%;
-  left: 3%;
-  font-weight: bolder;
-  color: $grayfive;
-}
-
-.store-category-show {
-  position: absolute;
-  top: 5%;
-  left: 3%;
-  font-size: 18px;
-  color: $grayfive;
-}
-
 .store-details-show {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  position: absolute;
   top: 27%;
   left: 3%;
   max-width: 28%;
   font-size: 22px;
 }
 
+.store-name {
+  font-weight: bolder;
+  color: $grayfive;
+}
+
+.store-name-font {
+  font-size: 45px;
+}
+
+.store-category-show {
+  font-size: 18px;
+  color: $grayfive;
+}
 
 .store-owner{
-  position: absolute;
-  top: 22%;
-  left: 3%;
-  right: 0;
-  font-size: 15px;
-  font-weight: light;
 }
 
 .store-address-show {
-
 }
 
 .store-commish-show {
-
 }
 
 .store-rent-time{
-
 }
 
 .store-rent {
-
 }
 
 .store-city {
-  position: absolute;
-  top: 70%;
-  left: 3%;
-  font-size: 15px;
-  font-weight: light;
 }
 
-
 .store-description {
-  position: absolute;
-  top: 25%;
-  left: 40%;
-  font-size: 20px;
-  width: 50%;
 }
 
 .store-rating-show {
-  position: absolute;
-  top: 55%;
-  left: 44%;
-  font-size: 55px;
 }
 
 .store-buttons {
-  position: absolute;
-  top: 7%;
-  left: 50%;
 }
 
 .input-store-name {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 25%  ;
 }
 
 .input-store-city {
-  width: 35%;
 }
 
 .input-store-description {
-  width: 50%;
-  height: 100px;
 }
 
 .star {
