@@ -1,29 +1,119 @@
 <div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @store.photo %>');">
 </div>
 
-<div class="edit-store-container">
+<div class="store-details-container">
 
   <div class="store-details-show">
 
     <%= form_for(@store) do |f| %>
     <!-- Do not change class names as these are used in JS -->
-      <div class="store-category-show">
-        <%= @store.category %>
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-category"></a>
+    <h2 class="store-show-name">
+      <%= @store.name %>
+      <% if current_user && policy(@store).update? %>
+      <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
+      <% end %>
+      <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
+    </h2>
+    <h4 class="store-category-show">
+      <%= @store.location %>, <%= @store.category %>
+      <% if current_user && policy(@store).update? %>
+      <a href="#" class="fas fa-pencil-alt edit-store-category"></a>
+      <% end %>
+      <%= f.text_field :name, class: "input-store-category hidden" %>
+    </h4>
+    <div class="store-rating-show">
+      <%= render 'ratings/form', store: @store %>
+      <% num_stars = @store.rating %>
+      <% if !num_stars.nil? %>
+        <% count = 1 %>
+        <% num_stars.times do %>
+          <i class="fas fa-star star-<%=count%> star"></i>
+          <% count += 1 %>
         <% end %>
-        <%= f.text_field :name, class: "input-store-category hidden" %>
-      </div>
+        <% (5 - num_stars).times do %>
+          <i class="far fa-star star-<%=count%> star"></i>
+          <% count += 1 %>
+        <% end %>
+      <% end %>
+    </div>
+    <h4>Our Store</h4>
+    <div class="store-commish-show">
+      <i class="fas fa-balance-scale"></i>
+      <p>
+        We charge <b><%= @store.commission_amount %>% Commission</b> on rented shelf revenue</p>
+      <% if current_user && policy(@store).update? && current_user.owner %>
+      <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
+      <% end %>
+      <%= f.text_field :commission_amount, class: "input-store-commish hidden" %>
+    </div>
 
-      <div class="store-name">
-        <div class="store-name-font">
-         <%= @store.name %>
-         <% if current_user && policy(@store).update? %>
-            <a href="#" class="fas fa-pencil-alt edit-store-name"></a>
-         <% end %>
-         <%= f.text_field :name, class: "input-store-name hidden", maxlength: 40 %>
-       </div>
-     </div>
+    <div class="store-rent-time">
+      <i class="far fa-clock"></i>
+      <p>We offer shelftime of <b><%= @store.rent_time %> days</b> or more
+      </p>
+      <% if current_user && policy(@store).update? %>
+          <a href="#" class="fas fa-pencil-alt edit-store-time"></a>
+      <% end %>
+      <%= f.text_field :rent_time, class: "input-store-time hidden" %>
+    </div>
+
+    <div class="store-rent-price">
+      <i class="far fa-money-bill-alt"></i>
+      <p>Product price range <b>€<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>,-</b></p>
+      <% if current_user && policy(@store).update? %>
+        <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
+      <% end %>
+      <div class="input-store-price hidden">
+        <%= f.text_field :rent_price_min %>
+        <%= f.text_field :rent_price_max %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="store-about-container">
+  <h2>About <%= @store.name %></h2>
+  <% if @store.description %>
+  <div class="store-description">
+    <%= @store.description %>
+    <% if current_user && policy(@store).update? %>
+    <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
+    <% end %>
+    <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
+    <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
+  </div>
+  <% end %>
+
+  <div class="store-about-images">
+    <div></div> <!-- add images here -->
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<div class="store-map-container">
+  <% if !@store.longitude.nil? && !@store.latitude.nil? %>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="store-address-show">
         <%= @store.address %>
@@ -33,38 +123,17 @@
         <%= f.text_field :address, class: "input-store-address hidden" %>
       </div>
 
-      <div class="store-commish-show">
-        <%= @store.commission_amount %>% Commission
-        <% if current_user && policy(@store).update? && current_user.owner %>
-          <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
-        <% end %>
-        <%= f.text_field :commission_amount, class: "input-store-commish hidden" %>
-      </div>
 
-      <div class="store-rent-time">
-        Rent for: <%= @store.rent_time %> days
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-time"></a>
-        <% end %>
-        <%= f.text_field :rent_time, class: "input-store-time hidden" %>
-      </div>
 
-      <div class="store-rent-price">
-        €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %> / Product
-        <% if current_user && policy(@store).update? %>
-          <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
-        <% end %>
-        <div class="input-store-price hidden">
-          <%= f.text_field :rent_price_min %>
-          <%= f.text_field :rent_price_max %>
-        </div>
-      </div>
+
+
+
 
       <div class="store-owner">
         <% if user_signed_in? %>
-          <%= link_to @store.user.username.capitalize, user_path(@store.user) %>
+          <%= link_to @store.user.username, user_path(@store.user) %>
         <% else %>
-          <%= @store.user.username.capitalize %>
+          <%= @store.user.username %>
         <% end %>
       </div>
 
@@ -90,21 +159,7 @@
       <% end %>
 
     <% end %>
-    <div class="store-rating-show">
-      <%= render 'ratings/form', store: @store %>
-      <% num_stars = @store.rating %>
-      <% if !num_stars.nil? %>
-        <% count = 1 %>
-        <% num_stars.times do %>
-          <i class="fas fa-star star-<%=count%> star"></i>
-          <% count += 1 %>
-        <% end %>
-        <% (5 - num_stars).times do %>
-          <i class="far fa-star star-<%=count%> star"></i>
-          <% count += 1 %>
-        <% end %>
-      <% end %>
-    </div>
+
   </div>
 
   <div class="store-buttons">
@@ -134,12 +189,4 @@
   </div>
 </div>
 
-<% if !@store.longitude.nil? && !@store.latitude.nil? %>
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-<% end %>
+
