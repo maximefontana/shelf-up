@@ -18,10 +18,9 @@
 
 .store-img-banner{
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   height: 40vh;
   width: 100%;
-  border-radius: 4px 4px 0px 0px;
   margin-top: 5%;
 }
 
@@ -33,36 +32,108 @@
 }
 
 // top level container for all the elements
-.edit-store-container {
-  height: 60vh;
-  position: relative;
-  width: 90%;
-  margin: 0 auto;
+.store-details-container {
+  height: 375px;
+  width: 100%;
+  padding: 0px 10%;
+  background-color: $grayone;
 }
 
 .store-details-show {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  top: 27%;
-  left: 3%;
-  max-width: 28%;
-  font-size: 22px;
+  color: black;
+
+
+  .store-show-name {
+    font-weight: bold;
+    margin-top: 24px;
+
+  }
+
+  .store-category-show {
+    font-weight: light;
+  }
+
+  .store-rating-show {
+    font-size: 24px;
+    margin-bottom: 5px;
+
+    .star {
+    cursor: pointer;
+    color: gold !important;
+    }
+  }
+
+  .store-commish-show {
+    display: flex;
+    font-weight: lighter;
+
+    > p {
+      font-size: 22px;
+    }
+
+    > i {
+      width: 48px;
+      font-size: 24px;
+    }
+  }
+
+  .store-rent-time {
+    display: flex;
+    font-weight: lighter;
+
+    > i {
+      width: 48px;
+      font-size: 24px;
+    }
+
+     > p {
+      font-size: 22px;
+    }
+  }
+
+  .store-rent-price {
+    display: flex;
+    font-weight: lighter;
+
+    > i {
+      width: 48px;
+      font-size: 24px;
+    }
+
+     > p {
+      font-size: 22px;
+    }
+  }
 }
 
-.store-name {
-  font-weight: bolder;
-  color: $grayfive;
+.store-about-container {
+  height: 520px;
+  width: 100%;
+  padding: 2% 10%;
+  text-align: center;
+
+  .store-description {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .store-about-images {
+    display: flex;
+    justify-content: space-around;
+    margin: 32px 0px;
+
+    > div {
+      height: 250px;
+      width: 200px;
+      border: 1px solid black;
+    }
+  }
+
 }
 
-.store-name-font {
-  font-size: 45px;
-}
-
-.store-category-show {
-  font-size: 18px;
-  color: $grayfive;
-}
 
 .store-owner{
 }
@@ -70,11 +141,8 @@
 .store-address-show {
 }
 
-.store-commish-show {
-}
 
-.store-rent-time{
-}
+
 
 .store-rent {
 }
@@ -85,8 +153,7 @@
 .store-description {
 }
 
-.store-rating-show {
-}
+
 
 .store-buttons {
 }
@@ -100,7 +167,4 @@
 .input-store-description {
 }
 
-.star {
-  cursor: pointer;
-  color: gold !important;
-}
+
