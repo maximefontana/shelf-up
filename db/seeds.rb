@@ -265,7 +265,7 @@ s11 = Store.create!(
   )
 
 s12 = Store.create!(
-  name: "Lara's Home Sweet Home Shop",
+  name: "Home Sweet Home",
   location: 'Amsterdam',
   address: 'Van Woustraat 138, Amsterdam',
   user: u9,
@@ -295,14 +295,14 @@ s13 = Store.create!(
   )
 
 s14 = Store.create!(
-  name: "RESCON MEN",
+  name: "Rescon MEN",
   location: 'Amsterdam',
   address: 'Laurierhof 50, Amsterdam',
   user: u2,
   description: "We at Rescon know what the gentleman of today needs to create the
   ultimate look. Our shoes tailored in the shop are famous in and arround the city of Amsterdam.",
-  remote_photo_url: 'https://lh5.googleusercontent.com/p/AF1QipNzyfwqvautjluVugqCdgtvDjhzP8s7aNEKbtMn=w408-h271-k-no',
-  category: 'Art',
+  remote_photo_url: 'https://images.pexels.com/photos/247321/pexels-photo-247321.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Clothes',
   rating: 5,
   commission_amount: 12,
   rent_price_min: 75,
@@ -315,8 +315,8 @@ s15 = Store.create!(
   address: 'Rozengracht 92II, Amsterdam',
   user: u8,
   description: "Muondo Nuovo sells an assorted selection of crafting supplies with emphasis on jewlery making supplies.
-  Our designs are made by the award winning Julietta Hansen."
-  remote_photo_url: 'https://lh5.googleusercontent.com/p/AF1QipNzyfwqvautjluVugqCdgtvDjhzP8s7aNEKbtMn=w408-h271-k-no',
+  Our designs are made by the award winning Julietta Hansen.",
+  remote_photo_url: 'https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&h=350',
   category: 'Art',
   rating: 4,
   commission_amount: 40,
@@ -341,7 +341,7 @@ s17 = Store.create!(
   )
 
 s18 = Store.create!(
-  name: "BurningBike Riders Accessory",
+  name: "Burning Riders",
   location: 'Amsterdam',
   address: 'Oudezijds Voorburgwal 50HS, Amsterdam',
   user: u7,
