@@ -16,3 +16,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.booking-new-double-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fill-column-space {
+  width: 25vw;
+  flex-grow: 1;
+}

@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   get 'messages/create'
   get 'messages/update'
   get 'messages/destroy'
+
+
   devise_for :users
+
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+
 
   # # authenticated :user do
   # #   root 'users#show', as: :authenticated_root

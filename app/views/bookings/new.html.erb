@@ -21,22 +21,28 @@
   <div class="booking-new-form">
     <h2> Make a Booking </h2>
     <%= simple_form_for([@store, @booking]) do |f| %>
-      <%#= f.input :category, label: "Item type" %>
-      <%= f.input :name, label: "Item Name", maxlength: 30 %>
-      <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2) %>
-      <%= f.input :quantity, label: "Amount of units" %>
+      <%#= f.input :category, label: "Item type" %> <!-- Not using anymore -->
+      <%= f.input :name, label: "Item Name", maxlength: 30, required: true %>
+      <div class="booking-new-double-column">
+        <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2), input_html: { class: "fill-column-space" }, required: true %>
+        <%= f.input :quantity, label: "Amount of units", input_html: { class: "fill-column-space" }, required: true %>
+      </div>
+      <!-- Hidden fields we calculate -->
       <%= f.input :booking_fee, as: :hidden %>
       <p id="store-fee">Store Insurance Policy Fee: </p>
       <%= f.input :total_price, as: :hidden %>
       <p id="total-cost">Total Cost: </p>
+
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
-      <%= f.input :end_date, as: :string, input_html: { class: "datepicker" } %>
+      <div class="booking-new-double-column">
+        <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, required: true %>
+        <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, required: true %>
+      </div>
       <%= f.input :comment, label: "Message" %>
       <div class = "booking-new-submit">
-        <%= f.submit "Book", class: "button button-medium button-green" %>
         <%= link_to "Back", :back, class: "button button-small button-red" %>
+        <%= f.submit "Book", class: "button button-medium button-green" %>
       </div>
     <% end %>
   </div>
