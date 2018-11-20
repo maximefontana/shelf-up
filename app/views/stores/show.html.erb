@@ -50,7 +50,7 @@
       </div>
 
       <div class="store-rent-price">
-        €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>/ Product
+        €<%= @store.rent_price_min %> - €<%= @store.rent_price_max %> / Product
         <% if current_user && policy(@store).update? %>
           <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
         <% end %>
@@ -90,25 +90,22 @@
       <% end %>
 
     <% end %>
-  </div>
-
-  <%= render 'ratings/form', store: @store %>
-
-  <div class="store-rating-show">
-    <% num_stars = @store.rating %>
-    <% if !num_stars.nil? %>
-      <% count = 1 %>
-      <% num_stars.times do %>
-        <i class="fas fa-star star-<%=count%> star"></i>
-        <% count += 1 %>
+    <div class="store-rating-show">
+      <%= render 'ratings/form', store: @store %>
+      <% num_stars = @store.rating %>
+      <% if !num_stars.nil? %>
+        <% count = 1 %>
+        <% num_stars.times do %>
+          <i class="fas fa-star star-<%=count%> star"></i>
+          <% count += 1 %>
+        <% end %>
+        <% (5 - num_stars).times do %>
+          <i class="far fa-star star-<%=count%> star"></i>
+          <% count += 1 %>
+        <% end %>
       <% end %>
-      <% (5 - num_stars).times do %>
-        <i class="far fa-star star-<%=count%> star"></i>
-        <% count += 1 %>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-
 
   <div class="store-buttons">
     <% if !user_signed_in? %>

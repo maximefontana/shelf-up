@@ -58,7 +58,7 @@ s1 = Store.create!(
   name: "Bershka",
   location: "Amsterdam",
   user: u2,
-  address: 'Nieuwendijk 209, 1012 MH Amsterdam',
+  address: '209 Nieuwendijk, Amsterdam',
   description: 'Bershka is large and with a well-kept appearance, from the shop windows
   to the arrangement of the clothing. Bershka chooses the best shopping areas in every
   city and establishes itself in prominent locations of the main shopping centers.',
@@ -74,7 +74,7 @@ s2 = Store.create!(
   name: "Primark",
   location: "Amsterdam",
   user: u2,
-  address: 'Damrak 77, 1012 LM Amsterdam',
+  address: '77 Damrak, Amsterdam',
   description: "Adored by fashion fans and value seekers alike Primark is widely
   established as the destination store for keeping up with the latest looks without
   breaking the bank.",
