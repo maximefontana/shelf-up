@@ -519,9 +519,9 @@ s30 = Store.create!(
   location: 'Amsterdam',
   address: 'Conradstraat 6, Amsterdam',
   user: u7,
-  description: " ",
-  remote_photo_url: 'Brother Bear is the hotspot for beer lovers and brewers. Located close to
-  Amsterdam Central Station we offer lunch & dinner and tours through the former brewery building.',
+  description: "Brother Bear is the hotspot for beer lovers and brewers. Located close to
+  Amsterdam Central Station we offer lunch & dinner and tours through the former brewery building. ",
+  remote_photo_url: 'https://images.pexels.com/photos/681847/pexels-photo-681847.jpeg?auto=compress&cs=tinysrgb&h=350',
   category: 'Food',
   rating: 4,
   commission_amount: 40,
