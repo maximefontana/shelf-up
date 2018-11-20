@@ -1,5 +1,30 @@
 <div class="user-show-container">
 
+  <div class="user-show-box">
+    <div class="user-show-avatar">
+      <% if @user.photo %>
+      <%= cl_image_tag @user.photo,
+        width: 300, height: 300, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
+      <% end %>
+    </div>
+    <div class="personal-details">
+      <h1 class="user-show-name">
+        <%= @user.username %>
+      </h1>
+    <% if @user == current_user %>
+      <div class="button button-large button-blue">
+        <%= link_to edit_user_registration_path(@user) do %>
+      Edit Profile
+      <% end %>
+      </div>
+      <div class="add-product button button-large button-green">
+        <%= link_to "Add Products", new_store_path%>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+
   <% if @user == current_user %>
 
     <!--  displays the current user's account with bookings & messages -->

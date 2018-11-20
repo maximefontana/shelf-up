@@ -1,45 +1,12 @@
-  <!-- USER PERSONAL SHOW PAGE -->
+<!-- if user is an owner -->
 
-  <!-- tabs -->
-  <div class="tabs">
-    <div class="tab-left"></div>
-    <a href="#" class="tab tab-first active">Personal</a>
-    <a href="#" class="tab tab-second">Bookings</a>
-    <a href="#" class="tab tab-third">Current Shelfs</a>
-    <a href="#" class="tab tab-last">Messages</a>
-    <div class="tab-right"></div>
-  </div>
+<% if @user.owner %>
 
-  <div class="user-show-box personal-details">
-    <div class="user-show-avatar">
-      <% if @user.photo %>
-      <%= cl_image_tag @user.photo,
-      width: 130, height: 130, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
-      <% end %>
-    </div>
+<%= render 'users/owner_show' %>
 
-    <div class="user-show-name">
-      <%= @user.username.capitalize %>
-    </div>
+<!-- if user is an entrepreneur -->
+<% else %>
 
-    <div class="user-show-edit-btn">
-      <%= link_to edit_user_registration_path(@user) do %>
-      Edit Profile
-      <% end %>
-    </div>
+<%= render 'users/entrepreneur_show' %>
 
-
-    <!-- if user is an owner -->
-
-    <% if @user.owner %>
-
-    <%= render 'users/owner_show' %>
-
-    <!-- if user is an entrepreneur -->
-    <% else %>
-
-    <%= render 'users/entrepreneur_show' %>
-
-    <% end %>
-
-  </div>
+<% end %>

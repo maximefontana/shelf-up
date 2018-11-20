@@ -25,7 +25,7 @@ u2 = User.create!(
   email: "marco@shelf.com",
   password: "testing",
   owner: true,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/krokrob"
+  remote_photo_url: "https://images.pexels.com/photos/213117/pexels-photo-213117.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
 
 u3 = User.create!(
@@ -33,16 +33,55 @@ u3 = User.create!(
   email: "maria@shelf.com",
   password: "testing",
   owner: true,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/ClaraMorgen"
+  remote_photo_url: "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
 
 u4 = User.create!(
-  username: "Steve 'Dion' Jobs",
+  username: "John Deen",
   email: "steve@shelf.com",
   password: "testing", owner: true,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/eschults"
+  remote_photo_url: "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
 
+u5 = User.create!(
+  username: "Frank Bekker",
+  email: "frank@shelf.com",
+  password: "testing",
+  owner: true,
+  remote_photo_url: "https://images.pexels.com/photos/334029/pexels-photo-334029.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
+
+u6 = User.create!(
+  username: "Rebecca Lee",
+  email: "rlee@shelf.com",
+  password: "testing",
+  owner: false,
+  remote_photo_url: "https://images.pexels.com/photos/756453/pexels-photo-756453.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
+
+u7 = User.create!(
+  username: "Robert Hogerwaard",
+  email: "robert@shelf.com",
+  password: "testing",
+  owner: true,
+  remote_photo_url: "https://images.pexels.com/photos/936072/pexels-photo-936072.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
+
+u8 = User.create!(
+  username: "Anne-Marije Lanjouw",
+  email: "aml@shelf.com",
+  password: "testing",
+  owner: true,
+  remote_photo_url: "https://images.pexels.com/photos/935803/pexels-photo-935803.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
+
+u9 = User.create!(
+  username: "Daantje Ester",
+  email: "daantje@shelf.com",
+  password: "testing",
+  owner: true,
+  remote_photo_url: "https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
 puts 'done'
 sleep(0.5)
 
@@ -58,7 +97,7 @@ s1 = Store.create!(
   name: "Bershka",
   location: "Amsterdam",
   user: u2,
-  address: 'Nieuwendijk 209, 1012 MH Amsterdam',
+  address: 'Nieuwendijk 209, Amsterdam',
   description: 'Bershka is large and with a well-kept appearance, from the shop windows
   to the arrangement of the clothing. Bershka chooses the best shopping areas in every
   city and establishes itself in prominent locations of the main shopping centers.',
@@ -74,7 +113,7 @@ s2 = Store.create!(
   name: "Primark",
   location: "Amsterdam",
   user: u2,
-  address: 'Damrak 77, 1012 LM Amsterdam',
+  address: 'Damrak 77, Amsterdam',
   description: "Adored by fashion fans and value seekers alike Primark is widely
   established as the destination store for keeping up with the latest looks without
   breaking the bank.",
@@ -90,7 +129,7 @@ s3 = Store.create!(
   name: "Score",
   location: "Amsterdam",
   user: u2,
-  address: 'Nieuwendijk 209, 1012 MH Amsterdam',
+  address: 'Nieuwendijk 209, Amsterdam',
   description: 'Score was founded in 1981 by owner / CEO Jan Peters. The first store
   was opened in Apeldoorn and Score has since grown into one of the most successful
   Multi Branded Jeans retail organizations.',
@@ -105,7 +144,7 @@ s3 = Store.create!(
 s4 = Store.create!(
   name: "Tulashi",
   location: "Amsterdam",
-  address: 'Haarlemmerstraat 28, 1013 ER Amsterdam',
+  address: 'Haarlemmerstraat 28, Amsterdam',
   user: u3,
   description: 'We concentrate on promotion of our own country and Nepali
   handmade products to encourage and develop the skill and lifestyle of the people
@@ -122,7 +161,7 @@ s4 = Store.create!(
 s5 = Store.create!(
   name: "Leder Paleis",
   location: "Amsterdam",
-  address: 'Nieuwendijk 229, 1012 MH Amsterdam',
+  address: 'Nieuwendijk 229, Amsterdam',
   user: u2,
   description: 'From influences from out the hearts of fashion like Italy,
   France, and the Netherlands with high-end materials and leather is mixed all in to
@@ -138,7 +177,7 @@ s5 = Store.create!(
 s6 = Store.create!(
   name: "Søstrene Grene",
 location: "Amsterdam",
-  address: 'Nieuwendijk 219, 1012 MH Amsterdam',
+  address: 'Nieuwendijk 219, Amsterdam',
   user: u3,
   description: 'A place where creative and inquisitive minds can feel
   right at home. Knud Cresten sets out to create a store concept that artfully
@@ -153,7 +192,7 @@ location: "Amsterdam",
 s7 = Store.create!(
   name: "Ermenegildo Zegna",
 location: "Amsterdam",
-  address: 'Dam 1, 1012 JS Amsterdam',
+  address: 'Dam 1, Amsterdam',
   user: u3,
   description: "High-end retailer selling the namesake Italian label's
   apparel, accessories & fragrances for men.",
@@ -167,7 +206,7 @@ location: "Amsterdam",
 s8 = Store.create!(
   name: "Abraxas",
 location: "Amsterdam",
-  address: 'Jonge Roelensteeg 12-14, 1012 PL Amsterdam',
+  address: 'Jonge Roelensteeg 12-14, Amsterdam',
   user: u4,
   description: "Originally starting off as a night bar, the shop then
   transformed into a legendary hotspot for high quality products, friendly customer
@@ -182,7 +221,7 @@ location: "Amsterdam",
 s9 = Store.create!(
   name: "The MM Gallery",
   location: "Amsterdam",
-  address: 'Spuistraat 249, 1012 VP Amsterdam',
+  address: 'Spuistraat 249, Amsterdam',
   user: u4,
   description: "Our products will give you energy to dance all night, or
   relax you after a stressful day. Others take you on a psychedelic journey through
@@ -197,7 +236,7 @@ s9 = Store.create!(
 s10 = Store.create!(
   name: "De Bierkoning",
   location: "Amsterdam",
-  address: 'Paleisstraat 125, 1012 ZL Amsterdam',
+  address: 'Paleisstraat 125, Amsterdam',
   user: u4,
   description: "De Bierkoning has been the address for good beer in Amsterdam
   since 1985. The assortment in the store in the Paleisstraat includes more than 2000
@@ -212,7 +251,7 @@ s10 = Store.create!(
 s11 = Store.create!(
   name: "ROOR Shop Amsterdam",
   location: 'Amsterdam',
-  address: 'Sint Nicolaasstraat 19, 1012 NJ Amsterdam',
+  address: 'Sint Nicolaasstraat 19, Amsterdam',
   user: u4,
   description: "ROOR started out in 1995 founded by Martin Birzle, the
   philosophy behind ROOR is based on the finest glassblowing craftsmanship and
@@ -223,6 +262,271 @@ s11 = Store.create!(
   commission_amount: 28,
   rent_price_min: 10,
   rent_price_max: 500
+  )
+
+s12 = Store.create!(
+  name: "Home Sweet Home",
+  location: 'Amsterdam',
+  address: 'Van Woustraat 138, Amsterdam',
+  user: u9,
+  description: "Come in and find your next cozy designer interior! We are
+  located in the hip DePijp Area and have everything ranging from carpets to candles.",
+  remote_photo_url: 'https://images.pexels.com/photos/415359/pexels-photo-415359.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Interior Design',
+  rating: 5,
+  commission_amount: 35,
+  rent_price_min: 10,
+  rent_price_max: 500
+  )
+
+s13 = Store.create!(
+  name: "Larry's Pub",
+  location: 'Amsterdam',
+  address: 'Lange Leidsedwarsstraat 70B8, Amsterdam',
+  user: u4,
+  description: "Larry's Pub has been the go to pub for young and old since it was
+  opened in 2005. We present new beers every tuesday of the month and we have a lunch menu!",
+  remote_photo_url: 'https://images.pexels.com/photos/34650/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 3,
+  commission_amount: 33,
+  rent_price_min: 3.50,
+  rent_price_max: 7
+  )
+
+s14 = Store.create!(
+  name: "Rescon MEN",
+  location: 'Amsterdam',
+  address: 'Laurierhof 50, Amsterdam',
+  user: u2,
+  description: "We at Rescon know what the gentleman of today needs to create the
+  ultimate look. Our shoes tailored in the shop are famous in and arround the city of Amsterdam.",
+  remote_photo_url: 'https://images.pexels.com/photos/247321/pexels-photo-247321.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Clothes',
+  rating: 5,
+  commission_amount: 12,
+  rent_price_min: 75,
+  rent_price_max: 1000
+  )
+
+s15 = Store.create!(
+  name: "Mundo Nuovo Designs",
+  location: 'Amsterdam',
+  address: 'Rozengracht 92II, Amsterdam',
+  user: u8,
+  description: "Muondo Nuovo sells an assorted selection of crafting supplies with emphasis on jewlery making supplies.
+  Our designs are made by the award winning Julietta Hansen.",
+  remote_photo_url: 'https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Art',
+  rating: 4,
+  commission_amount: 40,
+  rent_price_min: 50,
+  rent_price_max: 120
+  )
+
+s17 = Store.create!(
+  name: "Tap Tap Tap!",
+  location: 'Amsterdam',
+  address: 'Warmoesstraat 13IA, Amsterdam',
+  user: u4,
+  description: "Over 45 beers and more to come for our beer lovers and soon to be enthusiast!
+  Our bar is attached to the Hela-Brewery close to Amsterdam Central Station.
+  Newcomer of the month tasting every first tuesday!",
+  remote_photo_url: 'https://images.pexels.com/photos/1400255/pexels-photo-1400255.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 5,
+  commission_amount: 45,
+  rent_price_min: 3,
+  rent_price_max: 15
+  )
+
+s18 = Store.create!(
+  name: "Burning Riders",
+  location: 'Amsterdam',
+  address: 'Oudezijds Voorburgwal 50HS, Amsterdam',
+  user: u7,
+  description: "Find the best biking equipment with the help of our experienced
+  employees. We have provided the best gear for more than 30 years!",
+  remote_photo_url: 'https://images.pexels.com/photos/132682/pexels-photo-132682.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Lifestyle',
+  rating: 4,
+  commission_amount: 25,
+  rent_price_min: 10,
+  rent_price_max: 180
+  )
+
+s19 = Store.create!(
+  name: "Rausch Sportsbar",
+  location: 'Amsterdam',
+  address: 'Leidseplein 5, Amsterdam',
+  user: u4,
+  description: "At Rausch we show every football match and every snooker tournament on our 5 flat screens.",
+  remote_photo_url: 'https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 4,
+  commission_amount: 33,
+  rent_price_min: 10,
+  rent_price_max: 500
+  )
+
+s20 = Store.create!(
+  name: "Aviator Skins",
+  location: 'Amsterdam',
+  address: 'Kalverstraat 120, Amsterdam',
+  user: u7,
+  description: "The coolest leather Jackets in town. We guarantee you'll never
+  be cold or out of style with our timeless designs.",
+  remote_photo_url: 'https://images.pexels.com/photos/207300/pexels-photo-207300.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Cloting',
+  rating: 4,
+  commission_amount: 20,
+  rent_price_min: 80,
+  rent_price_max: 500
+  )
+
+s21 = Store.create!(
+  name: "Drinking Buddies",
+  location: 'Amsterdam',
+  address: 'Singel 194, Amsterdam',
+  user: u4,
+  description: "We have the biggest assortment of softdrinks and alcoholics.
+  Our attractive prices make us the go to place for event catering",
+  remote_photo_url: 'https://images.pexels.com/photos/533353/pexels-photo-533353.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 3,
+  commission_amount: 28,
+  rent_price_min: 5,
+  rent_price_max: 170
+  )
+
+s22 = Store.create!(
+  name: "Café Dexter",
+  location: 'Amsterdam',
+  address: 'Herengracht 148, Amsterdam',
+  user: u4,
+  description: "Café Dexter provides a laid back atmosphere for people who enjoy a good cocktail",
+  remote_photo_url: 'https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 4,
+  commission_amount: 28,
+  rent_price_min: 5,
+  rent_price_max: 100
+  )
+
+s23 = Store.create!(
+  name: "Antiquities Maria",
+  location: 'Amsterdam',
+  address: 'Johannes Vermeerstraat 13, Amsterdam',
+  user: u3,
+  description: "Our small Antiquities store has specialized in buying and selling watches, furniture and decoration.",
+  remote_photo_url: 'https://images.pexels.com/photos/678248/pexels-photo-678248.png?auto=compress&cs=tinysrgb&h=350',
+  category: 'Art',
+  rating: 4,
+  commission_amount: 15,
+  rent_price_min: 60,
+  rent_price_max: 600
+  )
+
+s24 = Store.create!(
+  name: "Little Italy Bakery",
+  location: 'Amsterdam',
+  address: 'Sint Nicolaasstraat 19, Amsterdam',
+  user: u2,
+  description: "Come in and find the best breads made by our traditional italian baker Giovanni!",
+  remote_photo_url: 'https://images.pexels.com/photos/1047458/pexels-photo-1047458.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 4,
+  commission_amount: 35,
+  rent_price_min: 2,
+  rent_price_max: 15
+  )
+
+s25 = Store.create!(
+  name: "Craft Space",
+  location: 'Amsterdam',
+  address: 'Van Baerlestraat 19, Amsterdam',
+  user: u8,
+  description: "Craft Space is a coworking space/shop that sells the work of their inhouse artist.
+  In here you will find detailed painting, african woodwork and even traditionally made instruments",
+  remote_photo_url: 'https://images.pexels.com/photos/848205/pexels-photo-848205.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Art',
+  rating: 4,
+  commission_amount: 40,
+  rent_price_min: 10,
+  rent_price_max: 500
+  )
+
+s26 = Store.create!(
+  name: "Deedee Shoes",
+  location: 'Amsterdam',
+  address: 'Van Woustraat 34, Amsterdam',
+  user: u9,
+  description: "We have a large assortment of modern design womens shoes with a large windowfront.",
+  remote_photo_url: 'https://images.pexels.com/photos/1020372/pexels-photo-1020372.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Art',
+  rating: 4,
+  commission_amount: 20,
+  rent_price_min: 45,
+  rent_price_max: 75
+  )
+
+s27 = Store.create!(
+  name: "Sunny Side",
+  location: 'Amsterdam',
+  address: 'Govert Flinckstraat 175, Amsterdam',
+  user: u7,
+  description: "Minimalistic designs with maximum style. Sunny Sides brand sunglasses
+  always look great on you. Promise.",
+  remote_photo_url: 'https://images.pexels.com/photos/704241/pexels-photo-704241.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Lifestyle',
+  rating: 5,
+  commission_amount: 25,
+  rent_price_min: 45,
+  rent_price_max: 160
+  )
+
+s28 = Store.create!(
+  name: "A&K Costumes",
+  location: 'Amsterdam',
+  address: 'Wibautstraat 42, Amsterdam',
+  user: u8,
+  description: "Be anyone or anything you like! We have a large variety of costumes for young and old!",
+  remote_photo_url: 'https://images.pexels.com/photos/607817/pexels-photo-607817.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Clothes',
+  rating: 4,
+  commission_amount: 20,
+  rent_price_min: 20,
+  rent_price_max: 75
+  )
+
+s29 = Store.create!(
+  name: "Mint & Chip Gelateria",
+  location: 'Amsterdam',
+  address: 'Derde Oosterparkstraat 201, Amsterdam',
+  user: u2,
+  description: "Mint & Chip has the mission to bring quality icecream to your neighbourhood.
+  We sell over 20 flavors and a variety of cakes and other deserts. Come by anytime!",
+  remote_photo_url: 'https://images.pexels.com/photos/3631/summer-dessert-sweet-ice-cream.jpg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 5,
+  commission_amount: 33,
+  rent_price_min: 3,
+  rent_price_max: 15
+  )
+
+s30 = Store.create!(
+  name: "Brother Bear",
+  location: 'Amsterdam',
+  address: 'Conradstraat 6, Amsterdam',
+  user: u7,
+  description: "Brother Bear is the hotspot for beer lovers and brewers. Located close to
+  Amsterdam Central Station we offer lunch & dinner and tours through the former brewery building. ",
+  remote_photo_url: 'https://images.pexels.com/photos/681847/pexels-photo-681847.jpeg?auto=compress&cs=tinysrgb&h=350',
+  category: 'Food',
+  rating: 4,
+  commission_amount: 40,
+  rent_price_min: 3,
+  rent_price_max: 8
   )
 puts 'done'
 sleep(0.5)

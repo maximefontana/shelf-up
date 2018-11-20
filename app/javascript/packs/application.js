@@ -20,3 +20,6 @@ openMessages();
 
 import { filterBookings } from '../components/filterBookings';
 filterBookings();
+
+import "../plugins/flatpickr";
+

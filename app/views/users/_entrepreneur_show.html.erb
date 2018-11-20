@@ -1,9 +1,21 @@
-<!-- show stores -->
+<!-- user bookings -->
+<div class="user-bookings-box">
+  <h2>Bookings</h2>
+  <div class="user-show-pending-bookings">
+    <% @user.bookings.each do |booking| %>
+
+    <%= render 'users/display_user_bookings', store: booking.store, booking: booking %>
+
+    <% end %>
+  </div>
+</div>
+
+<!-- user stores -->
 <div class="user-show-stores">
   <% if @user.stores.empty? %>
   <p>You haven't added a Brand yet</p>
   <% else %>
-
+  <h2>My Products</h2>
   <%= render 'users/display_user_stores' %>
   <% end %>
 
@@ -23,6 +35,7 @@
     <% end %>
   </div>
 </div>
+
 
 <!-- current shelves tab -->
 <div class="user-show-box current-bookings hidden">
