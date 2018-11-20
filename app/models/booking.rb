@@ -14,5 +14,4 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  # @category_choices = %w(Clothing Art Culinary Other)
 end

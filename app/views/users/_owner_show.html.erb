@@ -1,44 +1,46 @@
+<!-- show bookings -->
+
+<div class="user-bookings-box">
+  <h2>Bookings</h2>
+  <%= render 'users/bookings_filter' %>
+
+  <div class="user-show-pending-bookings">
+    <% @user.stores.each do |store| %>
+    <% store.bookings.each do |booking| %>
+
+    <%= render 'users/display_user_bookings', store: booking.store, booking: booking %>
+
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
 <!-- show stores -->
 <div class="user-show-stores">
   <% if @user.stores.empty? %>
   <h3 class="button button-large button-red">You haven't added a Store yet</h3>
   <% else %>
-
+  <h2>My Products</h2>
   <%= render 'users/display_user_stores' %>
 
   <% end %>
-  <h3><%= link_to "Add Store", new_store_path, class: "button button-medium button-green" %></h3>
-</div>
 </div>
 
-<!-- show bookings -->
-<div class="user-show-box pending-bookings hidden">
-  <div class="user-show-pending-bookings">
-    <% @user.stores.each do |store| %>
-    <% store.bookings.each do |booking| %>
 
-    <%= render 'users/display_user_bookings', store: store, booking: booking %>
-
-    <% end %>
-    <% end %>
-  </div>
-</div>
 
 <!-- current shelves tab -->
-<div class="user-show-box current-bookings hidden">
+<!-- <div class="user-show-box current-bookings hidden">
   <div class="user-show-current-bookings">
-    <% @user.stores.each do |store| %>
-    <% store.bookings.each do |booking| %>
-    <% if !booking.start_date.nil? && Date.today >= booking.start_date %>
+    <%# @user.stores.each do |store| %>
+    <%# store.bookings.each do |booking| %>
+    <%# if !booking.start_date.nil? && Date.today >= booking.start_date %>
 
-    <%= render 'users/display_user_bookings', store: store, booking: booking %>
+    <%#= render 'users/display_user_bookings', store: store, booking: booking %>
 
-    <% end %>
-    <% end %>
-    <% end %>
+    <%# end %>
+    <%# end %>
+    <%# end %>
   </div>
 </div>
+ -->
 
-<div class="user-show-box messages hidden">
-
-</div>

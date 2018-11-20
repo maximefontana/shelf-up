@@ -1,18 +1,8 @@
-<!-- show stores -->
-<div class="user-show-stores">
-  <% if @user.stores.empty? %>
-  <p>You haven't added a Brand yet</p>
-  <% else %>
+<!-- user bookings -->
+<div class="user-bookings-box">
+  <h2>Bookings</h2>
+  <%= render 'users/bookings_filter' %>
 
-  <%= render 'users/display_user_stores' %>
-  <% end %>
-
-</div>
-  <%= link_to "Add Products", new_store_path, class: "button button-large button-green add-brand-button" %>
-</div>
-
-<!-- show bookings -->
-<div class="user-show-box pending-bookings hidden">
   <div class="user-show-pending-bookings">
     <% @user.bookings.each do |booking| %>
 
@@ -22,19 +12,14 @@
   </div>
 </div>
 
-<!-- current shelves tab -->
-<div class="user-show-box current-bookings hidden">
-  <div class="user-show-current-bookings">
-    <% @user.bookings.each do |booking| %>
-    <% if !booking.start_date.nil? && Date.today >= booking.start_date %>
-
-    <%= render 'users/display_user_bookings', store: booking.store, booking: booking %>
-
-    <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="user-show-box messages hidden">
+<!-- user stores -->
+<div class="user-show-stores">
+  <% if @user.stores.empty? %>
+  <p>You haven't added a Brand yet</p>
+  <% else %>
+  <h2>My Products</h2>
+  <%= render 'users/display_user_stores' %>
+  <% end %>
 
 </div>
+
