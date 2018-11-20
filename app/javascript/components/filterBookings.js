@@ -1,8 +1,5 @@
 function filterBookings() {
   const items = document.querySelectorAll(".booking-status");
-  const btn = document.querySelector('.booking-status-btn');
-  const statusInput = document.querySelector('#status');
-  const statusForm = document.querySelector('.filter-bookings-form');
   const bookingCards = document.querySelectorAll('.booking-card');
 
   if (items) {
@@ -18,7 +15,6 @@ function filterBookings() {
           }
         })
 
-
         bookingCards.forEach((card) => {
           if (item.innerText == "All") {
             card.classList.remove('hidden');
@@ -27,13 +23,9 @@ function filterBookings() {
           } else {
             card.classList.add('hidden');
           }
-
         })
-
-
       })
     })
-
   }
 };
 
