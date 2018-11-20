@@ -755,17 +755,17 @@ sleep(0.5)
 print 'Creating messages...'
 
 m1 = Message.create!(
-  text: "I like your jeans but my shelf has already been booked for those dates. Please send me another booking for January"
+  text: "I like your jeans but my shelf has already been booked for those dates. Please send me another booking for January",
   booking: b2,
   user: u8
   )
 m2 = Message.create!(
-  text: "I love your design. I look forward to displaying your jeans in my store"
+  text: "I love your design. I look forward to displaying your jeans in my store",
   booking: b3,
   user: u9
   )
 m3 = Message.create!(
-  text: "I want to start selling children's clothes. Do you have any jeans in small sizes?"
+  text: "I want to start selling children's clothes. Do you have any jeans in small sizes?",
   booking: b9,
   user: u10
   )
