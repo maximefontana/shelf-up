@@ -7,6 +7,4 @@ class Booking < ApplicationRecord
   belongs_to :store
 
   has_many :messages, dependent: :destroy
-
-  # @category_choices = %w(Clothing Art Culinary Other)
 end

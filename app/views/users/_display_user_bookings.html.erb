@@ -37,7 +37,7 @@
       <% else %>
 
       <% if booking.status == 'Pending' %>
-      <%= link_to "Cancel", booking_path(booking), method: :delete, class: "button button-small button-red" %>
+      <%= link_to "Delete", booking_path(booking), method: :delete, class: "button button-small button-red" %>
       <% end %>
 
       <% end %>

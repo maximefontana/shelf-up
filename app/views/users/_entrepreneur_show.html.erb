@@ -23,6 +23,19 @@
   <%= link_to "Add Products", new_store_path, class: "button button-large button-green add-brand-button" %>
 </div>
 
+<!-- show bookings -->
+<div class="user-show-box pending-bookings hidden">
+  <%= render 'users/bookings_filter' %>
+
+  <div class="user-show-pending-bookings">
+    <% @user.bookings.each do |booking| %>
+
+    <%= render 'users/display_user_bookings', store: booking.store, booking: booking %>
+
+    <% end %>
+  </div>
+</div>
+
 
 <!-- current shelves tab -->
 <div class="user-show-box current-bookings hidden">

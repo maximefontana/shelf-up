@@ -18,4 +18,8 @@ addRating();
 import { openMessages } from '../components/userShowMessages';
 openMessages();
 
+import { filterBookings } from '../components/filterBookings';
+filterBookings();
+
 import "../plugins/flatpickr";
+
