@@ -67,6 +67,8 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: .5px .5px 5px $graythree;
+  background-color: white;
+
 }
 
 .homepage-avatar {
@@ -88,12 +90,18 @@
 }
 
 .owner-desription{
+  border-top: 4px solid $arrowsix;
+  width: 190px;
   font-weight:bold;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 0px;
+  margin: 10px;
 }
 
 .homepage-users-words {
   width: 60%;
-  margin-right: 5%;
+  margin: 0px 5%;
 }
 
 .homepage-bottom-buttons {
