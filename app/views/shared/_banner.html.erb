@@ -4,10 +4,17 @@
     window.scrollTo(0, 0);
   }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script>
+  var typed = new Typed('.typed', {
+    strings: ["First sentence.", "Second sentence."],
+    typeSpeed: 30
+  });
+</script>
 
 <div class="banner">
   <div class="banner-content">
-    <h1 id="banner-title-typer">YOUR PRODUCTS IN REAL STORES</h1>
+    <h1 class="typed"><span id="banner-typed-text"></span></h1>
     <p>ShelfUp let’s you display your brand in the coolest neighborhoods of the city.</p>
 
     <div class="banner-search">
