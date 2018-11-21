@@ -21,5 +21,8 @@ openMessages();
 import { filterBookings } from '../components/filterBookings';
 filterBookings();
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
 import "../plugins/flatpickr";
 
