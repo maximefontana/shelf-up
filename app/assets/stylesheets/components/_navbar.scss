@@ -59,6 +59,11 @@
   align-items: center;
   justify-content: space-between;
 }
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* Basic navbar item */
 .navbar-wagon-item {
@@ -73,7 +78,6 @@
   font-size: 20px;
   transition: 0.3s;
   margin: 0 5px;
-  margin-top: 5px;
 }
 .navbar-wagon-link:hover {
   color: $arrowseven;

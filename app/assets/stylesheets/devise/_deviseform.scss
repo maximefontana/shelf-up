@@ -1,13 +1,15 @@
 .container-devise-form {
-  width: 30%;
+  min-width: 650px;
+  width: auto;
   padding: 20px;
   border-radius: 10px;
   padding: 30px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 90px;
   text-align: center;
   height: 100% !important;
   background-color: $grayone;
+  margin-bottom: 20px;
 }
 .container-devise-form h2{
   color:#282727;
@@ -36,4 +38,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  input {
+    text-align: center;
+  }
+}
+.change-pass {
+  margin-top: 20px;
 }

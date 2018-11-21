@@ -1,40 +1,39 @@
+<div class="form-container">
+  <div class="container-devise-form">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<div class="container-devise-form">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :username, maxlength: 25 %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :email, required: true, autofocus: true %>
 
-  <div class="form-inputs">
-    <%= f.input :username, maxlength: 25 %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :email, required: true, autofocus: true %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <%= f.input :password,
+      hint: "Leave blank if no change",
+      required: false,
+      input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+      required: false,
+      input_html: { autocomplete: "new-password" } %>
+      <%= f.input :current_password,
+      hint: "Enter current password to confirm changes",
+      required: true,
+      input_html: { autocomplete: "current-password" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= link_to "Back", :back, class: "button button-small button-blue" %>
+      <%= link_to "Delete My Account", registration_path(resource_name), class: "button button-small button-red", data: { confirm: "Are you sure?" }, method: :delete %>
+      <%= f.button :submit, "Update", class: "button button-small button-green" %>
+    </div>
     <% end %>
 
-    <%= f.input :password,
-    hint: "Leave blank if no change",
-    required: false,
-    input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-    required: false,
-    input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-    hint: "Enter current password to confirm changes",
-    required: true,
-    input_html: { autocomplete: "current-password" } %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: "button button-small button-green" %>
-  </div>
-  <% end %>
-
-  <%= link_to "Back", :back, class: "button button-small button-blue" %>
-  <%= link_to "Delete My Account", registration_path(resource_name), class: "button button-small button-red", data: { confirm: "Are you sure?" }, method: :delete %>
-
 </div>
-
