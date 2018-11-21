@@ -190,7 +190,8 @@
 
   <% if current_user && current_user != @store.user && !current_user.owner %>
   <% if @store.bookings.empty? %>
-  <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
+  <p><b>Request this shelf today!</b></p>
+  <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
   <% else %>
   <% @store.bookings.each do |booking| %>
   <% if booking.user == current_user && booking.status == "Pending" %>

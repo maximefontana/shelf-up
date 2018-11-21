@@ -252,7 +252,22 @@ background-size: cover;
   }
 }
 
-// Sticky form classes
+.store-buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+
+  > p {
+    font-size: 36px;
+  }
+
+  > a {
+    width: 250px;
+  }
+}
 
 
 
