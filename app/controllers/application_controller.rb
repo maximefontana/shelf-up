@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo, :email])
   end
 
+  def default_url_options
+    { host: ENV["PRODUCTION_URL"] || "localhost:3000"}
+  end
+
   # def after_sign_in_path_for(resource)
   #   session[:previous_url] || root_path
   # end

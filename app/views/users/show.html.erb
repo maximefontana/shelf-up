@@ -12,14 +12,12 @@
         <%= @user.username %>
       </h1>
     <% if @user == current_user %>
+      <%= link_to edit_user_registration_path(@user) do %>
       <div class="button button-large button-blue">
-        <%= link_to edit_user_registration_path(@user) do %>
       Edit Profile
+      </div>
       <% end %>
-      </div>
-      <div class="add-product button button-large button-green">
-        <%= link_to "Add Products", new_store_path%>
-      </div>
+      <%= link_to "Add Products", new_store_path, class: "add-product button button-large button-blue" %>
     <% end %>
     </div>
   </div>

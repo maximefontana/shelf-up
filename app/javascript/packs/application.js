@@ -24,5 +24,9 @@ filterBookings();
 import { bookingMessages } from '../components/bookingFormMessage';
 bookingMessages();
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
+
 import "../plugins/flatpickr";
 
