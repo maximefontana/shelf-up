@@ -2,6 +2,12 @@
 
 # rubocop:disable all
 class MessagesController < ApplicationController
+
+  def index
+    @messages = Message.all
+    @user = current_user
+  end
+
   def create
     @message = Message.create(message_params)
     @message.user = current_user
@@ -19,6 +25,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:text)
+    params.require(:message).permit(:text, :user_id, :booking_id)
   end
 end
