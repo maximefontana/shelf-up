@@ -101,14 +101,13 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
+  transition: 0.3s;
 }
 
 .card-link:hover {
-  opacity: 0.9;
+  opacity: 0.8;
   box-shadow: 1px 1px 5px $grayfive;
 }
-
-
 
 .card-stars {
   color: $yellow;
