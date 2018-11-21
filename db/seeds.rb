@@ -64,7 +64,6 @@ u7 = User.create!(
   owner: true,
   remote_photo_url: "https://images.pexels.com/photos/213117/pexels-photo-213117.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
-
 u8 = User.create!(
   username: "Maria de Friets",
   email: "maria@shelf.com",
@@ -79,7 +78,6 @@ u9 = User.create!(
   owner: false,
   remote_photo_url: "https://images.pexels.com/photos/756453/pexels-photo-756453.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
-
 u10 = User.create!(
   username: "Robert Hogerwaard",
   email: "robert@shelf.com",
@@ -87,7 +85,6 @@ u10 = User.create!(
   owner: true,
   remote_photo_url: "https://images.pexels.com/photos/936072/pexels-photo-936072.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
-
 u11 = User.create!(
   username: "Anne-Marije Lanjouw",
   email: "aml@shelf.com",
@@ -95,7 +92,6 @@ u11 = User.create!(
   owner: true,
   remote_photo_url: "https://images.pexels.com/photos/935803/pexels-photo-935803.jpeg?auto=compress&cs=tinysrgb&h=350"
   )
-
 u12 = User.create!(
   username: "Daantje Ester",
   email: "daantje@shelf.com",
