@@ -1,7 +1,9 @@
 <!-- user bookings -->
 <div class="user-bookings-box">
   <h2>Bookings</h2>
-  <%= render 'users/bookings_filter' %>
+  <div class="user-bookings-filter">
+    <%= render 'users/bookings_filter' %>
+  </div>
 
   <div class="user-show-pending-bookings">
     <% @user.bookings.each do |booking| %>
