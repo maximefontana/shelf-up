@@ -16,11 +16,12 @@ input .form-control {
 .booking-new-form {
   width: 350px;
   height: 400px;
-  background-color: $light-gray;
+  background-color: $grayfive;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
   box-shadow: 1px 1px 5px $grayone;
+  color: white;
 
   .form-title {
     display: flex;
