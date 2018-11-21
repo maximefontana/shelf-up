@@ -7,6 +7,9 @@
   text-decoration: none;
   transition: 0.3s;
   cursor: pointer;
+  input {
+    width: auto !important;
+  }
 }
 
 .button-small{
@@ -22,7 +25,7 @@
 }
 
 .button-large {
-  width: 200px;
+  width: auto;
   height: auto;
   padding: 5px 35px;
   &:hover {
@@ -52,16 +55,16 @@
 }
 // booking filter buttons
 .button-filter {
-  color: $arrowseven;
-  border: 2px solid $arrowseven;
+  color: $grayfour;
+  border: 2px solid $grayfour;
   width: auto;
   &:focus {
     outline: none;
   }
 }
 .button-filter:hover {
-  color: white !important;
-  background-color: $arrowseven;
+  color: $arrowseven;
+  border: 2px solid $arrowseven;
 }
 .status-selected {
   color: white;
@@ -71,10 +74,17 @@
   &:focus {
     outline: none;
   }
+  &:hover {
+    color: white;
+  }
 }
 .button-green {
   color: $primarythree;
   border: 2px solid $primarythree;
+  width: auto;
+  &:focus {
+    outline: none;
+  }
 }
 
 .button-green:hover {
@@ -85,6 +95,9 @@
 .button-red, .button-red:focus {
   color: $redone;
   border: 2px solid $redone;
+  &:focus {
+    outline: none;
+  }
 }
 
 .button-red:hover {
@@ -108,24 +121,10 @@
 
 }
 
-
 .filter-button {
   text-decoration: none;
+  margin-bottom: 3px;
 }
-
-.filter-button a {
-  color: $bluesix !important;
+.form-button {
+  width: 85px;
 }
-
-.filter-button:hover {
-  color: $bluesix !important;
-}
-
-.filter-button-link {
-  color: white !important;
-}
-
-.filter-button-link:hover {
-  color: white !important;
-}
-
