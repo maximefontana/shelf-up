@@ -1,4 +1,4 @@
-function bookingMessages(event) {
+function bookingMessages() {
   const bookingMessageForm = document.querySelector('.booking-form-message-box');
   const bookingMessageButton = document.querySelector('.booking-form-message-button');
   if (bookingMessageButton) {
