@@ -4,10 +4,10 @@
 <ul>
   <% @messages.each do |message| %>
     <% if message.user == current_user %>
-      <li>From: <%= message.user %> | To: <%= message.booking.store.user %></li>
+      <li>From: <%= message.user.username %> | To: <%= message.booking.store.user.username %></li>
       <li>Content: <p><%= message.text %></p></li>
     <% end %>
   <% end %>
 </ul>
 
-<% raise %>
+<%# raise %>
