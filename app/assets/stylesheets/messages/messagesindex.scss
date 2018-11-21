@@ -1,4 +1,49 @@
+.messages-button-on-profile a {
+  margin-top: 24px;
+  font-size: 24px;
+  color: $grayfive;
+
+}
+
+.messages-button-on-profile {
+  margin: 12px 0px;
+  > i {
+    font-size: 24px;
+  }
+}
+
+.messages-button-on-profile:hover a:hover {
+  color: $arrowsix;
+}
+
 .messages-container {
   width: 1000px;
   height: 80vh;
+  margin: 100px auto;
+
+  > h2 {
+    text-align: center;
+
+  }
+
+  .messages-cards {
+    height: 250px;
+    background-color: white;
+    box-shadow: 1px 1px 5px $graythree;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 24px;
+
+    .user-message-name {
+      width: 250px;
+      margin: 24px;
+    }
+
+    .user-message-content {
+      flex-grow: 1;
+    }
+
+  }
+
 }
