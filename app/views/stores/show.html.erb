@@ -1,4 +1,4 @@
-<div class="store-img-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @store.photo %>');">
+<div class="store-img-banner" style="background-image: url('https://images.pexels.com/photos/1267360/pexels-photo-1267360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
 </div>
 
 <div class="store-details-container">
@@ -107,9 +107,9 @@
     <% end %>
 
   <div class="store-about-images">
-    <div></div> <!-- add images here -->
-    <div></div>
-    <div></div>
+    <div class="store-image-one"></div> <!-- add images here -->
+    <div class="store-image-two"></div>
+    <div class="store-image-three"></div>
   </div>
 </div>
 
@@ -190,7 +190,8 @@
 
   <% if current_user && current_user != @store.user && !current_user.owner %>
   <% if @store.bookings.empty? %>
-  <%= link_to "Request Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
+  <p><b>Request this shelf today!</b></p>
+  <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-green" %>
   <% else %>
   <% @store.bookings.each do |booking| %>
   <% if booking.user == current_user && booking.status == "Pending" %>

@@ -18,7 +18,7 @@ background-size: cover;
 
 .store-img-banner{
   background-size: cover;
-  background-position: bottom;;
+  background-position: center;
   height: 300px;
   width: 100%;
   margin-top: 5%;
@@ -37,7 +37,7 @@ background-size: cover;
   height: 375px;
   width: 100%;
   padding: 0px 10%;
-  background-color: $grayone;
+  background-color: rgba($grayone, 0.5);
   position: relative;
 
   .sticky-form {
@@ -118,7 +118,7 @@ background-size: cover;
 }
 
 .store-about-container {
-  height: 520px;
+  height: 580px;
   width: 100%;
   padding: 2% 10%;
   text-align: center;
@@ -129,6 +129,7 @@ background-size: cover;
       color: $bluesix;
       justify-content: center;
       align-items: center;
+      margin-bottom: 12px;
 
       > i {
         width: 36px;
@@ -163,8 +164,27 @@ background-size: cover;
 
     > div {
       height: 250px;
-      width: 200px;
-      border: 1px solid black;
+      width: 300px;
+      box-shadow: 0.5px 0.5px 2px $grayone;
+      border-radius: 2px;
+    }
+
+    .store-image-one {
+      background-image: url('https://images.pexels.com/photos/1267701/pexels-photo-1267701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .store-image-two {
+      background-image: url('https://images.pexels.com/photos/1324896/pexels-photo-1324896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .store-image-three {
+      background-image: url('https://images.pexels.com/photos/1267345/pexels-photo-1267345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+      background-size: cover;
+      background-position: center;
     }
   }
 }
@@ -178,7 +198,7 @@ background-size: cover;
   width: 100%;
   padding: 0% 10%;
   text-align: center;
-  background-color: $grayone;
+  background-color: rgba($grayone, 0.5);
 
   > p {
     font-size: 36px;
@@ -233,7 +253,22 @@ background-size: cover;
   }
 }
 
-// Sticky form classes
+.store-buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+
+  > p {
+    font-size: 36px;
+  }
+
+  > a {
+    width: 250px;
+  }
+}
 
 
 
