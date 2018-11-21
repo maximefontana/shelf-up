@@ -21,5 +21,8 @@ openMessages();
 import { filterBookings } from '../components/filterBookings';
 filterBookings();
 
+import { bookingMessages } from '../components/bookingFormMessage';
+bookingMessages();
+
 import "../plugins/flatpickr";
 

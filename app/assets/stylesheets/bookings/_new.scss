@@ -5,24 +5,31 @@
   border-radius: 10px;
 }
 
+input .form-control {
+  border-radius: 8px;
+}
+
 .form-group {
   margin-bottom: 0px;
 }
 
 .booking-new-form {
   width: 300px;
-  height: 350px;
-  background-color: $blueone;
-
+  height: 375px;
+  background-color: $graytwo;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   .form-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
     font-weight: bold;
     background-color: $bluesix;
     color: white;
+    font-size: 36px;
+    height: 100px;
   }
 
   .booking-form-row-one {
@@ -65,32 +72,34 @@
 
   .booking-form-row-three {
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
     font-size: 12px;
+  }
 
-    #store-fee {
+  .booking-photo .form-group {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 12px;
 
+    >input {
+      display: inline;
     }
 
-    #total-cost {
-
+    > input[type="file"] {
+    display: inline;
     }
+  }
+
+
+  .booking-new-submit {
+    margin: 6px 0px;
+    padding: 0px 6px;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
-
-
-
-.booking-new-submit {
-  display: flex;
-  justify-content: space-around;
-}
-
-
-
-.fill-column-space {
-
-}
 
 
