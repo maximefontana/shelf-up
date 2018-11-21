@@ -16,6 +16,9 @@
     min-width: 200px;
     display: block;
     position: static;
+    border-right: 7px solid $arrowone;
+    border-bottom: none;
+    border-radius: none;
   }
 
   .user-bookings-chatroom {
