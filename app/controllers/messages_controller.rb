@@ -2,6 +2,12 @@
 
 # rubocop:disable all
 class MessagesController < ApplicationController
+
+  def index
+    @messages = Message.all
+    @user = current_user
+  end
+
   def create
     @message = Message.create(message_params)
     @message.user = current_user

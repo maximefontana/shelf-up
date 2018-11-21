@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'messages/index'
   get 'messages/create'
   get 'messages/update'
   get 'messages/destroy'
-
 
   devise_for :users
 
@@ -23,7 +21,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'home', to: 'pages#home', as: :home
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :messages, only: [:index]
+  end
 
   resources :stores do
     resources :bookings, only: [:new, :create]
