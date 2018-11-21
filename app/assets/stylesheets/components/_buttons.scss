@@ -55,12 +55,13 @@
 }
 // booking filter buttons
 .button-filter {
-  color: $grayfour;
-  border: 2px solid $grayfour;
+  color: $graythree;
+  border: 2px solid $graythree;
   width: auto;
   &:focus {
     outline: none;
   }
+  letter-spacing: 1px;
 }
 .button-filter:hover {
   color: $arrowseven;
