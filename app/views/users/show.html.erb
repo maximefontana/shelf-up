@@ -4,33 +4,33 @@
     <div class="user-show-avatar">
       <% if @user.photo %>
       <%= cl_image_tag @user.photo,
-        width: 300, height: 300, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
+      width: 300, height: 300, crop: :thumb, gravity: :face, style:"border-radius:50%;"%>
       <% end %>
     </div>
     <div class="personal-details">
       <h1 class="user-show-name">
         <%= @user.username %>
+        <% if @user == current_user %>
+        <%= link_to edit_user_registration_path(@user) do %>
+        <i class="fas fa-pencil-alt edit-store-name"></i>
+        <% end %>
+        <% end %>
       </h1>
-    <% if @user == current_user %>
-      <%= link_to edit_user_registration_path(@user) do %>
-      <div class="button button-large button-blue">
-      Edit Profile
-      </div>
-      <% end %>
+      <% if @user == current_user %>
       <%= link_to "Add Products", new_store_path, class: "add-product button button-large button-blue" %>
-    <% end %>
+      <% end %>
     </div>
   </div>
 
 
   <% if @user == current_user %>
 
-    <!--  displays the current user's account with bookings & messages -->
-    <%= render 'users/user_personal_show' %>
+  <!--  displays the current user's account with bookings & messages -->
+  <%= render 'users/user_personal_show' %>
 
   <% else %>
 
-    <%= render 'users/third_party_show' %>
+  <%= render 'users/third_party_show' %>
 
   <% end %>
 

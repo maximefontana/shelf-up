@@ -4,7 +4,7 @@
    <div class="nav-homepage-logo">
     <%= link_to root_path do %>
     <span>SHELFUP</span>
-    <%= image_tag('upload-big.png') %>
+    <%= image_tag('upload-big.png', style: "padding-bottom: 5px;") %>
     <% end %>
   </div>
 
@@ -37,6 +37,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-homepage-wagon-link" %>
     <% end %>
   </div>

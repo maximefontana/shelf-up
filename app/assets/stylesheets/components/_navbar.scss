@@ -27,13 +27,17 @@
 .nav-logo a {
   font-size: 25px;
   text-decoration: none;
-  color: $arrowthree;
+  color: $grayfive;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .nav-search-logo a{
   color: $arrowthree;
+  margin: 0 15px;
+  &:hover {
+    color: $arrowfive;
+  }
 }
 
 .nav-logo a:hover {
@@ -68,9 +72,10 @@
   font-size: 14px;
   font-size: 20px;
   transition: 0.3s;
+  margin: 0 5px;
 }
 .navbar-wagon-link:hover {
-  color: $bluesix;
+  color: $arrowseven;
   text-decoration: none;
 }
 
@@ -84,14 +89,14 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $grayfive !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: black !important;
+  background: white;
+  color: $graythree !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';

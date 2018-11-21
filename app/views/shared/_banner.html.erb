@@ -17,7 +17,7 @@
         <%# elsif user_signed_in? && !current_user.owner %>
         <%#= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Locations" %>
         <%# else %>
-        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Location", list: "location", autocomplete: :off, onfocus: "this.placeholder = ''" %>
+        <%= text_field_tag :query, params[:query], class: "homepage-form", placeholder: "Search Location", autocomplete: :off, onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search Location'" %>
         <%# end %>
       </div>
     </div>
@@ -28,9 +28,9 @@
       <% end %>
     </datalist>
 
-    <div class="banner-button">
-      <%= submit_tag "Search", class: "button btn-big-homepage" %>
-    </div>
+    <!-- <div class="banner-button">
+      <%#= submit_tag "Search", class: "button btn-big-homepage" %>
+    </div> -->
     <% end %>
 
     <!-- smooth scrolling down the page -->

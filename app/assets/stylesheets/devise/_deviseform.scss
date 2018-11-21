@@ -22,3 +22,11 @@
   padding: 30px;
   text-align: center;
 }
+.form-links {
+  margin-top: 20px;
+  padding-top: 20px;
+  color: #5A5C5C;
+  &:hover {
+    color: $arrowfive;
+  }
+}
