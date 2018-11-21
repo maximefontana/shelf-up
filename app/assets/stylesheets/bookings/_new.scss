@@ -1,28 +1,108 @@
 .container-new-booking {
-  margin-top: 80px;
-  margin-left: 20vw;
-  margin-right: 20vw;
-  background-color: $grayone;
+  width: 50%;
+  margin: 10% auto;
   padding: 30px;
   border-radius: 10px;
 }
 
-.container-new-booking h2{
-  color:#282727;
-  font-weight: bold;
+input .form-control {
+  border-radius: 8px;
 }
 
-.booking-new-submit {
+.form-group {
+  margin-bottom: 0px;
+}
+
+.booking-new-form {
+  width: 300px;
+  height: auto;
+  background-color: $light-gray;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px $grayone;
+
+  .form-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: $bluesix;
+    color: white;
+    font-size: 36px;
+    height: 100px;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .booking-form-row-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 6px 12px;
+
+    .booking-form-name {
+      width: 600px;
+
+    }
+
+    .booking-form-start-date{
+      flex-grow: 1;
+      margin: 0px 6px;
+    }
+
+    .booking-form-end-date{
+      flex-grow: 1;
+    }
+  }
+
+  .booking-form-row-two {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+
+    .price-per-unit {
+      width: 45%;
+    }
+
+    .booking-quantity {
+      width: 45%;
+    }
+  }
+
+  .booking-form-row-three {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .booking-photo .form-group {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 12px;
+
+    >input {
+      display: inline;
+    }
+
+    > input[type="file"] {
+    display: inline;
+    }
+  }
+
+
+  .booking-new-submit {
+    margin: 6px 0px;
+    padding: 0px 6px;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-.booking-new-double-column {
-  display: flex;
-  justify-content: space-between;
-}
 
-.fill-column-space {
-  width: 25vw;
-  flex-grow: 1;
-}
+

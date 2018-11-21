@@ -169,13 +169,6 @@
 </div>
 
 
-      <div class="store-owner">
-        <% if user_signed_in? %>
-          <%= link_to @store.user.username, user_path(@store.user) %>
-        <% else %>
-          <%= @store.user.username %>
-        <% end %>
-      </div>
 
 
       <% if !@store.link.nil? %>
