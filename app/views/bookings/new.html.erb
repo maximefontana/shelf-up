@@ -15,18 +15,36 @@
         document.getElementById('total-cost').innerHTML = "Total Cost: €0";
       }
     }
-
   </script>
 
   <div class="booking-new-form">
-    <h2> Make a Booking </h2>
+    <div class="form-title">
+      Inquire
+    </div>
     <%= simple_form_for([@store, @booking]) do |f| %>
-      <%#= f.input :category, label: "Item type" %> <!-- Not using anymore -->
-      <%= f.input :name, label: "Item Name", maxlength: 30, required: true %>
-      <div class="booking-new-double-column">
-        <%= f.input :price_per_unit, input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2), input_html: { class: "fill-column-space" }, required: true %>
-        <%= f.input :quantity, label: "Amount of units", input_html: { class: "fill-column-space" }, required: true %>
+    <div class="booking-form-row-one">
+      <div class="booking-form-name">
+        <%= f.input :name, label: "Name", maxlength: 30, required: true %>
       </div>
+      <div class="booking-form-start-date">
+        <%= f.input :start_date, label: "Start", as: :string, input_html: { class: "datepicker" }, required: true %>
+      </div>
+      <div class="booking-form-end-date">
+        <%= f.input :end_date, label: "End", as: :string, input_html: { class: "datepicker" }, required: true %>
+      </div>
+    </div>
+
+
+    <div class="booking-form-row-two">
+      <div class="price-per-unit">
+        <%= f.input :price_per_unit, label: "Price/Unit", input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2), required: true %>
+      </div>
+      <div class="booking-quantity">
+        <%= f.input :quantity, label: "Quantity", required: true %>
+      </div>
+    </div>
+
+
       <!-- Hidden fields we calculate -->
       <%= f.input :booking_fee, as: :hidden %>
       <p id="store-fee">Store Insurance Policy Fee: </p>
@@ -35,10 +53,9 @@
 
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
-      <div class="booking-new-double-column">
-        <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, required: true %>
-        <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, required: true %>
-      </div>
+
+
+
       <%= f.input :comment, label: "Message" %>
       <div class = "booking-new-submit">
         <%= link_to "Back", :back, class: "button button-small button-red" %>

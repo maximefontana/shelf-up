@@ -1,28 +1,78 @@
 .container-new-booking {
-  margin-top: 80px;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin: 80px 20vw 0% 20vw;
   background-color: $grayone;
   padding: 30px;
   border-radius: 10px;
 }
 
-.container-new-booking h2{
-  color:#282727;
-  font-weight: bold;
+.booking-new-form {
+  width: 300px;
+  height: 350px;
+  background-color: $blueone;
+
+
+  .form-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-weight: bold;
+    background-color: $bluesix;
+    color: white;
+  }
+
+  .booking-form-row-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 0px;
+
+    .booking-form-name {
+      width: 600px;
+    }
+
+    .booking-form-start-date{
+      flex-grow: 1;
+      margin: 0px 6px;
+    }
+
+    .booking-form-end-date{
+      flex-grow: 1;
+    }
+  }
+
+  .booking-form-row-two {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    margin: 0px;
+
+    .price-per-unit {
+      width: 45%;
+    }
+
+    .booking-quantity {
+      width: 45%;
+    }
+  }
 }
+
+
+
 
 .booking-new-submit {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.booking-new-double-column {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .fill-column-space {
-  width: 25vw;
-  flex-grow: 1;
+
 }
+
+

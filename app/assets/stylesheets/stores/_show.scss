@@ -1,6 +1,4 @@
 .store-index-img-banner{
-  background-size: cover;
-  background-position: center;
   height: 40vh;
   width: 100%;
   border-radius: 4px 4px 0px 0px;
@@ -14,12 +12,14 @@
     url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-image: linear-gradient(to bottom left, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
     url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+background-size: cover;
+  background-position: center;
 }
 
 .store-img-banner{
   background-size: cover;
-  background-position: bottom;
-  height: 40vh;
+  background-position: bottom;;
+  height: 300px;
   width: 100%;
   margin-top: 5%;
 }
