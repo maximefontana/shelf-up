@@ -212,15 +212,14 @@ location: "Amsterdam",
   rent_time: 10,
   link: "www.abraxas.com"
   )
+
 s7 = Store.create!(
   name: "De Bierkoning",
   location: "Amsterdam",
   address: 'Paleisstraat 125, Amsterdam',
   user: u7,
-  description: "De Bierkoning has been the address for good beer in Amsterdam
-  since 1985. The assortment in the store in the Paleisstraat includes more than 2000
-  ifferent beers in every conceivable style from home and abroad.",
-  remote_photo_url: 'https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/46137530_1822032041228913_4964196228045733888_n.jpg?_nc_cat=106&_nc_ht=scontent-ams3-1.xx&oh=06f54de02e33d54ade7fc3c43296c8c6&oe=5C7BBBD8',
+  description: "Since 1985 De Bierkoning has been one of the top spots in Amsterdam to meet up with friends and grab a beer. We carry all sorts of beer ranging from craft beer to global brands. Come in and check us out!",
+  remote_photo_url: 'https://images.pexels.com/photos/1267682/pexels-photo-1267682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   category: 'Food',
   rating: 5,
   commission_amount: 36,
@@ -229,6 +228,7 @@ s7 = Store.create!(
   rent_time: 30,
   link: "www.de-bierkoning.com"
   )
+
 s8 = Store.create!(
   name: "ROOR Shop Amsterdam",
   location: 'Amsterdam',
