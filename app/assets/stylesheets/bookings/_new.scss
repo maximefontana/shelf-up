@@ -1,6 +1,6 @@
 .container-new-booking {
-  margin: 80px 20vw 0% 20vw;
-  background-color: $grayone;
+  width: 50%;
+  margin: 10% auto;
   padding: 30px;
   border-radius: 10px;
 }
@@ -15,11 +15,13 @@ input .form-control {
 
 .booking-new-form {
   width: 300px;
-  height: 375px;
-  background-color: $graytwo;
+  height: auto;
+  background-color: $light-gray;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px $grayone;
 
   .form-title {
     display: flex;
@@ -30,6 +32,7 @@ input .form-control {
     color: white;
     font-size: 36px;
     height: 100px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .booking-form-row-one {
