@@ -18,6 +18,10 @@
       </h1>
       <% if @user == current_user %>
       <%= link_to "Add Products", new_store_path, class: "add-product button button-large button-blue" %>
+      <div class="messages-button-on-profile">
+        <i class="far fa-envelope"></i>
+        <%= link_to "Messages", user_messages_path(@user) %>
+      </div>
       <% end %>
     </div>
   </div>

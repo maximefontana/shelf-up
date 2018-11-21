@@ -1,22 +1,21 @@
 <div class="messages-container">
-  <ul>
+  <h2>Messages</h2>
   <% @messages.each do |message| %>
-    <% if message.user == current_user %>
-      <li>
-        From: <%= message.user.username %> | To: <%= message.booking.store.user.username %>
-        </li>
-      <li>Content: <p><%= message.text %></p></li>
+  <div class="messages-cards">
+    <% if message.user == current_user || message.booking.user == current_user  %>
+    <div class="user-message-name">
+      <div class="center">
+      From:
+      </div>
+      <div>
+        <%= link_to message.user.username, user_path(message.user) %>
+      </div>
+    </div>
+
+    <div class="user-message-content">
+      <%= message.text %>
+    </div>
     <% end %>
+  </div>
   <% end %>
-</ul>
-
-
-
 </div>
-
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
-
-
-
-<%# raise %>
