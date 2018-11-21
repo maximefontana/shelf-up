@@ -57,15 +57,15 @@
       <%= f.input :photo, label: "Photo:" %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>
+      <div class ="booking-form-message-box hidden">
+      <%= f.input :comment, label: "Message" %>
+    </div>
 
     <div class = "booking-new-submit">
       <a class="booking-form-message-button button button-small button-blue" href="#">Message</a>
       <%= f.submit "Book", class: "button button-medium button-green" %>
     </div>
-      <div class ="booking-form-message-box hidden">
-      <%= f.input :comment, label: "Message" %>
     <% end %>
-    </div>
   </div>
 
   <!-- Has to be below the form, otherwise the form breaks because the function is confused -->

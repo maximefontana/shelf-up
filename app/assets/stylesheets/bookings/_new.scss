@@ -3,6 +3,7 @@
   margin: 10% auto;
   padding: 30px;
   border-radius: 10px;
+  height: auto;
 }
 
 input .form-control {
@@ -15,7 +16,8 @@ input .form-control {
 
 .booking-new-form {
   width: 350px;
-  height: 480px;
+  min-height: 480px;
+  height: auto;
   background-color: $grayfive;
   display: flex;
   flex-direction: column;
