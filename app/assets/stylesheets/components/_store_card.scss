@@ -54,7 +54,8 @@
   height: 55%;
   width: 100%;
   border-radius: 4px 4px 0px 0px;
-  border-right: 7px solid $arrowone;
+  border-bottom: 7px solid $arrowone;
+  transition: 0.3s;
 }
 .stores-index-image {
   border-right: 0;
@@ -102,6 +103,13 @@
   left: 0px;
   right: 0px;
   transition: 0.3s;
+
+  &:hover {
+    .card-img {
+      border-bottom: 18px solid $arrowone;
+    }
+  }
+
 }
 
 .card-link:hover {

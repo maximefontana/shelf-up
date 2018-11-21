@@ -15,7 +15,7 @@
   <% @stores.brand.each do |store| %>
   <div class="card">
     <%= link_to store_path(store), class: "card-link" do %>
-    <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
+    <div class="card-img stores-index-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
       <%# raise %>
     </div>
     <div class="card-store-name">
@@ -55,7 +55,7 @@
   <% @stores.shop.each do |store| %>
   <div class="card">
     <%= link_to store_path(store), class: "card-link" do %>
-    <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
+    <div class="card-img store-index-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path store.photo %>');">
       <%# raise %>
     </div>
     <div class="card-store-name">
