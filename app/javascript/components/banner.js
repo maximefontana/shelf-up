@@ -7,8 +7,9 @@ function loadDynamicBannerText() {
      "IN PHYSICAL STORES",
     "IN LOCAL COMMUNITIES"],
     typeSpeed: 80,
-    loop: true
-    setTimeout(loadDynamicBannerText, 500);
+    loop: true,
+    backSpeed: 20,
+    backDelay: 1500
   });
 }
 
