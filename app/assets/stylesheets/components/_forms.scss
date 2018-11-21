@@ -2,7 +2,7 @@
   border-radius: 25px;
   // border: none;
   font-weight: bold;
-  background-color: rgba(14, 131, 221, 0.6);
+  background-color: transparent;
   text-align: center;
   text-decoration: none;
   color: white;
@@ -11,9 +11,9 @@
   &:focus {
     outline: none;
   }
-  ::placeholder {
-    color: white;
-  }
+}
+.homepage-form::placeholder {
+  color: white;
 }
 
 .form-text input {
