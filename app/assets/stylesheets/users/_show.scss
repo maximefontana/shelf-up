@@ -27,6 +27,13 @@
 
     .user-show-name {
       color: $grayfive;
+      font-weight: bold;
+
+      >a {
+        > i {
+          font-size: 22px;
+        }
+      }
     }
 
     .user-show-edit-btn a {
