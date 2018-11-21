@@ -188,14 +188,17 @@
   <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
   <% end %>
 
-  <% if current_user && current_user != @store.user && !current_user.owner %>
+  <% if current_user && current_user != @store.user %>
+
   <% if @store.bookings.empty? %>
   <p><b>Request this shelf today!</b></p>
   <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
+
   <% else %>
   <% @store.bookings.each do |booking| %>
   <% if booking.user == current_user && booking.status == "Pending" %>
-  You have already requested this shelf.
+  <b>You have already requested this shelf</b>
+  <a href="#">Top</a>
   <% else %>
   <% end %>
   <% end %>
