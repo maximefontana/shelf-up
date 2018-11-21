@@ -14,12 +14,11 @@ input .form-control {
 }
 
 .booking-new-form {
-  width: 300px;
-  height: auto;
+  width: 350px;
+  height: 400px;
   background-color: $light-gray;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   border-radius: 4px;
   box-shadow: 1px 1px 5px $grayone;
 
@@ -31,7 +30,7 @@ input .form-control {
     background-color: $bluesix;
     color: white;
     font-size: 36px;
-    height: 100px;
+    height: 130px;
     border-radius: 4px 4px 0px 0px;
   }
 
@@ -41,6 +40,7 @@ input .form-control {
     align-items: center;
     font-size: 12px;
     padding: 6px 12px;
+    margin: 10px 0px;
 
     .booking-form-name {
       width: 600px;
