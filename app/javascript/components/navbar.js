@@ -6,6 +6,7 @@ function initUpdateNavbarOnScroll() {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
         navbar.classList.add('navbar-homepage-white');
+        navbar.classList.add('navbar-homepage-shadow');
         links[0].classList.remove('navbar-wagon-link');
         links[0].classList.add('navbar-homepage-black-link');
         links[1].classList.remove('navbar-wagon-link');
@@ -14,6 +15,7 @@ function initUpdateNavbarOnScroll() {
         logo.classList.add('navbar-homepage-logo-black');
       } else {
         navbar.classList.remove('navbar-homepage-white');
+        navbar.classList.remove('navbar-homepage-shadow');
         links[0].classList.add('navbar-wagon-link');
         links[0].classList.remove('navbar-homepage-black-link');
         links[1].classList.add('navbar-wagon-link');
