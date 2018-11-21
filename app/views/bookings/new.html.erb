@@ -7,10 +7,10 @@
       const unitQuantity = document.getElementById("booking_quantity").value;
 
       const bookingFee = Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100;
-      document.getElementById('store-fee').innerHTML = "Store's Insurance Policy Fee: €" + bookingFee.toString();
+      document.getElementById('store-fee').innerHTML = "Fee: €" + bookingFee.toString();
 
       // updating HTML
-      document.getElementById('total-cost').innerHTML = "Total Cost: €" + (Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100).toString();
+      document.getElementById('total-cost').innerHTML = "Total: €" + (Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100).toString();
       if (unitQuantity === "") {
         document.getElementById('total-cost').innerHTML = "Total Cost: €0";
       }
@@ -44,15 +44,20 @@
       </div>
     </div>
 
-
+    <div class="booking-form-row-three">
       <!-- Hidden fields we calculate -->
-      <%= f.input :booking_fee, as: :hidden %>
-      <p id="store-fee">Store Insurance Policy Fee: </p>
-      <%= f.input :total_price, as: :hidden %>
-      <p id="total-cost">Total Cost: </p>
+      <div id="total-cost">
+        Total:<%= f.input :total_price, label: "Total:", as: :hidden %>
+      </div>
+      <div id="store-fee">
+        Fee:<%= f.input :booking_fee, label: "Fee:", as: :hidden %>
+      </div>
 
+
+    </div>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
+
 
 
 
