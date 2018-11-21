@@ -112,7 +112,12 @@ input .form-control {
     margin: 6px 0px;
     padding: 0px 6px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-bottom: 8px;
+
+    > a {
+      margin: 0px 12px;
+    }
   }
 }
 
