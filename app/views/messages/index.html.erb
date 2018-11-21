@@ -1,2 +1,13 @@
 <h1>Messages#index</h1>
 <p>Find me in app/views/messages/index.html.erb</p>
+
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.user == current_user %>
+      <li>From: <%= message.user %> | To: <%= message.booking.store.user %></li>
+      <li>Content: <p><%= message.text %></p></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<% raise %>
