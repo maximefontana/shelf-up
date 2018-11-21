@@ -31,7 +31,7 @@
       <% if booking.status == "Pending" && policy(booking).update? %>
       <%= form_for(booking, method: :put) do |f| %>
       <%= f.hidden_field :status, value: "Accepted" %>
-      <%= f.submit "Accept", class: "button button-small button-blue" %>
+      <%= f.submit "Accept", class: "button button-small button-green" %>
       <% end %>
       <%= form_for(booking, method: :put) do |f| %>
       <%= f.hidden_field :status, value: "Declined" %>

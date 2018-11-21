@@ -60,6 +60,13 @@
 
 .user-bookings-store-name {
   font-size: 32px;
+  a {
+    color: $arrowthree;
+    &:hover {
+    color: $arrowone;
+
+    }
+  }
 }
 
 .user-bookings-category-location {
@@ -79,10 +86,10 @@
 }
 
 a.user-bookings-message-button {
-  color: $bluesix;
+  color: $arrowthree;
 
   &:focus, &:active, &:visited {
-    color: $bluesix;
+    color: $arrowfive;
   }
 }
 
