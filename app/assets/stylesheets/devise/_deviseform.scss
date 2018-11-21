@@ -1,13 +1,13 @@
 .container-devise-form {
   width: 30%;
-  background-color: $grayone;
   padding: 20px;
   border-radius: 10px;
   padding: 30px;
   margin: 0 auto;
-  text-align: center;
   margin-top: 100px;
+  text-align: center;
   height: 100% !important;
+  background-color: $grayone;
 }
 .container-devise-form h2{
   color:#282727;
@@ -29,4 +29,11 @@
   &:hover {
     color: $arrowfive;
   }
+}
+.form-container {
+  height: auto;
+  min-height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

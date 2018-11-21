@@ -61,13 +61,13 @@
 .user-bookings-store-name {
   font-size: 32px;
   a {
-    color: $arrowthree;
+    color: $grayfive !important;
     &:hover {
-    color: $arrowone;
-
+      color: $arrowthree !important;
     }
   }
 }
+.user-bookings-store-name
 
 .user-bookings-category-location {
   font-size: 16px;

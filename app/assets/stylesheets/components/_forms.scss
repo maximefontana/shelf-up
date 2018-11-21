@@ -28,8 +28,6 @@
   }
 }
 
-
-
 .navbar-search-form {
   background: transparent;
   border: 1px solid $arrowsix;
@@ -46,4 +44,35 @@
   ::placeholder {
     color: $grayone;
   }
+}
+.new-user-form-option {
+  font-weight: bold;
+  background-color: transparent;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+  color: $arrowtwo;
+  font-size: 20px;
+}
+.user-options {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+  width: auto;
+  .separator {
+  }
+  .active {
+    color: $arrowsix;
+    border-bottom: 3px solid $arrowsix;
+  }
+  .entrepreneur {
+  }
+}
+.form-actions {
+  margin-top: 15px;
+}
+.text-muted {
+  color: $redtwo;
 }
