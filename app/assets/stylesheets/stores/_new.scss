@@ -10,24 +10,24 @@
   // min-height: 92vh;
 }
 
-.new-store-form{
-  display:flex;
-  flex-direction:column;
+.new-store-form {
+  display: flex;
+  flex-direction: column;
   margin-top: 10%;
   width: 45%;
   margin: auto;
   margin-top: 100px;
+  margin-bottom: 20px;
   height: auto;
   min-height: 92vh;
   background-color: $grayone;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
-  justify-content:center;
-  align-content:center;
-
+  justify-content: center;
+  align-content: center;
 }
 
-.new-store-form h2{
-  color:#282727;
-  font-weight:bold;
+.new-store-form h2 {
+  color: #282727;
+  font-weight: bold;
 }
