@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // box-shadow: 1px 1px 18px 2px rgba(90,91,90,1);
+  transition: 0.5s;
 }
 
 .box-shadow-why-right {
@@ -47,23 +47,24 @@
 .with-bg-color-one {
   overflow-wrap: normal;
   background-color: $arrowone;
-  opacity: 0.7;
+  opacity: 0.0;
+  transition: 0.5s;
 }
 
 .with-bg-color-two {
   overflow-wrap: normal;
   background-color: $arrowtwo;
-  opacity: 0.7;
+  opacity: 0.0;
 }
 .with-bg-color-three {
   overflow-wrap: normal;
   background-color: $arrowthree;
-  opacity: 0.7;
+  opacity: 0.0;
 }
 .with-bg-color-four {
   overflow-wrap: normal;
   background-color: $arrowfive;
-  opacity: 0.7;
+  opacity: 0.0;
 }
 .homepage-wrapper {
   height: 100%;
