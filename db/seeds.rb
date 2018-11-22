@@ -14,11 +14,11 @@ print "Users Creating..."
 
 # entrepreneurs
 u1 = User.create!(
-  username: "Mikey de Konijn",
+  username: "Mike Peterson",
   email: "mikey@mikey.com",
   password: "testing",
   owner: false,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/mmudge"
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/maximefontana"
   )
 u2 = User.create!(
   username: "Frank Bekker",
@@ -39,7 +39,7 @@ u4 = User.create!(
   email: "max@max.com",
   password: "testing",
   owner: false,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/maximefontana"
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/mmudge"
   )
 u5 = User.create!(
   username: "Johnny Cash",
@@ -146,15 +146,13 @@ s2 = Store.create!(
   link: "www.primark.com"
   )
 s3 = Store.create!(
-  name: "Score",
+  name: "Murphy's Irish Pub",
   location: "Amsterdam",
   user: u9,
   address: 'Nieuwendijk 209, Amsterdam',
-  description: 'Score was founded in 1981 by owner / CEO Jan Peters. The first store
-  was opened in Apeldoorn and Score has since grown into one of the most successful
-  Multi Branded Jeans retail organizations.',
+  description: "Murphy's was founded in 1981 by owner / CEO Jan Peters. With great music, cheap drinks, and tasty food they have always been one of the top places in town to spend time with friends.",
   remote_photo_url: 'https://lh5.googleusercontent.com/p/AF1QipOGAS4h6fHBNvuGjctRZr2Ako8TQr0lMShVz2oy=w408-h306-k-no',
-  category: 'Clothing',
+  category: 'Food and Drinks',
   rating: 2,
   commission_amount: 30,
   rent_price_min: 7,
@@ -472,7 +470,7 @@ s23 = Store.create!(
   description: "Brother Bear is the hotspot for beer lovers and brewers. Located close to
   Amsterdam Central Station we offer lunch & dinner and tours through the former brewery building. ",
   remote_photo_url: 'https://images.pexels.com/photos/681847/pexels-photo-681847.jpeg?auto=compress&cs=tinysrgb&h=350',
-  category: 'Food',
+  category: 'Food and Drinks',
   rating: 4,
   commission_amount: 40,
   rent_price_min: 3,
@@ -575,7 +573,7 @@ s29 = Store.create!(
   description: "We have the biggest assortment of softdrinks and alcoholics.
   Our attractive prices make us the go to place for event catering",
   remote_photo_url: 'https://images.pexels.com/photos/533353/pexels-photo-533353.jpeg?auto=compress&cs=tinysrgb&h=350',
-  category: 'Food',
+  category: 'Drinks',
   rating: 3,
   commission_amount: 28,
   rent_price_min: 5,
@@ -589,26 +587,28 @@ sleep(0.5)
 
 print 'Creating bookings...'
 b1 = Booking.create!(
-  price_per_unit: 1500,
-  quantity: 4,
-  total_price: 6000,
-  name: "Jeans",
-  category: "Clothing",
+  price_per_unit: 15,
+  quantity: 100,
+  total_price: 1500,
+  name: "Craft Beers",
+  category: "Food",
   user: u1,
-  store: s1,
-  start_date: "2018-11-25",
-  end_date: "2018-12-25",
+  store: s3,
+  start_date: "2019-1-25",
+  end_date: "2019-2-21",
+  status: "Accepted",
   booking_fee: (60*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/M8ans8O-exI',
-  comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
+  comment: "Hello, do you have any space to display my beer? Please contact me with any questions. Thanks!"
   )
+
 b2 = Booking.create!(
   price_per_unit: 1500,
   quantity: 4,
   total_price: 6000,
   name: "Jeans",
   category: "Clothing",
-  user: u1,
+  user: u2,
   store: s2,
   start_date: "2018-11-20",
   end_date: "2018-12-20",
@@ -621,16 +621,16 @@ b3 = Booking.create!(
   price_per_unit: 1500,
   quantity: 4,
   total_price: 6000,
-  name: "Jeans",
-  category: "Clothing",
+  name: "My Beers",
+  category: "Food",
   user: u1,
-  store: s3,
-  start_date: "2019-01-20",
-  end_date: "2019-02-20",
+  store: s10,
+  start_date: "2019-03-20",
+  end_date: "2019-04-19",
   status: "Accepted",
   booking_fee: (60*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/M8ans8O-exI',
-  comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
+  comment: "Hello, do you think my beers would sell in your store? Please contact me with any questions you may have."
   )
 b4 = Booking.create!(
   price_per_unit: 1500,
@@ -638,7 +638,7 @@ b4 = Booking.create!(
   total_price: 6000,
   name: "Jeans",
   category: "Clothing",
-  user: u1,
+  user: u2,
   store: s5,
   start_date: "2018-10-01",
   end_date: "2018-11-01",
@@ -647,43 +647,48 @@ b4 = Booking.create!(
   remote_photo_url: 'https://unsplash.com/photos/M8ans8O-exI',
   comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
   )
+
 b5 = Booking.create!(
   price_per_unit: 600,
   quantity: 24,
   total_price: 14400,
   name: "Craft Beers",
   category: "Food",
-  user: u4,
-  store: s10,
-  start_date: "2018-11-20",
-  end_date: "2018-11-30",
+  user: u1,
+  store: s13,
+  start_date: "2018-12-18",
+  end_date: "2019-1-24",
+  status: "Pending",
   booking_fee: (144*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/EoC_IuYmtug'
   )
+
 b6 = Booking.create!(
   price_per_unit: 6700,
   quantity: 5,
   total_price: 33500,
-  name: "Leather Purse",
-  category: "Clothing",
+  name: "Beer",
+  category: "Food",
   user: u1,
-  store: s11,
-  start_date: "2018-10-30",
-  end_date: "2018-11-30",
+  store: s29,
+  start_date: "2018-12-14",
+  end_date: "2019-1-16",
+  status: "Pending",
   booking_fee: (335*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/M8ans8O-exI',
-  comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
+  comment: "Hello, do you have space to sell my beer? Please free to ask me any questions."
   )
 b7 = Booking.create!(
-  price_per_unit: 5000,
+  price_per_unit: 500,
   quantity: 10,
-  total_price: 50000,
+  total_price: 5000,
   name: "Drinks",
   category: "Food",
-  user: u6,
-  store: s17,
+  user: u1,
+  store: s10,
   start_date: "2018-12-10",
   end_date: "2019-01-10",
+  status: "Past End Date"
   booking_fee: (500*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/uVxPEvrYJxA'
   )
@@ -706,7 +711,7 @@ b9 = Booking.create!(
   total_price: 6000,
   name: "Jeans",
   category: "Clothing",
-  user: u1,
+  user: u2,
   store: s11,
   start_date: "2018-09-25",
   end_date: "2018-10-25",
@@ -719,16 +724,16 @@ b10 = Booking.create!(
   price_per_unit: 1500,
   quantity: 4,
   total_price: 6000,
-  name: "Jeans",
-  category: "Clothing",
+  name: "Beer",
+  category: "Food",
   user: u1,
-  store: s3,
-  start_date: "2018-11-20",
-  end_date: "2018-12-20",
+  store: s23,
+  start_date: "2018-6-1",
+  end_date: "2018-8-2",
   status: "Declined",
   booking_fee: (60*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/M8ans8O-exI',
-  comment: "Hello, would you have space for my jeans? Feel free to ask me any questions"
+  comment: "Hello, would you have space for my beer? Feel free to ask me any questions"
   )
 b11 = Booking.create!(
   price_per_unit: 1500,
@@ -736,8 +741,8 @@ b11 = Booking.create!(
   total_price: 6000,
   name: "Jeans",
   category: "Clothing",
-  user: u1,
-  store: s2,
+  user: u2,
+  store: s1,
   start_date: "2019-01-15",
   end_date: "2019-01-31",
   booking_fee: (60*0.15).round(2),
