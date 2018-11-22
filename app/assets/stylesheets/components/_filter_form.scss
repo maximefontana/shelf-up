@@ -6,6 +6,7 @@ input::-webkit-inner-spin-button {
 
 .filter-form-box {
   margin: 5% 0%;
+
 }
 
 .filter-form-flexbox {
@@ -16,10 +17,19 @@ input::-webkit-inner-spin-button {
   justify-content: space-around;
   align-items: center;
   text-align: left;
+  background-color: $grayfive;
+  border-radius: 4px;
+  padding: 24px;
+  color: white;
+
 }
 
 .filter-form-search-box {
-  margin: 5px 0px;
+  margin: 18px 0px 6px 0px;
+
+  > input {
+    color: black;
+  }
 }
 
 .width-thirty {
