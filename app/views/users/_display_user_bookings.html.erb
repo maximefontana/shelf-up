@@ -48,44 +48,7 @@
 
       <% end %>
 
-      <% if booking.store.ratings.empty? && booking.status == 'Past End Date' %>
-      <h3>Rate It!</h3>
-      <div class="rating-booking">
-        <p class="booking-id hidden"><%= booking.id %></p>
-        <%= render 'ratings/form', store: booking.store, booking: booking %>
-        <% num_stars = booking.store.rating %>
-        <% if !num_stars.nil? %>
-        <% count = 1 %>
-        <% num_stars.times do %>
-        <i class="fas fa-star star-<%=count%> star-rate"></i>
-        <% count += 1 %>
-        <% end %>
-        <% (5 - num_stars).times do %>
-        <i class="far fa-star star-<%=count%> star-rate"></i>
-        <% count += 1 %>
-        <% end %>
-        <% end %>
-      </div>
-
-      <% else %>
-
-      <% booking.store.ratings do |rating| %>
-      <% if rating.user == current_user %>
-      <h3>Thanks for your rating!</h3>
-      <div>
-        <% count = 1 %>
-        <% rating.score.times do %>
-        <i class="fas fa-star"></i>
-        <% count += 1 %>
-        <% end %>
-        <% (5 - rating.score).times do %>
-        <i class="far fa-star"></i>
-        <% count += 1 %>
-        <% end %>
-      </div>
-
-      <% else %>
-
+      <% if booking.status == 'Past End Date' %>
       <h3>Rate It!</h3>
       <div class="rating-booking">
         <p class="booking-id hidden"><%= booking.id %></p>
@@ -104,8 +67,7 @@
         <% end %>
       </div>
       <% end %>
-      <% end %>
-      <% end %>
+
     </div>
 
   </div>
