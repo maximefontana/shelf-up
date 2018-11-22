@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     store = Store.find(params[:store_id])
     booking.store = store
     booking.user = current_user
+    booking.category = store.category
 
     # set calculated fields in params
     set_price_per_unit
