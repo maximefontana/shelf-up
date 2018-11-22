@@ -6,7 +6,7 @@
       const unitQuantity = document.getElementById("booking_quantity").value;
 
       const bookingFee = Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100;
-      document.getElementById('store-fee').innerHTML = "Fee: €" + bookingFee.toString();
+      document.getElementById('store-fee').innerHTML = "Shelf Rental Fee: €" + bookingFee.toString();
 
       // updating HTML
       document.getElementById('total-cost').innerHTML = "Total: €" + (Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100).toString();
@@ -46,11 +46,8 @@
 
     <div class="booking-form-row-three">
       <!-- Hidden fields we calculate -->
-      <div id="total-cost">
-        Total:<%= f.input :total_price, label: "Total:", as: :hidden %>
-      </div>
       <div id="store-fee">
-        Fee:<%= f.input :booking_fee, label: "Fee:", as: :hidden %>
+        Shelf Rental Fee:<%= f.input :booking_fee, label: "Shelf Rental Fee:", as: :hidden %>
       </div>
     </div>
     <div class="booking-photo">
