@@ -63,7 +63,7 @@
 
       <div class="store-rent-price">
         <i class="far fa-money-bill-alt"></i>
-        <p>Product price range <b>€<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>,-</b></p>
+        <p>Product price range <b>€<%= @store.rent_price_min %> - €<%= @store.rent_price_max %></b></p>
         <% if current_user && policy(@store).update? %>
         <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
         <% end %>

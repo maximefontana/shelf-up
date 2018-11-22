@@ -5,9 +5,11 @@
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
       const commission = document.getElementById("commission").innerText;
-      console.log(commission)
+
       const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
+
       const bookingFee = (Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100) * daysTime;
+
       if (bookingFee) {
         document.getElementById('store-fee').innerHTML = "Shelf Rental Fee: €" + bookingFee.toString();
       }
@@ -52,19 +54,20 @@
 
     <div class="booking-form-row-three">
       <!-- Hidden fields we calculate -->
-      <div id="total-profit">
-        Possible Revenue: €0
-      </div>
-
-      <div id="store-fee">
-        Shelf Rental Fee: €0<%= f.input :booking_fee, label: "Shelf Rental Fee:", as: :hidden %>
+      <div class="amounts">
+        <div id="total-profit">
+          Possible Revenue: €0
+        </div>
+        <div id="store-fee">
+          Shelf Rental Fee: €0<%= f.input :booking_fee, label: "Shelf Rental Fee:", as: :hidden %>
+        </div>
       </div>
     </div>
     <div class="booking-photo">
       <%= f.input :photo, label: "Photo:" %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>
-      <div class ="booking-form-message-box hidden">
+    <div class ="booking-form-message-box hidden">
       <%= f.input :comment, label: "Message" %>
     </div>
 
@@ -78,8 +81,8 @@
   <!-- Has to be below the form, otherwise the form breaks because the function is confused -->
   <script>
      // updates when quantity is changed
-    const quantity = document.querySelector("#booking_quantity");
-    quantity.addEventListener('keyup', (event) => {
+     const quantity = document.querySelector("#booking_quantity");
+     quantity.addEventListener('keyup', (event) => {
       calcPrice();
     });
     //  Updates when price per unit is changed
