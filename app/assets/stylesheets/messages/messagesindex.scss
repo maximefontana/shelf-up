@@ -24,7 +24,6 @@
 
   > h2 {
     text-align: center;
-
   }
 
   .messages-cards {
@@ -47,17 +46,37 @@
     .user-message-name-content {
       max-width: 800px;
       flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-bottom: 60px;
 
-      > div a {
+      .just-name {
+        margin: 24px 0px;
         font-size: 24px;
-        margin: 18px 0px;
+        color: black;
+        border-bottom: 1px solid $arrowsix;
+
+        > a {
+          color: black;
+        }
+
+        > a:hover {
+          color: $arrowsix;
+        }
       }
+
+      .just-text {
+        color: $grayfive;
+      }
+
+
     }
 
     .user-message-time {
-      text-align: left;
-      max-width: 50px;
-      margin: 0px 36px;
+      text-align: center;
+      margin: 0px 24px 140px 36px;
+      min-width: 100px;
     }
 
   }
