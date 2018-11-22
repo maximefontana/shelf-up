@@ -5,19 +5,18 @@
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
       const commission = document.getElementById("commission").innerText;
-
       const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
-
       const bookingFee = (Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100) * daysTime;
+      const total = ((Math.round(
+        ((pricePerUnit * unitQuantity) -
+        (pricePerUnit * unitQuantity) * (commission / 100))
+        * 100) / 100)
+        * daysTime);
 
+      // updating HTML
       if (bookingFee) {
         document.getElementById('store-fee').innerHTML = "Shelf Rental Fee: €" + bookingFee.toString();
       }
-
-
-      // FIX THE ABOVE!!
-
-      const total = (Math.round(((pricePerUnit * unitQuantity) - (bookingFee + commission) * 100) / 100) * daysTime);
       if (total) {
         document.getElementById('total-profit').innerHTML = "Possible Revenue: €" + total.toString();
       }
