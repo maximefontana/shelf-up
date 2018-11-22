@@ -27,7 +27,7 @@
     <div class="form-title">
       REQUEST
     </div>
-    <%= simple_form_for([@store, Booking.new]) do |f| %>
+    <%= simple_form_for([@store, @booking]) do |f| %>
     <div class="booking-form-row-one">
       <div class="booking-form-name">
         <%= f.input :name, label: "Name", maxlength: 30, required: true %>
@@ -72,7 +72,7 @@
 
     <div class = "booking-new-submit">
       <a class="booking-form-message-button button button-small button-blue" href="#">Message</a>
-      <%= f.submit "Book", class: "button button-medium button-green" %>
+      <%= f.submit "Request", class: "button button-medium button-green" %>
     </div>
     <% end %>
   </div>
