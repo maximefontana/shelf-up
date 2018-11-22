@@ -44,7 +44,7 @@
     <div class="store-commish-show">
       <i class="fas fa-balance-scale"></i>
       <p>
-        We charge <b><%= @store.commission_amount %>% Commission</b> on rented shelf revenue</p>
+        We charge <b id="commission"><%= @store.commission_amount %></b><b>% Commission</b> on rented shelf revenue</p>
         <% if current_user && policy(@store).update? && current_user.owner %>
         <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
         <% end %>

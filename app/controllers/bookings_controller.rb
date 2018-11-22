@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     booking.total_price = params[:booking][:total_price]
 
     if booking.save
-      redirect_to user_path(current_user) + "#bookings"
+      redirect_to user_path(current_user)
     else
       @booking = booking
       @store = store
