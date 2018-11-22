@@ -30,5 +30,8 @@ initUpdateNavbarOnScroll();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
+import { boxesScrollAnimation } from '../components/homepageColorBoxes';
+boxesScrollAnimation();
+
 import "../plugins/flatpickr";
 
