@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
       @booking = booking
       @store = store
       render :new
-end
+    end
   end
 
   def edit
