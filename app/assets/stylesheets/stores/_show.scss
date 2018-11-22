@@ -7,12 +7,12 @@
   justify-content: center;
   align-items: flex-end;
   background-image: -webkit-linear-gradient(top right, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
-    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-image: -o-linear-gradient(top right, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
-    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-image: linear-gradient(to bottom left, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%),
-    url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-background-size: cover;
+  url('https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover;
   background-position: center;
 }
 
@@ -41,9 +41,9 @@ background-size: cover;
   position: relative;
 
   .sticky-form {
-  position: absolute;
-  top: -130px;
-  right: 150px;
+    position: absolute;
+    top: -130px;
+    right: 150px;
   }
 
   .store-details-show {
@@ -122,18 +122,18 @@ background-size: cover;
   padding: 5% 10%;
   text-align: center;
 
-   .store-owner {
-      display: flex;
-      font-size: 14px;
-      color: $bluesix;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 12px;
+  .store-owner {
+    display: flex;
+    font-size: 14px;
+    color: $bluesix;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
 
-      > i {
-        width: 36px;
-      }
+    > i {
+      width: 36px;
     }
+  }
 
   .store-location-show {
     display: flex;
@@ -242,11 +242,11 @@ background-size: cover;
       }
 
       .testimonial-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto;
-      background-position: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-position: center;
       }
     }
   }
@@ -269,5 +269,8 @@ background-size: cover;
   }
 }
 
-
+.star-rate {
+  cursor: pointer;
+  color: gold !important;
+}
 

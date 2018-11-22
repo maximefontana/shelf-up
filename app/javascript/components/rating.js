@@ -2,57 +2,59 @@ function addRating(reviewHTML) {
   const bookings = document.querySelectorAll('.rating-booking');
 
   if (bookings) {
-    bookings.forEach(function(item, index) {
+    bookings.forEach(function(booking, index) {
+      const fullStars = booking.querySelectorAll(".fas.fa-star");
+      const number = fullStars.length;
+      const rating = booking.querySelector('#rating_score');
+      const stars = booking.querySelectorAll(".fa-star");
+      const newRatingForm = booking.querySelector('#new_rating');
 
-      console.log(item.children[2-6].classList);
+      stars.forEach(function(star, index) {
 
-      const fullStars= document.querySelectorAll(".fas.fa-star");
-      const number = fullStars.length
-      const rating = document.getElementById('rating_score');
-      const list= document.querySelectorAll(".fa-star");
-      const bookingID = document.querySelector('.booking-id').innerText;
-      const newRatingForm = document.getElementById(`${bookingID}`);
-      item.addEventListener('mouseover', (event) => {
-        const arrayOfStars = Array.from(list)
+        star.addEventListener('mouseover', (event) => {
+          const arrayOfStars = Array.from(stars);
 
-        function findIndexNumber(element) {
-          return element == event.target;
-        }
+          function findIndexNumber(element) {
+            return element == event.target;
+          }
 
-        const star = arrayOfStars.findIndex(findIndexNumber);
+          const currentStar = arrayOfStars.findIndex(findIndexNumber);
+          console.log(currentStar);
 
-        if(star == -1) {
-          list.forEach(function(item, index) {
-            if(index <= number - 1){
-              item.classList.add('fas');
-              item.classList.remove('far');
-            } else {
-              item.classList.remove('fas');
-              item.classList.add('far');
-            }
-          })
-        }
-        else {
-          list.forEach(function(item, index) {
-
-            if(index <= star){
-              item.classList.add('fas');
-              item.classList.remove('far');
-            } else {
-              item.classList.remove('fas');
-              item.classList.add('far');
-            }
-          })
-        }
-      })
-      item.addEventListener('click', (event) => {
-        list.forEach(function(item, index) {
-          if (event.target == item) {
-            rating.value = index + 1;
-            newRatingForm.submit();
+          if(currentStar == -1) {
+            stars.forEach(function(star, index) {
+              if(index <= number - 1){
+                star.classList.add('fas');
+                star.classList.remove('far');
+              } else {
+                star.classList.remove('fas');
+                star.classList.add('far');
+              }
+            })
+          }
+          else {
+            stars.forEach(function(star, index) {
+              if(index <= currentStar){
+                star.classList.add('fas');
+                star.classList.remove('far');
+              } else {
+                star.classList.remove('fas');
+                star.classList.add('far');
+              }
+            })
           }
         })
-      });
+
+
+        star.addEventListener('click', (event) => {
+          stars.forEach(function(item, index) {
+            if (event.target == item) {
+              rating.value = index + 1;
+              newRatingForm.submit();
+            }
+          })
+        });
+      })
     })
   }
 };
