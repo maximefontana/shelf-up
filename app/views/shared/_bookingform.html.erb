@@ -13,7 +13,7 @@
       // if (total) {
       //   document.getElementById('total-cost').innerHTML = "Total Price of Your Merchandise: €" + total.toString();
       // }
-
+    }
   </script>
 
   <div class="booking-new-form">
@@ -47,7 +47,7 @@
     <div class="booking-form-row-three">
       <!-- Hidden fields we calculate -->
       <div id="total-cost">
-        Total:<%= f.input :total_price, label: "Total:", as: :hidden %>
+        <%= f.input :total_price, label: "Total:", as: :hidden %>
       </div>
       <div id="store-fee">
         Fee:<%= f.input :booking_fee, label: "Fee:", as: :hidden %>
