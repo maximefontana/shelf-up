@@ -688,7 +688,7 @@ b7 = Booking.create!(
   store: s10,
   start_date: "2018-12-10",
   end_date: "2019-01-10",
-  status: "Past End Date"
+  status: "Past End Date",
   booking_fee: (500*0.15).round(2),
   remote_photo_url: 'https://unsplash.com/photos/uVxPEvrYJxA'
   )
