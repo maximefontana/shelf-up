@@ -18,7 +18,8 @@
 
 .messages-container {
   width: 1000px;
-  height: 80vh;
+  height: auto;
+  min-height: 80vh;
   margin: 100px auto;
 
   > h2 {
@@ -31,17 +32,32 @@
     background-color: white;
     box-shadow: 1px 1px 5px $graythree;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 24px;
 
-    .user-message-name {
-      width: 250px;
-      margin: 24px;
+    .user-message-avatar {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      margin: 0px 36px;
+
     }
 
-    .user-message-content {
+    .user-message-name-content {
+      max-width: 800px;
       flex-grow: 1;
+
+      > div a {
+        font-size: 24px;
+        margin: 18px 0px;
+      }
+    }
+
+    .user-message-time {
+      text-align: left;
+      max-width: 50px;
+      margin: 0px 36px;
     }
 
   }

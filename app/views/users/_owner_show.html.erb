@@ -6,7 +6,7 @@
 
   <div class="user-show-pending-bookings">
     <% @user.stores.each do |store| %>
-    <% store.bookings.each do |booking| %>
+    <% store.bookings.order("created_at DESC").each do |booking| %>
 
     <%= render 'users/display_user_bookings', store: booking.store, booking: booking %>
 

@@ -4,15 +4,23 @@
       // calculations
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
+      const commission = document.getElementById("commission").innerText;
+
       const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
+
       const bookingFee = (Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100) * daysTime;
+
       if (bookingFee) {
-        document.getElementById('store-fee').innerHTML = "Store Insurance Policy Fee Per Day: €" + bookingFee.toString();
+        document.getElementById('store-fee').innerHTML = "Shelf Rental Fee: €" + bookingFee.toString();
       }
-      const total = ((Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100) * daysTime);
-      // if (total) {
-      //   document.getElementById('total-cost').innerHTML = "Total Price of Your Merchandise: €" + total.toString();
-      // }
+
+
+      // FIX THE ABOVE!!
+
+      const total = (Math.round(((pricePerUnit * unitQuantity) - (bookingFee + commission) * 100) / 100) * daysTime);
+      if (total) {
+        document.getElementById('total-profit').innerHTML = "Possible Revenue: €" + total.toString();
+      }
     }
   </script>
 
@@ -37,7 +45,7 @@
 
     <div class="booking-form-row-two">
       <div class="price-per-unit">
-        <%= f.input :price_per_unit, label: "Price/Unit", input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2), required: true %>
+        <%= f.input :price_per_unit, label: "Price/Unit €", input_html: { min: '0', step: '0.01' }, value: number_with_precision(f.object.price_per_unit, precision: 2), required: true %>
       </div>
       <div class="booking-quantity">
         <%= f.input :quantity, label: "Quantity", required: true %>
@@ -46,18 +54,20 @@
 
     <div class="booking-form-row-three">
       <!-- Hidden fields we calculate -->
-      <div id="total-cost">
-        <%= f.input :total_price, label: "Total:", as: :hidden %>
-      </div>
-      <div id="store-fee">
-        Fee:<%= f.input :booking_fee, label: "Fee:", as: :hidden %>
+      <div class="amounts">
+        <div id="total-profit">
+          Possible Revenue: €0
+        </div>
+        <div id="store-fee">
+          Shelf Rental Fee: €0<%= f.input :booking_fee, label: "Shelf Rental Fee:", as: :hidden %>
+        </div>
       </div>
     </div>
     <div class="booking-photo">
       <%= f.input :photo, label: "Photo:" %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>
-      <div class ="booking-form-message-box hidden">
+    <div class ="booking-form-message-box hidden">
       <%= f.input :comment, label: "Message" %>
     </div>
 
@@ -71,8 +81,8 @@
   <!-- Has to be below the form, otherwise the form breaks because the function is confused -->
   <script>
      // updates when quantity is changed
-    const quantity = document.querySelector("#booking_quantity");
-    quantity.addEventListener('keyup', (event) => {
+     const quantity = document.querySelector("#booking_quantity");
+     quantity.addEventListener('keyup', (event) => {
       calcPrice();
     });
     //  Updates when price per unit is changed
