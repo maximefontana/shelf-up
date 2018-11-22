@@ -4,15 +4,15 @@
       // calculations
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
-
-      const bookingFee = Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100;
-      document.getElementById('store-fee').innerHTML = "Fee: €" + bookingFee.toString();
-
-      // updating HTML
-      document.getElementById('total-cost').innerHTML = "Total: €" + (Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100).toString();
-      if (unitQuantity === "") {
-        document.getElementById('total-cost').innerHTML = "Total Cost: €0";
+      const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
+      const bookingFee = (Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100) * daysTime;
+      if (bookingFee) {
+        document.getElementById('store-fee').innerHTML = "Store Insurance Policy Fee Per Day: €" + bookingFee.toString();
       }
+      const total = ((Math.round(((pricePerUnit * unitQuantity) + bookingFee) * 100) / 100) * daysTime);
+      // if (total) {
+      //   document.getElementById('total-cost').innerHTML = "Total Price of Your Merchandise: €" + total.toString();
+      // }
     }
   </script>
 
@@ -70,7 +70,7 @@
 
   <!-- Has to be below the form, otherwise the form breaks because the function is confused -->
   <script>
-    // updates when quantity is changed
+     // updates when quantity is changed
     const quantity = document.querySelector("#booking_quantity");
     quantity.addEventListener('keyup', (event) => {
       calcPrice();
@@ -78,6 +78,16 @@
     //  Updates when price per unit is changed
     const price_per_unit = document.querySelector("#booking_price_per_unit");
     price_per_unit.addEventListener('keyup', (event) => {
+      calcPrice();
+    });
+    // updates when start date is changed
+    const booking_start_date = document.querySelector("#booking_start_date");
+    booking_start_date.addEventListener('input', (event) => {
+      calcPrice();
+    });
+    // updates when end date is changed
+    const booking_end_date = document.querySelector("#booking_end_date");
+    booking_end_date.addEventListener('input', (event) => {
       calcPrice();
     });
   </script>
