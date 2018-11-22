@@ -20,7 +20,6 @@ class StoresController < ApplicationController
   def show
     @markers = [{ lng: @store.longitude, lat: @store.latitude }]
     authorize @store
-    @store.rating = average_rating
     if current_user
       @user = current_user
       authorize @user

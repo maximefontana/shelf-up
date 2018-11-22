@@ -1,4 +1,4 @@
-<div class="hidden">
+<div class="<%= booking.id %>">
   <%= simple_form_for([store,Rating.new]) do |form| %>
     <%= form.input :score %>
     <%= form.button :submit %>
