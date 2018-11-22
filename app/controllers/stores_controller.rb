@@ -19,11 +19,11 @@ class StoresController < ApplicationController
 
   def show
     @markers = [{ lng: @store.longitude, lat: @store.latitude }]
+    @booking = Booking.new
     authorize @store
     if current_user
       @user = current_user
       authorize @user
-      @booking = Booking.new
     end
   end
 

@@ -198,7 +198,7 @@
 
   <%# if @store.bookings.empty? %>
   <p><b>Request this shelf today!</b></p>
-  <%= link_to "Request This Shelf", store_path(@store), class: "button button-small button-blue" %>
+  <a href='#' class="button button-small button-blue" onclick="scroll();">Request This Shelf</a>
 
   <%# else %>
   <%# @store.bookings.each do |booking| %>
