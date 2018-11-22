@@ -27,7 +27,7 @@
     <div class="form-title">
       REQUEST
     </div>
-    <%= simple_form_for([@store, @booking]) do |f| %>
+    <%= simple_form_for([@store, Booking.new]) do |f| %>
     <div class="booking-form-row-one">
       <div class="booking-form-name">
         <%= f.input :name, label: "Name", maxlength: 30, required: true %>

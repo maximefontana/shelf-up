@@ -2,7 +2,10 @@
 </div>
 
 <div class="store-details-container">
+
+
   <div class="store-details-show">
+
     <%= form_for(@store) do |f| %>
     <!-- Do not change class names as these are used in JS -->
     <h2 class="store-show-name">
@@ -23,8 +26,6 @@
       </div>
     </h4>
     <div class="store-rating-show">
-      <%= render 'ratings/form', store: @store, booking: @booking %>
-
       <% num_stars = @store.rating %>
       <% if !num_stars.nil? %>
       <% count = 1 %>
@@ -134,7 +135,7 @@
   <p>What people say about us</p>
   <div class="store-testimonial-card-container">
     <div class="testimonial-card">
-      <div class="testimonial-avatar" style="background-image: url('<%=asset_path 'shebrews.jpg' %>');" width="100px"></div>
+      <div class="testimonial-avatar" style="background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&h=350');" width="100px"></div>
       <h4>Maria Sanchez</h4>
       <h6>She Brews LTD</h6>
       <p>"The king for a reason! It's always a pleasure to work with Marco!"</p>
@@ -147,10 +148,10 @@
     </div>
 
     <div class="testimonial-card">
-      <div class="testimonial-avatar" style="background-image: url('<%=asset_path 'beardman.jpg' %>');" width="100px"></div>
+      <div class="testimonial-avatar" style="background-image: url('https://images.pexels.com/photos/1073097/pexels-photo-1073097.jpeg?auto=compress&cs=tinysrgb&h=350');" width="100px"></div>
       <h4>Brandon Sanderson</h4>
       <h6>WoodJack Stout</h6>
-      <p>As newcomer of the month our beer got a spot on the menu!"</p>
+      <p>After beeing awarded newcomer of the month our beer got a permanent spot on the menu!"</p>
       <div>
         <% 5.times do %>
         <i class="fas fa-star star"></i>
@@ -159,9 +160,9 @@
     </div>
 
     <div class="testimonial-card">
-      <div class="testimonial-avatar" style="background-image: url('<%=asset_path 'blueberry.jpg' %>');" width="100px"></div>
+      <div class="testimonial-avatar" style="background-image: url('https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&h=350');" width="100px"></div>
       <h4>Pierce Brown</h4>
-      <h6>"BlueBerry Brewery</h6>
+      <h6>"Blue Beer Brewery</h6>
       <p>"Very professional staff serving your product and great location!"</p>
       <div class="testimonial-rating">
         <% 4.times do %>
@@ -188,32 +189,34 @@
 
 <div class="store-buttons">
   <% if !user_signed_in? %>
-    <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
+  <div class="align-text">
+    Please <%= link_to "Sign Up", new_user_registration_path %> / <%= link_to "Log In", new_user_session_path %> to view the Owner's details and request this space.</div>
+  </div>
   <% end %>
 
   <% if current_user && current_user != @store.user %>
 
-    <%# if @store.bookings.empty? %>
-      <p><b>Request this shelf today!</b></p>
-      <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
+  <%# if @store.bookings.empty? %>
+  <p><b>Request this shelf today!</b></p>
+  <%= link_to "Request This Shelf", store_path(@store), class: "button button-small button-blue" %>
 
-    <%# else %>
-      <%# @store.bookings.each do |booking| %>
-        <%# if booking.user == current_user && booking.status == "Pending" %>
+  <%# else %>
+  <%# @store.bookings.each do |booking| %>
+  <%# if booking.user == current_user && booking.status == "Pending" %>
          <!--  <b>You have already requested this shelf</b>
           <a href="#" onclick="scroll();">Top</a> -->
-        <%# end %>
-      <%# end %>
+          <%# end %>
+          <%# end %>
 
           <!-- <p><b>Request this shelf today!</b></p> -->
           <%#= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
-        <%# end %>
-      <%# end %>
-    <%# end %>
-  <% end %>
+          <%# end %>
+          <%# end %>
+          <%# end %>
+          <% end %>
 
-  <% if current_user && policy(@store).update? %>
-  <%= link_to "Delete this space", store_path(@store), method: :delete, class: "button button-small button-red" %>
-  <% end %>
-</div>
+          <% if current_user && policy(@store).update? %>
+          <%= link_to "Delete this space", store_path(@store), method: :delete, class: "button button-small button-red" %>
+          <% end %>
+        </div>
 
