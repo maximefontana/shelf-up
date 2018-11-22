@@ -1,4 +1,4 @@
-<div class="store-img-banner" style="background-image: url('https://images.pexels.com/photos/1267360/pexels-photo-1267360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+<div class="store-img-banner" id="scroll-store" style="background-image: url('https://images.pexels.com/photos/1267360/pexels-photo-1267360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
 </div>
 
 <div class="store-details-container">
@@ -88,9 +88,9 @@
       <div class="fas fa-map-marker-alt"></div>
       <p><%= @store.address %></p>
       <% if current_user && policy(@store).update? %>
-        <a href="#" class="fas fa-pencil-alt edit-store-address"></a>
-        <% end %>
-        <%= f.text_field :address, class: "input-store-address hidden" %>
+      <a href="#" class="fas fa-pencil-alt edit-store-address"></a>
+      <% end %>
+      <%= f.text_field :address, class: "input-store-address hidden" %>
     </div>
 
     <div class="store-owner">
@@ -174,42 +174,44 @@
   </div>
 </div>
 
-
-
-
-<% if !@store.link.nil? %>
-<div class="store-link">
-  <% if current_user && policy(@store).update? %>
-  <a href="#" class="fas fa-pencil-alt edit-store-link"></a>
-  <% end %>
-  <%= f.text_field :link, class: "input-store-link hidden" %>
-</div>
-<% end %>
-
 <% end %>
 
 </div>
+
+<script type="text/javascript">
+  function scroll() {
+    const button = document.getElementById("scroll-store");
+    button.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 <div class="store-buttons">
   <% if !user_signed_in? %>
-  <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
+    <div class="btn">Please Sign Up / Log In to view the Owner's details and request this space.</div>
   <% end %>
 
   <% if current_user && current_user != @store.user %>
 
-  <% if @store.bookings.empty? %>
-  <p><b>Request this shelf today!</b></p>
-  <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
+    <%# if @store.bookings.empty? %>
+      <p><b>Request this shelf today!</b></p>
+      <%= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
 
-  <% else %>
-  <% @store.bookings.each do |booking| %>
-  <% if booking.user == current_user && booking.status == "Pending" %>
-  <b>You have already requested this shelf</b>
-  <a href="#">Top</a>
-  <% else %>
-  <% end %>
-  <% end %>
-  <% end %>
+    <%# else %>
+      <%# @store.bookings.each do |booking| %>
+        <%# if booking.user == current_user && booking.status == "Pending" %>
+         <!--  <b>You have already requested this shelf</b>
+          <a href="#" onclick="scroll();">Top</a> -->
+        <%# end %>
+      <%# end %>
+
+          <!-- <p><b>Request this shelf today!</b></p> -->
+          <%#= link_to "Request This Shelf", new_store_booking_path(@store), class: "button button-small button-blue" %>
+        <%# end %>
+      <%# end %>
+    <%# end %>
   <% end %>
 
   <% if current_user && policy(@store).update? %>
