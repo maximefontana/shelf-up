@@ -85,7 +85,13 @@ class BookingsController < ApplicationController
 
   def set_total_price
     params[:booking][:total_price] =
-      (params[:booking][:booking_fee]) +
-      (params[:booking][:price_per_unit] * params[:booking][:quantity])
+      ((params[:booking][:booking_fee]) +
+      (params[:booking][:price_per_unit] * params[:booking][:quantity])) * total_time
+  end
+
+  def total_time
+    start = Date.parse(params[:booking][:start_date])
+    final = Date.parse(params[:booking][:end_date])
+    return (final - start).to_i
   end
 end
