@@ -20,7 +20,10 @@
       <% if current_user && policy(@store).update? %>
       <a href="#" class="fas fa-pencil-alt edit-store-category"></a>
       <% end %>
-      <%= f.text_field :name, class: "input-store-category hidden" %>
+      <div class="input-store-category hidden">
+        <%= f.text_field :location %>
+        <%= f.text_field :category %>
+      </div>
     </h4>
     <div class="store-rating-show">
       <%= render 'ratings/form', store: @store %>
@@ -41,86 +44,90 @@
     <div class="store-commish-show">
       <i class="fas fa-balance-scale"></i>
       <p>
-      We charge <b><%= @store.commission_amount %>% Commission</b> on rented shelf revenue</p>
-      <% if current_user && policy(@store).update? && current_user.owner %>
-      <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
-      <% end %>
-      <%= f.text_field :commission_amount, class: "input-store-commish hidden" %>
-    </div>
+        We charge <b><%= @store.commission_amount %>% Commission</b> on rented shelf revenue</p>
+        <% if current_user && policy(@store).update? && current_user.owner %>
+        <a href="#" class="fas fa-pencil-alt edit-store-commish"></a>
+        <% end %>
+        <%= f.text_field :commission_amount, class: "input-store-commish hidden" %>
+      </div>
 
-    <div class="store-rent-time">
-      <i class="far fa-clock"></i>
-      <p>We offer shelftime of <b><%= @store.rent_time %> days</b> or more
-      </p>
-      <% if current_user && policy(@store).update? %>
-      <a href="#" class="fas fa-pencil-alt edit-store-time"></a>
-      <% end %>
-      <%= f.text_field :rent_time, class: "input-store-time hidden" %>
-    </div>
+      <div class="store-rent-time">
+        <i class="far fa-clock"></i>
+        <p>We offer shelftime of <b><%= @store.rent_time %> days</b> or more
+        </p>
+        <% if current_user && policy(@store).update? %>
+        <a href="#" class="fas fa-pencil-alt edit-store-time"></a>
+        <% end %>
+        <%= f.text_field :rent_time, class: "input-store-time hidden" %>
+      </div>
 
-    <div class="store-rent-price">
-      <i class="far fa-money-bill-alt"></i>
-      <p>Product price range <b>€<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>,-</b></p>
-      <% if current_user && policy(@store).update? %>
-      <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
-      <% end %>
-      <div class="input-store-price hidden">
-        <%= f.text_field :rent_price_min %>
-        <%= f.text_field :rent_price_max %>
+      <div class="store-rent-price">
+        <i class="far fa-money-bill-alt"></i>
+        <p>Product price range <b>€<%= @store.rent_price_min %> - €<%= @store.rent_price_max %>,-</b></p>
+        <% if current_user && policy(@store).update? %>
+        <a href="#" class="fas fa-pencil-alt edit-store-price"></a>
+        <% end %>
+        <div class="input-store-price hidden">
+          <%= f.text_field :rent_price_min %>
+          <%= f.text_field :rent_price_max %>
+        </div>
       </div>
     </div>
+
+    <div class="sticky-form">
+      <%= render 'shared/bookingform' %>
+    </div>
+
   </div>
 
-  <div class="sticky-form">
-    <%= render 'shared/bookingform' %>
-  </div>
-
-</div>
 
 
-
-<div class="store-about-container">
-  <h2>About <%= @store.name %></h2>
-  <div class="store-location-show">
-    <div class="fas fa-map-marker-alt"></div>
+  <div class="store-about-container">
+    <h2>About <%= @store.name %></h2>
+    <div class="store-location-show">
+      <div class="fas fa-map-marker-alt"></div>
       <p><%= @store.address %></p>
-  </div>
+      <% if current_user && policy(@store).update? %>
+        <a href="#" class="fas fa-pencil-alt edit-store-address"></a>
+        <% end %>
+        <%= f.text_field :address, class: "input-store-address hidden" %>
+    </div>
 
-  <div class="store-owner">
-    <% if user_signed_in? %>
-    <i class="far fa-user"></i>
+    <div class="store-owner">
+      <% if user_signed_in? %>
+      <i class="far fa-user"></i>
 
-    <%= link_to @store.user.username, user_path(@store.user)%>
-    <% else %>
-    <%= @store.user.username %>
-    <% end %>
-  </div>
+      <%= link_to @store.user.username, user_path(@store.user)%>
+      <% else %>
+      <%= @store.user.username %>
+      <% end %>
+    </div>
     <% if @store.description %>
-  <div class="store-description">
-    <%= @store.description %>
-    <% if current_user && policy(@store).update? %>
-    <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
-    <% end %>
-    <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
-    <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
-  </div>
+    <div class="store-description">
+      <%= @store.description %>
+      <% if current_user && policy(@store).update? %>
+      <a href="#" class="fas fa-pencil-alt edit-store-description"></a>
+      <% end %>
+      <%= f.text_field :description, class: "input-store-description hidden", max_length: 250 %>
+      <%= f.submit "Edit", class: "button button-small button-blue store-edit-button hidden" %>
+    </div>
     <% end %>
 
-  <div class="store-about-images">
-    <div class="store-image-one"></div> <!-- add images here -->
-    <div class="store-image-two"></div>
-    <div class="store-image-three"></div>
+    <div class="store-about-images">
+      <div class="store-image-one"></div> <!-- add images here -->
+      <div class="store-image-two"></div>
+      <div class="store-image-three"></div>
+    </div>
   </div>
-</div>
 
-<div class="store-map-container">
-  <% if !@store.longitude.nil? && !@store.latitude.nil? %>
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="store-map-container">
+    <% if !@store.longitude.nil? && !@store.latitude.nil? %>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <% end %>
 </div>

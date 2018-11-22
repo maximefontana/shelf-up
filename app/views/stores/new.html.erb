@@ -6,7 +6,7 @@
     <h2>Add A New Store</h2>
 
     <%= simple_form_for(@store) do |f| %>
-    <%= f.input :name, input_html: { maxlength: 40 }, class: 'form-text' %>
+    <%= f.input :name, input_html: { maxlength: 40 } %>
     <%= f.input :description, label: "Store description (limit 250 characters)", input_html: { maxlength: 250 }, class: 'form-text' %>
     <%= f.input :address, label: "Street Adress", input_html: { maxlength: 150 }, class: 'form-text'  %>
     <%= f.input :location, label: "City", class: 'form-text' %>
