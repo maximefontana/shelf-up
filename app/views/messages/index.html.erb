@@ -2,7 +2,7 @@
   <h2>Messages</h2>
   <% @messages.each do |message| %>
   <div class="messages-cards">
-    <% if message.user == current_user || message.booking.user == current_user  %>
+    <% if message.user == current_user || message.booking.user == current_user %>
 
     <div class="user-message-avatar">
       <% if message.user.photo %>
@@ -29,6 +29,14 @@
       <div><%= mtime.to_a[2] %>:<%= mtime.to_a[1] %></div>
 
     </div>
+
+    <div class="user-new-message">
+      <%= form_for([message.booking, Message.new]) do |f| %>
+        <%= f.text_field :text %>
+        <%= f.submit "Reply", class: "button button-blue button-medium" %>
+      <% end %>
+    </div>
+
   </div>
   <% end %>
 </div>
