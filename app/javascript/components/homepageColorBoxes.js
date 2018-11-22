@@ -22,11 +22,6 @@ function boxesScrollAnimation() {
         boxes[5].style.opacity = '0.0';
         boxes[6].style.opacity = '0.0';
       }
-
-      //   boxes[2].classList.remove('hidden');
-      //   boxes[5].classList.remove('hidden');
-      //   boxes[6].classList.remove('hidden');
-
     });
   }
 }
