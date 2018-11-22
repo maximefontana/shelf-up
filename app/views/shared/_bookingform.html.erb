@@ -14,11 +14,15 @@
         document.getElementById('store-fee').innerHTML = "Shelf Rental Fee: €" + bookingFee.toString();
       }
 
-
-      // FIX THE ABOVE!!
-
-      const total = (Math.round(((pricePerUnit * unitQuantity) - (bookingFee + commission) * 100) / 100) * daysTime);
+      const total = ((Math.round(
+        ((pricePerUnit * unitQuantity) -
+        (pricePerUnit * unitQuantity) * (commission / 100))
+        * 100) / 100)
+        * daysTime);
       if (total) {
+        console.log(commission);
+        console.log(daysTime);
+        console.log(total);
         document.getElementById('total-profit').innerHTML = "Possible Revenue: €" + total.toString();
       }
     }
