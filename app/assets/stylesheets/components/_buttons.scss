@@ -42,8 +42,8 @@
 }
 
 .button-blue {
-  color: $arrowfour;
-  border: 2px solid $arrowfour;
+  color: $arrowfour !important;
+  border: 2px solid $arrowfour !important;
   width: auto;
   &:focus {
     outline: none;

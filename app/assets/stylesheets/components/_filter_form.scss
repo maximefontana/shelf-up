@@ -18,13 +18,18 @@ input::-webkit-inner-spin-button {
   align-items: center;
   text-align: left;
   background-color: $grayfive;
-  color: white;
   border-radius: 4px;
   padding: 24px;
+  color: white;
+
 }
 
 .filter-form-search-box {
   margin: 18px 0px 6px 0px;
+
+  > input {
+    color: black;
+  }
 }
 
 .width-thirty {
