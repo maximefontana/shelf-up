@@ -23,6 +23,8 @@
       </div>
     </h4>
     <div class="store-rating-show">
+      <%= render 'ratings/form', store: @store, booking: @booking %>
+
       <% num_stars = @store.rating %>
       <% if !num_stars.nil? %>
       <% count = 1 %>
