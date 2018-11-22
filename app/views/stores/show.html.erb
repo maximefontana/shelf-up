@@ -26,16 +26,15 @@
       </div>
     </h4>
     <div class="store-rating-show">
-      <%= render 'ratings/form', store: @store %>
       <% num_stars = @store.rating %>
       <% if !num_stars.nil? %>
       <% count = 1 %>
       <% num_stars.times do %>
-      <i class="fas fa-star star-<%=count%> star"></i>
+      <i class="fas fa-star star"></i>
       <% count += 1 %>
       <% end %>
       <% (5 - num_stars).times do %>
-      <i class="far fa-star star-<%=count%> star"></i>
+      <i class="far fa-star star"></i>
       <% count += 1 %>
       <% end %>
       <% end %>

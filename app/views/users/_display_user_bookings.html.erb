@@ -48,6 +48,26 @@
 
       <% end %>
 
+      <% if booking.status == 'Past End Date' %>
+
+      <div class="rating-booking">
+        <p class="booking-id hidden"><%= booking.id %></p>
+        <%= render 'ratings/form', store: booking.store, booking: booking %>
+        <% num_stars = booking.store.rating %>
+        <% if !num_stars.nil? %>
+        <% count = 1 %>
+        <% num_stars.times do %>
+        <i class="fas fa-star star-<%=count%> star"></i>
+        <% count += 1 %>
+        <% end %>
+        <% (5 - num_stars).times do %>
+        <i class="far fa-star star-<%=count%> star"></i>
+        <% count += 1 %>
+        <% end %>
+        <% end %>
+      </div>
+
+      <% end %>
 
     </div>
 
