@@ -13,6 +13,10 @@ input .form-control {
 .form-group {
   margin-bottom: 0px;
   margin-top: 0px;
+
+   > input {
+    color: black;
+  }
 }
 
 .booking-new-form {
@@ -48,7 +52,6 @@ input .form-control {
 
     .booking-form-name {
       width: 600px;
-
     }
   }
 
