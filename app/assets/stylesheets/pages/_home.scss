@@ -124,7 +124,9 @@
   justify-content: center;
   align-items: center;
   margin: 50px 0px;
-  background-color: $grayone;
+  background-color: white;
+  // border-top: 4px solid $arrowsix;
+  box-shadow: .5px .5px 5px $graythree;
 }
 
 .you-have-shelf {
