@@ -5,13 +5,12 @@
       const pricePerUnit = document.getElementById("booking_price_per_unit").value;
       const unitQuantity = document.getElementById("booking_quantity").value;
       const commission = document.getElementById("commission").innerText;
-      const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
-      const bookingFee = (Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100) * daysTime;
-      const total = ((Math.round(
+      // const daysTime = (Date.parse(document.getElementById('booking_end_date').value) - Date.parse(document.getElementById('booking_start_date').value)) / (86400000);
+      const bookingFee = Math.round((((pricePerUnit) * unitQuantity) * 0.15)*100) / 100;
+      const total = (Math.round(
         ((pricePerUnit * unitQuantity) -
         (pricePerUnit * unitQuantity) * (commission / 100))
-        * 100) / 100)
-        * daysTime);
+        * 100) / 100);  // for rounding
 
       // updating HTML
       if (bookingFee) {
