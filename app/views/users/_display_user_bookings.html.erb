@@ -10,7 +10,7 @@
     </div>
 
     <div class="user-bookings-total-price">
-      <p>Booking Fee: €<%= booking.booking_fee %></p>
+      <p>Booking Fee: €<%= booking.booking_fee.to_f / 100 %></p>
       <p><span class="glyphicon glyphicon-calendar"></span>   <%= booking.start_date %> / <%= booking.end_date %></p>
     </div>
   </div>
