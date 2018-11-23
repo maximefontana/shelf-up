@@ -3,7 +3,7 @@ function openFilterForm(event) {
   const filterButton = document.querySelector('.filter-button');
   if (filterButton) {
     filterButton.addEventListener("click", event => {
-      filterForm.classList.toggle('hidden');
+      $('.collapse').collapse('toggle');
     })
   }
 };
