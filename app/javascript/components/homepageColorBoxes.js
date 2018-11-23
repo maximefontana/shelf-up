@@ -1,7 +1,7 @@
 function boxesScrollAnimation() {
   const boxes = document.querySelectorAll('.homepage-why-box');
 
-  if (boxes) {
+  if (boxes.length > 0) {
     window.addEventListener('scroll', () => {
       console.log(window.scrollY); // gives y value
       if (window.scrollY + window.screen.height >= window.innerHeight + 580) {

@@ -2,7 +2,7 @@ function filterBookings() {
   const items = document.querySelectorAll(".booking-status");
   const bookingCards = document.querySelectorAll('.booking-card');
 
-  if (items) {
+  if (items.length > 0) {
     items.forEach((item) => {
       item.addEventListener("click", (event) => {
         event.preventDefault();
