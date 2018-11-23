@@ -16,9 +16,10 @@ function filterBookings() {
         })
 
         bookingCards.forEach((card) => {
+          const cardChildTwo = card.children[2];
           if (item.innerText == "All") {
             card.classList.remove('hidden');
-          } else if (card.children[2].children[0].innerText.trim() == item.innerText) {
+          } else if (cardChildTwo && cardChildTwo.children[0].innerText.trim() == item.innerText) {
             card.classList.remove('hidden');
           } else {
             card.classList.add('hidden');
